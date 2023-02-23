@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 7efc7f16e2b456341a46984c9d8fceef
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: 149885328460683727
+    second: ArmatureAction.002
+  - first:
+      74: -3462713569010428882
+    second: 0_Asansor 1|ArmatureAction.001
+  - first:
+      74: -3965840725908564749
+    second: 0_Asansor 1|ArmatureAction.002
+  - first:
+      74: 6554381595709392142
+    second: 0_Asansor 1|ArmatureAction.003
+  - first:
+      74: 87187958820367554
+    second: 0_Asansor 1|ArmatureAction.004
+  - first:
+      74: -7546640879974533367
+    second: 0_Asansor 1|ArmatureAction.005
+  - first:
+      74: 2998622194193665689
+    second: 0_Asansor 1|ArmatureAction.006
+  - first:
+      74: 4380548497209138892
+    second: 0_Asansor 1|ArmatureAction.007
+  - first:
+      74: 626758601668298920
+    second: 0_Asansor 1|ArmatureAction.008
+  - first:
+      74: -7386782756847128629
+    second: 0_Asansor 1|Wing 1Action.002
+  - first:
+      74: 6289158717290342061
+    second: 0_Asansor 1|Wing 2Action.002
+  - first:
+      74: -1661087137522662419
+    second: 0_Asansor 1|Wing 3Action.002
+  - first:
+      74: 5833028917747371701
+    second: 0_Asansor 1|Wing 4Action.002
+  - first:
+      74: -2297579931719614826
+    second: 0_Asansor 1|Wing 5Action.002
+  - first:
+      74: 6697802669349505601
+    second: 0_Asansor 1|Wing 6Action.002
+  - first:
+      74: -7346055113588717442
+    second: 0_Asansor 1|Wing 7Action.002
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
