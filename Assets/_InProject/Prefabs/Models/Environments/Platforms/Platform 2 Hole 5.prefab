@@ -84,6 +84,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -619059459964139661, guid: 7597ce88f62e23141aa2cca06d14a07e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bda8877bc7b01d84c84d3778aafd7396, type: 2}
+    - target: {fileID: -619059459964139661, guid: 7597ce88f62e23141aa2cca06d14a07e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 242a0bce53a6e754d8c8445b253a1162, type: 2}
     - target: {fileID: 919132149155446097, guid: 7597ce88f62e23141aa2cca06d14a07e, type: 3}
       propertyPath: m_Name
       value: Platform 2 - Asansor
@@ -171,6 +179,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f2eed9173cabbe34db62cef311bf3fce, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d3a736e24d2d539478a7eee77c19b8f9, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f2eed9173cabbe34db62cef311bf3fce, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a18476085ad22e448b5188555c55b5d4, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f2eed9173cabbe34db62cef311bf3fce, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3820fc33891fdd04fb3e8c96faaffd8d, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f2eed9173cabbe34db62cef311bf3fce, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: a18476085ad22e448b5188555c55b5d4, type: 2}
     - target: {fileID: 919132149155446097, guid: f2eed9173cabbe34db62cef311bf3fce, type: 3}
       propertyPath: m_Name
       value: Platform 2 - Hole 5
