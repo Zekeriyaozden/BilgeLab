@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     public CharacterController mainCharacterController;
     public int levelsOfCharacter;
     private GameObject GamePlayEnvs;
-    private EnvironmentController envController;
+    [HideInInspector]
+    public EnvironmentController envController;
 
     private void Awake()
     {
@@ -24,7 +25,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         levelsOfCharacter = 0;
-
+        GamePlayEnvs = GameObject.Find("GamePlayEnvs");
+        envController = GamePlayEnvs.GetComponent<EnvironmentController>();
     }
 
     // Update is called once per frame
