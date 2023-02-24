@@ -67,6 +67,7 @@ public class CharacterController : MonoBehaviour
         Destroy(sf);
         gameObject.transform.eulerAngles = startRotation;
         gameObject.transform.position.Set(transform.position.x,startPosition.y,transform.position.z);
+        changeMotion(true);
     }
 
     public void inSpline()

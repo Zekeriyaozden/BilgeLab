@@ -24,10 +24,11 @@ public class PipeController : MonoBehaviour
     {
         if (other.gameObject.name == "MainCharacter")
         {
-            other.gameObject.GetComponent<CharacterController>().changeMotion(false);
+           CharacterController _controller = other.gameObject.GetComponent<CharacterController>();
             SplineFollower sp = other.gameObject.AddComponent<SplineFollower>();
+            _controller.changeMotion(false);
             sp.spline = spline;
-            //other.gameObject.GetComponent<>()
+            _controller.inSpline();
         }
     }
 }
