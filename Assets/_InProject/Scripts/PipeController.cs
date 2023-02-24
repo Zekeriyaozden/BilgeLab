@@ -27,7 +27,7 @@ public class PipeController : MonoBehaviour
             other.gameObject.GetComponent<CharacterController>().changeMotion(false);
             SplineFollower sp = other.gameObject.AddComponent<SplineFollower>();
             sp.spline = spline;
-            other.gameObject.GetComponent<>()
+            //other.gameObject.GetComponent<>()
         }
     }
 }
