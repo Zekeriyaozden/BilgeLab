@@ -9,21 +9,26 @@ public class CharacterController : MonoBehaviour
     private bool inMotion;
     private bool letChangeTheMotion;
     private float speed;
-    public DynamicJoystick dynamicJoystick;
-    public Vector3 direction;
-    public float _magn;
-    public Vector2 _magnVert;
+    private DynamicJoystick dynamicJoystick;
+    [HideInInspector]public Vector3 direction;
+    [HideInInspector]public float _magn;
+    [HideInInspector]public Vector2 _magnVert;
     private Animator anim;
     private bool idle;
     private bool running;
-    public bool inTunnel;
-    public GameObject tunnel;
+    [HideInInspector]public bool inTunnel;
+    [HideInInspector]public GameObject tunnel;
     private GameManager gm;
     private Vector3 startRotation;
-    public Vector3 startPosition;
+    private Vector3 startPosition;
+    public GameObject parachute;
+    private bool parachuteOn;
+    private bool skingOn;
     
+
     void Start()
     {
+        skingOn = parachuteOn = false;
         startRotation = gameObject.transform.rotation.eulerAngles;
         startPosition = transform.position;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -33,6 +38,7 @@ public class CharacterController : MonoBehaviour
         idle = true;
         inMotion = true;
         letChangeTheMotion = true;
+        dynamicJoystick = gm.envController.dynamicJoystick;
     }
 
     public bool changeSpeed(float _speed)
@@ -53,9 +59,63 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    private void onParachute(bool activate)
+    {
+        if (activate)
+        {
+            parachuteOn = true;
+        }
+        else
+        {
+            parachuteOn = false;
+        }
+        parachute.gameObject.SetActive(activate);
+    }
+
+    private IEnumerator endSplineMotion(Vector3 targetPos,Vector3 targetRot)
+    {
+        Debug.Log("inThere");
+        onParachute(true);
+        float k = 0;
+        Vector3 startRot = gameObject.transform.eulerAngles;
+        Vector3 startPos = gameObject.transform.position;
+        while (k <= 1)
+        {
+            yield return new WaitForEndOfFrame();
+            gameObject.transform.position = Vector3.Lerp(startPos,targetPos,k);
+            k += Time.deltaTime * gm.endOfSplineSpeed / 2f;
+        }
+        onParachute(false);
+        changeMotion(true);
+    }
+    
+
+    private void endOfSpline(SplineFollower sf)
+    {
+        Debug.Log("EndOfSpline");
+        Destroy(sf);
+        gameObject.transform.eulerAngles = startRotation;
+        if (sf.spline.gameObject.transform.parent.gameObject.GetComponent<PipeController>().isTrue)
+        {
+            gameObject.transform.eulerAngles = startRotation;
+            gameObject.transform.position = new Vector3(transform.position.x,startPosition.y,transform.position.z);
+            changeMotion(true);
+        }
+        else
+        {
+            gameObject.transform.eulerAngles = startRotation;
+            gameObject.transform.position = new Vector3(gm.envController.currentPlatform.transform.position.x,transform.position.y,gm.envController.currentPlatform.transform.position.z);
+            StartCoroutine(endSplineMotion(
+                new Vector3(gm.envController.currentPlatform.transform.position.x, startPosition.y,
+                    gm.envController.currentPlatform.transform.position.z - 10f), startRotation));
+        }
+
+    }
+
     private IEnumerator splineFollow(SplineFollower sf)
     {
-        sf.followSpeed = 5f;
+        skingOn = true;
+        sf.followSpeed = gm.splineSpeed;
         while (true)
         {
             yield return new WaitForEndOfFrame();
@@ -64,11 +124,8 @@ public class CharacterController : MonoBehaviour
                 break;
             }
         }
-        Debug.Log("EndOfSpline");
-        Destroy(sf);
-        gameObject.transform.eulerAngles = startRotation;
-        gameObject.transform.position = new Vector3(transform.position.x,startPosition.y,transform.position.z);
-        changeMotion(true);
+        skingOn = false;
+        endOfSpline(sf);
     }
 
     public void inSpline()
@@ -87,21 +144,48 @@ public class CharacterController : MonoBehaviour
     
     public void animatorController(float s,bool idle=false)
     {
-        if (idle)
+        if (!parachuteOn)
         {
-            anim.speed = 1f;
-            anim.SetBool("Idle",true);
-            anim.SetBool("Running",false);
-            anim.SetBool("Walking",false);   
+            anim.SetBool("Parachute",false);
         }
         else
         {
-            if (s > .5f)
+            anim.SetBool("Parachute",true); 
+        }
+
+        if (skingOn)
+        {
+            anim.SetBool("Sking",true);  
+        }
+        else
+        {
+            anim.SetBool("Sking",false);
+        }
+        if (idle)
+        {
+            {
+                anim.speed = 1f;
+                anim.SetBool("Idle",true);
+                anim.SetBool("Running",false);
+                anim.SetBool("Walking",false);     
+            }
+        }
+        else
+        {
+            if (s > .3f)
             {
                 anim.SetBool("Idle",false);
-                anim.SetBool("Running",true);   
-                anim.SetBool("Walking",false);   
-                anim.speed = s;
+                anim.SetBool("Running",true);
+                anim.SetBool("Walking", false);
+                if (s < .6f)
+                {
+                    anim.speed = .6f;
+                }
+                else
+                {
+                    anim.speed = s;
+                }
+
             }
             else
             {
@@ -228,7 +312,7 @@ public class CharacterController : MonoBehaviour
 
         }
     }
-    public float distancedis;
+    [HideInInspector]public float distancedis;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Tunnel")

@@ -7,17 +7,18 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public float mainCharacterSpeed;
+    public float endOfSplineSpeed;
     //[HideInInspector]
     public GameObject mainCharacter;
     public CharacterController mainCharacterController;
     public int levelsOfCharacter;
     private GameObject GamePlayEnvs;
-    [HideInInspector]
     public EnvironmentController envController;
+    public float splineSpeed;
 
     private void Awake()
     {
-        mainCharacterController = GameObject.Find("MainCharacter").GetComponent<CharacterController>();
+        mainCharacterController = mainCharacter.GetComponent<CharacterController>();
         mainCharacterController.changeSpeed(mainCharacterSpeed);
     }
     
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         levelsOfCharacter = 0;
         GamePlayEnvs = GameObject.Find("GamePlayEnvs");
-        envController = GamePlayEnvs.GetComponent<EnvironmentController>();
+        envController = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentController>();
     }
 
     // Update is called once per frame

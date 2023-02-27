@@ -72,6 +72,7 @@ public class PlatformController : MonoBehaviour
             {
                 env.addNewPlatform();
                 isAdded = true;
+                env.currentPlatform = gameObject;
             }
         }
     }

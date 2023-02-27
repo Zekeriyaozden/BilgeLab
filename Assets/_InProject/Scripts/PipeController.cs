@@ -28,10 +28,15 @@ public class PipeController : MonoBehaviour
         {
            CharacterController _controller = other.gameObject.GetComponent<CharacterController>();
             SplineFollower sp = other.gameObject.AddComponent<SplineFollower>();
+            sp.motion.rotationOffset = new Vector3(-90f,0,0);
             _controller.changeMotion(false);
             sp.spline = spline;
             _controller.inSpline();
-            isUsed = true;
+            if (isTrue)
+            {
+                gameObject.transform.parent = null;
+            }
+            //isUsed = true;
         }
     }
 }

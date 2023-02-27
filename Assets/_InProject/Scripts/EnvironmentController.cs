@@ -6,9 +6,10 @@ using Random = UnityEngine.Random;
 
 public class EnvironmentController : MonoBehaviour
 {
+    public DynamicJoystick dynamicJoystick;
     public GameObject gamePlayEnvs;
     public List<GameObject> platforms;
-    [HideInInspector]public GameObject currentPlatform;
+    public GameObject currentPlatform;
     public List<GameObject> platformPrefs;
     private float distance;
     public GameObject pipeTrue;
