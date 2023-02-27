@@ -6,11 +6,13 @@ using UnityEngine;
 
 public class PipeController : MonoBehaviour
 {
+    private bool isUsed;
     private GameManager gm;
     public bool isTrue;
     public SplineComputer spline;
     void Start()
     {
+        isUsed = false;
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -22,13 +24,14 @@ public class PipeController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "MainCharacter")
+        if (other.gameObject.tag == "Player" && !isUsed)
         {
            CharacterController _controller = other.gameObject.GetComponent<CharacterController>();
             SplineFollower sp = other.gameObject.AddComponent<SplineFollower>();
             _controller.changeMotion(false);
             sp.spline = spline;
             _controller.inSpline();
+            isUsed = true;
         }
     }
 }

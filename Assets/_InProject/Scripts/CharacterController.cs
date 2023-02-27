@@ -20,7 +20,7 @@ public class CharacterController : MonoBehaviour
     public GameObject tunnel;
     private GameManager gm;
     private Vector3 startRotation;
-    private Vector3 startPosition;
+    public Vector3 startPosition;
     
     void Start()
     {
@@ -64,9 +64,10 @@ public class CharacterController : MonoBehaviour
                 break;
             }
         }
+        Debug.Log("EndOfSpline");
         Destroy(sf);
         gameObject.transform.eulerAngles = startRotation;
-        gameObject.transform.position.Set(transform.position.x,startPosition.y,transform.position.z);
+        gameObject.transform.position = new Vector3(transform.position.x,startPosition.y,transform.position.z);
         changeMotion(true);
     }
 

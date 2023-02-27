@@ -2,57 +2,38 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnvironmentController : MonoBehaviour
 {
-    public GameObject GamePlayEnvs;
-    public List<GameObject> plains;
-    [HideInInspector]public GameObject currentPlain;
-    public GameObject plainPref3;
-    public GameObject plainPref4;
-    public GameObject plainPref5;
+    public GameObject gamePlayEnvs;
+    public List<GameObject> platforms;
+    [HideInInspector]public GameObject currentPlatform;
+    public List<GameObject> platformPrefs;
     private float distance;
+    public GameObject pipeTrue;
+    public GameObject pipeFalse;
     
     void Start()
     {
-        currentPlain = plains[0];
-        distance = plains[1].transform.position.z - plains[0].transform.position.z;
-        GamePlayEnvs = GameObject.Find("GamePlayEnvs");
-    }
-
-    public bool drawSpline(Vector3 _start,Vector3 _target,bool trueAnswer = true)
-    {
-        try
-        {
-            if (trueAnswer)
-            {
-                //Debug.Log("drawing spline to target");
-            }
-            else
-            {
-                //Debug.Log("drawing spline to themself");
-            }
-                
-            return true;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-            return false;
-        }
+        distance = platforms[1].transform.position.z - platforms[0].transform.position.z;
+        platforms[2].transform.position = platforms[1].transform.position + new Vector3(0, 0, distance);
+        currentPlatform = platforms[0];
     }
     
-    
 
-    public void addNewPlain()
+    public void addNewPlatform()
     {
-        GameObject willDestroy = plains[0];
-        plains.RemoveAt(0);
+        int _platformIndex = Random.Range(0, 3);
+        GameObject newPlatform = Instantiate(platformPrefs[_platformIndex]);
+        newPlatform.transform.parent = gamePlayEnvs.transform;
+        newPlatform.transform.eulerAngles = platforms[platforms.Count - 1].transform.eulerAngles;
+        newPlatform.transform.position = platforms[platforms.Count - 1].transform.position + new Vector3(0,0,distance);
+        platforms.Add(newPlatform);
+        GameObject willDestroy = platforms[0];
+        platforms.RemoveAt(0);
         Destroy(willDestroy);
-        //GameObject _inst = Instantiate(plainPref0);
-        //_inst.transform.position = plains[plains.Count - 1].transform.position + new Vector3(0, 0, distance);
-        //plains.Add(_inst);
+        Debug.Log("AddedNewPlatform");
     }
     
     void Update()

@@ -41,7 +41,6 @@ public class LevelEnvController : MonoBehaviour
     {
         if (!isFirstLevel && !triggered && other.gameObject.name == "MainCharacter")
         {
-            envController.addNewPlain();
             triggered = true;
         }
     }
