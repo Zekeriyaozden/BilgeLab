@@ -92,7 +92,6 @@ public class CharacterController : MonoBehaviour
 
     private void endOfSpline(SplineFollower sf)
     {
-        Debug.Log("EndOfSpline");
         Destroy(sf);
         gameObject.transform.eulerAngles = startRotation;
         if (sf.spline.gameObject.transform.parent.gameObject.GetComponent<PipeController>().isTrue)
