@@ -1,6 +1,6 @@
-id,name,npc,desc,status,rewards,task,parent
-0,aaa,abb,acc,add,ass,aff,agg
+id,question,answer1,answer2,answer3,answer4,answer5,subject
+0,aaa,abb,acc,add,,aff,agg
 1,baa,bbb,bcc,bdd,bss,bff,bgg
 2,caa,cbb,ccc,cdd,css,cff,cgg
 3,daa,dbb,dcc,ddd,dss,dff,dgg
-4,faa,fbb,fcc,fdd,fss,fff,fgg
+4,faa,fbb,fcc,fdd,fss,,fgg
