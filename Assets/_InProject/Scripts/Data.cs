@@ -8,10 +8,12 @@ public class QuestionData
     public string question;
     public List<string> answers;
     public int sizeOfAnswer;
-    public string subject;
+    public int subject;
+    public List<int> indexesOfTrueAnswer;
 
-    public QuestionData(int _sizeOfAnswer,string _question,List<string> _answers,int _id,string _subject)
+    public QuestionData(int _sizeOfAnswer,string _question,List<string> _answers,int _id,int _subject,List<int> _indexesOfTrueAnswer)
     {
+        this.indexesOfTrueAnswer = _indexesOfTrueAnswer;
         this.sizeOfAnswer = _sizeOfAnswer;
         this.answers = _answers;
         this.id = _id;

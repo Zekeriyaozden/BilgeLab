@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public CharacterController mainCharacterController;
     public int levelsOfCharacter;
     private GameObject GamePlayEnvs;
+    [HideInInspector] public DataReader dataReader;
     public EnvironmentController envController;
     public float splineSpeed;
 
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     {
         mainCharacterController = mainCharacter.GetComponent<CharacterController>();
         mainCharacterController.changeSpeed(mainCharacterSpeed);
+        dataReader = GameObject.Find("DataManager").GetComponent<DataReader>();
     }
     
 

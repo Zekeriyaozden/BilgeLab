@@ -918,7 +918,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &918615692
 Transform:
   m_ObjectHideFlags: 0
@@ -946,7 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27059cda1c7a01f4da75ec67e60c9989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questdata: {fileID: 0}
+  questdata: {fileID: 4900000, guid: 26d1580a695db1c4288f2fb84fa97834, type: 3}
 --- !u!1 &925938723
 GameObject:
   m_ObjectHideFlags: 0

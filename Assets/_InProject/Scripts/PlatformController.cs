@@ -1,15 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class PlatformController : MonoBehaviour
 {
+    public List<TextMeshProUGUI> texts;
     public bool isStart;
     public int answerCount;
     public List<GameObject> answerObjects;
     public List<GameObject> answerHoles;
+    public QuestionData questionData;
     private EnvironmentController env;
     private bool isAdded;
     void Start()
@@ -17,7 +20,6 @@ public class PlatformController : MonoBehaviour
         isAdded = false;
         env = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentController>();
         _holeAns();
-        locatePipes();
     }
 
     //TO DO
@@ -38,6 +40,7 @@ public class PlatformController : MonoBehaviour
             }
         }
         answerHoles[_range].GetComponent<HoleController>().isTrue = true;
+        locatePipes();
     }
     
     private void locatePipes()
