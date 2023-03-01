@@ -15,31 +15,38 @@ public class PlatformController : MonoBehaviour
     public QuestionData questionData;
     private EnvironmentController env;
     private bool isAdded;
+    
     void Start()
     {
         isAdded = false;
         env = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentController>();
         _holeAns();
     }
-
+    
     //TO DO
     //yerine otomasyon sistemi gelecek---
     private void _holeAns()
     {
-        int _range = 0;
-        for (int i = 0; i < answerHoles.Count; i++)
+        if (questionData != null)
         {
-            int s= Random.Range(0, answerCount);
-            if (i == answerHoles.Count - 1)
+            texts[0].text = questionData.question;
+            for (int i = 0; i < answerHoles.Count; i++)
             {
-                _range = answerHoles.Count - 1;
-            }
-            if (s > answerCount/2)
-            {
-                _range = i;
+                texts[i+1].text = questionData.answers[i];
+                answerHoles[i].GetComponent<HoleController>().text = texts[i+1];
+                for (int j = 0; j < questionData.indexesOfTrueAnswer.Count; j++)
+                {
+                    if (questionData.indexesOfTrueAnswer[j] == i)
+                    {
+                        answerHoles[i].GetComponent<HoleController>().isTrue = true;
+                    }
+                }
             }
         }
-        answerHoles[_range].GetComponent<HoleController>().isTrue = true;
+        else
+        {
+            answerHoles[0].GetComponent<HoleController>().isTrue = true;
+        }
         locatePipes();
     }
     

@@ -17,13 +17,11 @@ public class DataReader : MonoBehaviour
         Read();
     }
     
-
-
     public QuestionData selectRandomQuestion(int _subject)
     {
         List<QuestionData> dataTemp = dataSet.FindAll(delegate(QuestionData _data)
         {
-            return _data.id == _subject;
+            return _data.subject == 1;
         });
         int _sizeOfDataTemp = dataTemp.Count;
         if (_sizeOfDataTemp < 1)
@@ -84,7 +82,7 @@ public class DataReader : MonoBehaviour
                 answer.Add(dataLine[3]);
                 answer.Add(dataLine[4]);
                 question = dataLine[1];
-                Int32.TryParse(dataLine[10],out subject);
+                subject = 1;
                 if (subject != 0)
                 {
                     if (dataLine[5] == "")

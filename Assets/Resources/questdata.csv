@@ -1,6 +1,6 @@
-id,question,A-þýkký,B-þýkký,C-þýkký,D-þýkký,E-þýkký,trueAnswer1,trueAnswer2,trueAnswer3,subject
-1,aaa,abb,acc,add,adfd,aff,A,B,,5
-2,baa,bbb,bcc,bdd,bss,bff,C,D,E,4
-3,caa,cbb,ccc,cdd,css,cff,D,,,4
-4,daa,dbb,dcc,ddd,dss,dff,D,,,7
-5,faa,fbb,fcc,fdd,fss,,B,,,6
+id,question,A-þýkký,B-þýkký,C-þýkký,D-þýkký,E-þýkký,trueAnswer1,trueAnswer2,trueAnswer3
+1,aaa,abb,acc,add,adfd,aff,A,B,
+2,baa,bbb,bcc,bdd,bss,bff,C,D,E
+3,caa,cbb,ccc,cdd,css,cff,D,,
+4,daa,dbb,dcc,ddd,dss,dff,D,,
+5,faa,fbb,fcc,fdd,fss,,B,,
