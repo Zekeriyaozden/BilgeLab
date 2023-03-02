@@ -11,6 +11,7 @@ public class EnvironmentController : MonoBehaviour
     public List<GameObject> platforms;
     public GameObject currentPlatform;
     public List<GameObject> platformPrefs;
+    public List<GameObject> startPlatformPrefs;
     private float distance;
     public GameObject pipeTrue;
     public GameObject pipeFalse;
@@ -38,14 +39,80 @@ public class EnvironmentController : MonoBehaviour
         }*/
     }
 
+    public void currentPlatformControl()
+    {
+        for (int i = 0; i < platforms.Count; i++)
+        {
+            platforms[i].GetComponent<PlatformController>().questionData = dataReader.selectRandomQuestion(level);
+            addedPlatformSize++;
+        }
+        List<GameObject> newList = new List<GameObject>();
+        for (int i = 0; i < platforms.Count; i++)
+        {
+            int _size = platforms[i].GetComponent<PlatformController>().questionData.sizeOfAnswer;
+            GameObject _tempObj;
+            if (_size == 3)
+            {
+                if (i == 0)
+                {
+                    _tempObj = Instantiate(startPlatformPrefs[0]);
+                }
+                else
+                {
+                    _tempObj = Instantiate(platformPrefs[0]);
+                }
+            }else if (_size == 4)
+            {
+                if (i == 0)
+                {
+                    _tempObj = Instantiate(startPlatformPrefs[1]);
+                }
+                else
+                {
+                    _tempObj = Instantiate(platformPrefs[1]);
+                }
+            }
+            else
+            {
+                if (i == 0)
+                {
+                    _tempObj = Instantiate(startPlatformPrefs[2]);
+                }
+                else
+                {
+                    _tempObj = Instantiate(platformPrefs[2]);
+                }
+            }
+
+            _tempObj.GetComponent<PlatformController>().questionData =
+                platforms[i].GetComponent<PlatformController>().questionData;
+            _tempObj.transform.eulerAngles = platforms[i].transform.eulerAngles;
+            _tempObj.transform.position = platforms[i].transform.position;
+            newList.Add(_tempObj);
+        }
+
+        for (int i = 0; i < 3; i++)
+        {
+            Destroy(platforms[i]);
+        }
+        platforms.Clear();
+        for (int i = 0; i < 3; i++)
+        {
+            platforms.Add(newList[i]);
+        }
+    }
+
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         dataReader = gm.dataReader;
-        distance = platforms[1].transform.position.z - platforms[0].transform.position.z;
-        platforms[2].transform.position = platforms[1].transform.position + new Vector3(0, 0, distance);
-        currentPlatform = platforms[0];
-
+        if (!gm.isLobby)
+        {
+            distance = platforms[1].transform.position.z - platforms[0].transform.position.z;
+            platforms[2].transform.position = platforms[1].transform.position + new Vector3(0, 0, distance);
+            currentPlatform = platforms[0];
+            currentPlatformControl();   
+        }
     }
     
 
@@ -55,7 +122,7 @@ public class EnvironmentController : MonoBehaviour
         {
             addedPlatformSize++;
             int _platformIndex = 0;
-            QuestionData questionData = dataReader.selectRandomQuestion(1);
+            QuestionData questionData = dataReader.selectRandomQuestion(level);
             if (questionData.sizeOfAnswer == 3)
             {
                 _platformIndex = 0;

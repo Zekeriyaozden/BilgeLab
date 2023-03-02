@@ -39,6 +39,7 @@ public class CharacterController : MonoBehaviour
         inMotion = true;
         letChangeTheMotion = true;
         dynamicJoystick = gm.envController.dynamicJoystick;
+        Debug.Log(gm.envController);
     }
 
     public bool changeSpeed(float _speed)

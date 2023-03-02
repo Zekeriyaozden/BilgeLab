@@ -9,53 +9,54 @@ public class DataReader : MonoBehaviour
 {
     public TextAsset questdata;
     public List<QuestionData> dataSet;
-    public List<int> selectedQuestionList;
 
     private void Awake()
     {
         dataSet = new List<QuestionData>();
         Read();
     }
-    
-    public QuestionData selectRandomQuestion(int _subject)
+
+    public int sizeOfQuestion()
     {
-        List<QuestionData> dataTemp = dataSet.FindAll(delegate(QuestionData _data)
+        return dataSet.Count;
+    }
+    
+    public QuestionData selectRandomQuestion(int Level)
+    {
+
+        List<int> selectebleIndexes = new List<int>();
+        for (int i = 0; i < dataSet.Count; i++)
         {
-            return _data.subject == 1;
-        });
-        int _sizeOfDataTemp = dataTemp.Count;
-        if (_sizeOfDataTemp < 1)
+            if ((PlayerPrefs.GetInt(i.ToString(), -1) == Level))
+            {
+                selectebleIndexes.Add(i);   
+            }
+        }
+
+        if (selectebleIndexes.Count < 9)
+        {
+            for (int i = 0; i < dataSet.Count; i++)
+            {
+                if ((PlayerPrefs.GetInt(i.ToString(), -1) == -1))
+                {
+                    selectebleIndexes.Add(i);   
+                }
+            }
+        }
+
+        if (selectebleIndexes.Count < 1)
         {
             return null;
         }
         else
         {
-            for (int i = 0; i < selectedQuestionList.Count; i++)
-            {
-                if (dataTemp.Contains(dataSet[selectedQuestionList[i]]))
-                {
-                    dataTemp.Remove(dataSet[selectedQuestionList[i]]);
-                }
-            }
-            _sizeOfDataTemp = dataTemp.Count;
-            if (_sizeOfDataTemp < 1)
-            {
-                return null;
-            }
-            int randIndex = Random.Range(0, _sizeOfDataTemp-1);
-
-            if (dataTemp[randIndex] != null)
-            {
-                int indexOfAll = dataSet.IndexOf(dataTemp[randIndex]);
-                selectedQuestionList.Add(indexOfAll);
-                return dataTemp[randIndex];
-            }
-            else
-            {
-                return null;
-            }
+            int randIndex = Random.Range(0, selectebleIndexes.Count-1);
+            int randId = selectebleIndexes[randIndex];
+            QuestionData dt = dataSet.Find(x => x.id == randId);
+            return dt;
         }
     }
+    
     
 
     void Read()
@@ -167,5 +168,7 @@ public class DataReader : MonoBehaviour
         }
 
     }
+    
+    
 }
 

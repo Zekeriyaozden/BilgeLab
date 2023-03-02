@@ -23,8 +23,10 @@ public class PlatformController : MonoBehaviour
         _holeAns();
     }
     
+    
+    
+    
     //TO DO
-    //yerine otomasyon sistemi gelecek---
     private void _holeAns()
     {
         if (questionData != null)

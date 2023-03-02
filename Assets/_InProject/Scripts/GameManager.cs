@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public float mainCharacterSpeed;
     public float endOfSplineSpeed;
+    public bool isLobby = false;
     //[HideInInspector]
     public GameObject mainCharacter;
     public CharacterController mainCharacterController;
@@ -28,8 +29,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         levelsOfCharacter = 0;
-        GamePlayEnvs = GameObject.Find("GamePlayEnvs");
-        envController = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentController>();
+        if (!isLobby)
+        {
+            GamePlayEnvs = GameObject.Find("GamePlayEnvs");
+            envController = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentController>();
+        }
     }
 
     // Update is called once per frame

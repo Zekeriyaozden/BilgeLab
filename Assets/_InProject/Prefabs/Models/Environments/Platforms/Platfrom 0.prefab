@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7897827786396017690}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.38758078, y: -5.2814775, z: -8.677052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -42,7 +42,7 @@ Transform:
   - {fileID: 6802304641005136028}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &356051965759867035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -382,6 +382,36 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
   m_PrefabInstance: {fileID: 4973178999758225709}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &8127909501054412452
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315705660372466812}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!136 &3144254082691014594
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315705660372466812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 3.1450226
+  m_Height: 12.368451
+  m_Direction: 1
+  m_Center: {x: 5.8727045, y: 0.9804654, z: 0.03771019}
 --- !u!95 &4973179001752152532
 Animator:
   serializedVersion: 4
@@ -781,6 +811,36 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
   m_PrefabInstance: {fileID: 4973179001032926448}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &6413700964126207250
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315705659632834977}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!136 &8942137356535351586
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315705659632834977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 3.1450226
+  m_Height: 12.368451
+  m_Direction: 1
+  m_Center: {x: 5.8727045, y: 0.9804654, z: 0.03771019}
 --- !u!95 &4973179001659498645
 Animator:
   serializedVersion: 4
