@@ -20,7 +20,7 @@ public class _2dxFX_Lightning : MonoBehaviour
     [HideInInspector] [Range(0, 1)] public float _Alpha = 1f;
 
     [HideInInspector] public Texture2D __MainTex2;
-    [HideInInspector] [Range(16, 256)] public float _Value1 = 64;
+    [HideInInspector] [Range(0, 256)] public float _Value1 = 64;
     [HideInInspector] [Range(0, 2)] public float _Value2 = 1;
     [HideInInspector] [Range(0, 1)] public float _Value3 = 1;
     [HideInInspector] public float _Value4;

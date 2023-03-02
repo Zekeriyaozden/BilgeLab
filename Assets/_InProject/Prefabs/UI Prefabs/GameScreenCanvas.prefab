@@ -2565,6 +2565,7 @@ GameObject:
   - component: {fileID: 4033779088273340846}
   - component: {fileID: 4033779088273340840}
   - component: {fileID: 4033779088273340841}
+  - component: {fileID: 277530863975064850}
   m_Layer: 5
   m_Name: Trophy
   m_TagString: Untagged
@@ -2637,7 +2638,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4033779088273340844}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffd018828d6f5ec4ba743658e129a408, type: 3}
   m_Name: 
@@ -2645,7 +2646,7 @@ MonoBehaviour:
   ForceMaterial: {fileID: 0}
   ActiveChange: 1
   _Alpha: 1
-  Gold: 4
+  Gold: 1
   ShaderChange: 0
   ActiveUpdate: 1
 --- !u!95 &4033779088273340841
@@ -2668,6 +2669,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &277530863975064850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4033779088273340844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee9ad4c74b2eff478c683de37b56cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForceMaterial: {fileID: 0}
+  ActiveChange: 1
+  _Alpha: 1
+  __MainTex2: {fileID: 2800000, guid: 21297ee56dfcb3744aeca141dd1a29de, type: 3}
+  _Value1: 10
+  _Value2: 1.65
+  _Value3: 1
+  _Value4: 0
+  _AutoScrollX: 0
+  _AutoScrollSpeedX: 0
+  _AutoScrollY: 0
+  _AutoScrollSpeedY: 0
+  ShaderChange: 0
+  ActiveUpdate: 1
 --- !u!1 &4033779088325414331
 GameObject:
   m_ObjectHideFlags: 0
