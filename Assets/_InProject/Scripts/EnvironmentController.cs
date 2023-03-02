@@ -50,6 +50,7 @@ public class EnvironmentController : MonoBehaviour
         for (int i = 0; i < platforms.Count; i++)
         {
             int _size = platforms[i].GetComponent<PlatformController>().questionData.sizeOfAnswer;
+            Debug.Log("enter");
             GameObject _tempObj;
             if (_size == 3)
             {
@@ -93,6 +94,7 @@ public class EnvironmentController : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
+            Debug.Log("Destroy");
             Destroy(platforms[i]);
         }
         platforms.Clear();

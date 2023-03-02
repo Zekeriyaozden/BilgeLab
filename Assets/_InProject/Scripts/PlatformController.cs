@@ -34,6 +34,7 @@ public class PlatformController : MonoBehaviour
             texts[0].text = questionData.question;
             for (int i = 0; i < answerHoles.Count; i++)
             {
+                Debug.Log(questionData.answers[i]);
                 texts[i+1].text = questionData.answers[i];
                 answerHoles[i].GetComponent<HoleController>().text = texts[i+1];
                 for (int j = 0; j < questionData.indexesOfTrueAnswer.Count; j++)

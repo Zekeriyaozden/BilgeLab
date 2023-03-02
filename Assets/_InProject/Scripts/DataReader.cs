@@ -62,11 +62,15 @@ public class DataReader : MonoBehaviour
     void Read()
     {
         string[] Lines = questdata.text.Split("\n");
+        for (int i = 0; i < Lines.Length; i++)
+        {
+            Debug.Log(Lines[i]);
+        }
         //Debug.Log(Lines.Length);
         for (int i=0; i<Lines.Length; i++)
         {
             //Debug.Log(Lines[i]);
-            string[] dataLine = Lines[i].Split(",");
+            string[] dataLine = Lines[i].Split(";");
             int id, answerSize, subject;
             List<string> answer = new List<string>();
             string question;
@@ -101,8 +105,29 @@ public class DataReader : MonoBehaviour
                         answer.Add(dataLine[6]);
                     }
                     string trueAns0 = dataLine[7];
-                    string trueAns1 = dataLine[8];
-                    string trueAns2 = dataLine[9];
+                    string trueAns1;
+                    string trueAns2;
+                    try
+                    {
+                        trueAns1 = dataLine[8];
+                    }
+                    catch (Exception e)
+                    {
+                        trueAns1 = "";
+                        Console.WriteLine(e);
+                        throw;
+                    }
+                    try
+                    {
+                        trueAns2 = dataLine[9];
+                    }
+                    catch (Exception e)
+                    {
+                        trueAns2 = "";
+                        Console.WriteLine(e);
+                        throw;
+                    }
+
                     if (trueAns0 != "")
                     {
                         if (trueAns0 == "a" || trueAns0 == "A")
