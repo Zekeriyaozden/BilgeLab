@@ -35,13 +35,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _DissolveRing: -1.1
-    - _EdgeThickness: 0.015
+    - _EdgeThickness: 0.08
     - _NoiseScale: 30
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
     - _BaseColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0}
-    - _DissolveColor: {r: 2, g: 1.4745098, b: 0, a: 0}
+    - _DissolveColor: {r: 3.9999995, g: 2.9528794, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8982666080383875493
 MonoBehaviour:
