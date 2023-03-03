@@ -19,12 +19,13 @@ public class EnvironmentController : MonoBehaviour
     private List<QuestionData> questionAskedList;
     private DataReader dataReader;
     private int sizeOfData;
-    private int addedPlatformSize;
+    public int addedPlatformSize;
     private bool isAdded;
     public int level;
 
     private void Awake()
     {
+        level = PlayerPrefs.GetInt("Level", 1);
         addedPlatformSize = 3;
         /*for (int i = 0; i < 10; i++)
         {
@@ -44,11 +45,14 @@ public class EnvironmentController : MonoBehaviour
         for (int i = 0; i < platforms.Count; i++)
         {
             platforms[i].GetComponent<PlatformController>().questionData = dataReader.selectRandomQuestion(level);
-            addedPlatformSize++;
         }
         List<GameObject> newList = new List<GameObject>();
         for (int i = 0; i < platforms.Count; i++)
         {
+            if (i == 0)
+            {
+                Debug.Log(platforms[i].GetComponent<PlatformController>().questionData.id + "--------");
+            }
             int _size = platforms[i].GetComponent<PlatformController>().questionData.sizeOfAnswer;
             Debug.Log("enter");
             GameObject _tempObj;
@@ -113,7 +117,7 @@ public class EnvironmentController : MonoBehaviour
             distance = platforms[1].transform.position.z - platforms[0].transform.position.z;
             platforms[2].transform.position = platforms[1].transform.position + new Vector3(0, 0, distance);
             currentPlatform = platforms[0];
-            currentPlatformControl();   
+            currentPlatformControl();  
         }
     }
     

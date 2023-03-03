@@ -14,34 +14,44 @@ public class StartEnvironmentController : MonoBehaviour
         distance = startPlatforms[1].transform.position.z - startPlatforms[0].transform.position.z;
         sizeOfQuestion = GameObject.Find("GameManager").GetComponent<GameManager>().dataReader.sizeOfQuestion();
         int countOfPlatform = sizeOfQuestion / 20;
+        Debug.Log(countOfPlatform);
+        levelIndex();
         if (countOfPlatform > 2)
         {
-            for (int i = 0; i < countOfPlatform; i++)
+            for (int i = 0; i < countOfPlatform-2; i++)
             {
                 GameObject _pltfrm = Instantiate(platform1Prefabs);
                 _pltfrm.transform.position = new Vector3(startPlatforms[1].transform.position.x,
-                    startPlatforms[1].transform.position.y, startPlatforms[1].transform.position.z + distance);
+                    startPlatforms[1].transform.position.y, startPlatforms[startPlatforms.Count - 1].transform.position.z + 28);
+                startPlatforms.Add(_pltfrm);
                 _pltfrm.GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>()
                     .levelIndex = sumOfLevel;
+                _pltfrm.GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>().levelIndexer();
                 sumOfLevel++;
                 _pltfrm.GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>()
                     .levelIndex = sumOfLevel;
+                _pltfrm.GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>().levelIndexer();
                 sumOfLevel++;
             }
         }
+        
     }
 
     private void levelIndex()
     {
         startPlatforms[0].GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>()
-            .levelIndex = 0;
-        startPlatforms[0].GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>()
             .levelIndex = 1;
-        startPlatforms[1].GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>()
+        startPlatforms[0].GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>().levelIndexer();
+        startPlatforms[0].GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>()
             .levelIndex = 2;
-        startPlatforms[1].GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>()
+        startPlatforms[0].GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>().levelIndexer();
+        startPlatforms[1].GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>()
             .levelIndex = 3;
-        sumOfLevel = 4;
+        startPlatforms[1].GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>().levelIndexer();
+        startPlatforms[1].GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>()
+            .levelIndex = 4;
+        startPlatforms[1].GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>().levelIndexer();
+        sumOfLevel = 5;
     }
     
 

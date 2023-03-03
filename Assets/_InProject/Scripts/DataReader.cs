@@ -18,6 +18,7 @@ public class DataReader : MonoBehaviour
 
     public int sizeOfQuestion()
     {
+        //Debug.Log(dataSet.Count);
         return dataSet.Count;
     }
     
@@ -25,6 +26,7 @@ public class DataReader : MonoBehaviour
     {
 
         List<int> selectebleIndexes = new List<int>();
+        
         for (int i = 0; i < dataSet.Count; i++)
         {
             if ((PlayerPrefs.GetInt(i.ToString(), -1) == Level))
@@ -33,13 +35,20 @@ public class DataReader : MonoBehaviour
             }
         }
 
-        if (selectebleIndexes.Count < 9)
+        if (selectebleIndexes.Count < 10)
         {
+            int _counter = selectebleIndexes.Count;
             for (int i = 0; i < dataSet.Count; i++)
             {
                 if ((PlayerPrefs.GetInt(i.ToString(), -1) == -1))
                 {
-                    selectebleIndexes.Add(i);   
+                    selectebleIndexes.Add(i);
+                    PlayerPrefs.SetInt(i.ToString(),Level);
+                    _counter++;
+                    if (_counter >= 10)
+                    {
+                        break;
+                    }
                 }
             }
         }

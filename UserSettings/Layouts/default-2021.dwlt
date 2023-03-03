@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Console
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 20
+  controlID: 123
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 21
+  controlID: 107
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 22
+  controlID: 108
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -216,8 +216,8 @@ MonoBehaviour:
     y: 0
     width: 773
     height: 549
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -243,14 +243,14 @@ MonoBehaviour:
     y: 549
     width: 1020
     height: 390
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
   - {fileID: 13}
-  m_Selected: 2
+  m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
@@ -297,8 +297,8 @@ MonoBehaviour:
     y: 0
     width: 598
     height: 939
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -345,22 +345,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources
+    - Assets/_InProject/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 76
   m_LastFolders:
-  - Assets/Resources
+  - Assets/_InProject/Scripts
   m_LastFoldersGridSize: 76
   m_LastProjectPath: C:\Users\Maleriya\Desktop\Pigeon Gaming\BilgeLab
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 67}
-    m_SelectedIDs: f8720000
-    m_LastClickedID: 29432
-    m_ExpandedIDs: 0000000022710000f672000010730000228800002888000000ca9a3b
+    scrollPos: {x: 0, y: 131}
+    m_SelectedIDs: 40830000
+    m_LastClickedID: 33600
+    m_ExpandedIDs: 00000000a6820000ae8200002483000026830000288300002a83000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -388,7 +388,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000a6820000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -413,9 +413,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 6ef9feff
+    m_LastClickedInstanceID: -67218
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -669,9 +669,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -46.2419, y: 70.47024, z: 871.3235}
+    m_Target: {x: -46.36848, y: 4.0932784, z: 62.35451}
     speed: 2
-    m_Value: {x: -46.24657, y: 70.461006, z: 871.49274}
+    m_Value: {x: -46.36848, y: 4.0932784, z: 62.35451}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -718,13 +718,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.004966794, y: 0.93394053, z: -0.35730377, w: 0.012870472}
+    m_Target: {x: 0.22687742, y: -0.2169798, z: 0.05194132, w: 0.94803834}
     speed: 2
-    m_Value: {x: 0.005005122, y: 0.9328172, z: -0.36008576, w: 0.012854867}
+    m_Value: {x: 0.22687423, y: -0.21697675, z: 0.05194059, w: 0.948025}
   m_Size:
-    m_Target: 10.92025
+    m_Target: 10.233445
     speed: 2
-    m_Value: 10.92025
+    m_Value: 10.233445
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -780,23 +780,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1e720000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 1276fdff2276fdff3689fdff4e89fdff6289fdff1e1cfeffba2ffeff5234feffb87effff767fffffbad1fffffeeeffffc6f0ffff30fbffff88730000b68300004c84000054840000d8a800004ca90000
+      m_SelectedIDs: 0ede0000
+      m_LastClickedID: 56846
+      m_ExpandedIDs: 6c86fdffbc86fdffb601feffb04dfeff6065feffc41affff6e22ffff5e35ffff6835ffff3a39fffff449ffff7669ffff627dffff347effff5a85ffff388effff3e8effff0e8fffff0a91fffff0a600001ca700006aa700002eab000038ab0000e8b7000054b8000066b80000e4dd000014de000058de0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Answer1
+        m_OriginalName: Answer1
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -162214
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -839,6 +839,8 @@ MonoBehaviour:
     - {fileID: -483334107612668295, guid: 2dc516f81c7572e43b38bc2669d5004d, type: 2}
     - {fileID: -1136146300081964038, guid: 69ef4514e58c71d4289d8e3491616734, type: 2}
     - {fileID: -7437874667848181994, guid: 1d8b77d0aa716bf4ea99f069edfda508, type: 2}
+    - {fileID: -2481773311255731623, guid: 9708a83a1429cb941a4f8f658e8eebde, type: 2}
+    - {fileID: 8637372201633221340, guid: 56e81a4dfd68e77478018dd7aa38c971, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.45538253
       e01: 0
@@ -888,10 +890,42 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: -70
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 2dc516f81c7572e43b38bc2669d5004d, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 56e81a4dfd68e77478018dd7aa38c971, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -483334107612668295, guid: 2dc516f81c7572e43b38bc2669d5004d, type: 2}
+  - m_Target: {fileID: 8637372201633221340, guid: 56e81a4dfd68e77478018dd7aa38c971, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -973,22 +1007,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_InProject/Prefabs/Models/Environments/Platforms
+    - Assets/Resources
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_InProject/Prefabs/Models/Environments/Platforms
+  - Assets/Resources
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Maleriya\Desktop\Pigeon Gaming\BilgeLab
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 67}
-    m_SelectedIDs: 34880000
-    m_LastClickedID: 34868
-    m_ExpandedIDs: 0000000022710000f6720000fe72000010730000228800002888000000ca9a3b
+    scrollPos: {x: 0, y: 115}
+    m_SelectedIDs: b0820000
+    m_LastClickedID: 33456
+    m_ExpandedIDs: 00000000a6820000ae82000024830000268300002883000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1016,7 +1050,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000022710000
+    m_ExpandedIDs: 00000000a6820000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1041,8 +1075,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 5475fdff
-    m_LastClickedInstanceID: -166572
+    m_SelectedInstanceIDs: 1c310100
+    m_LastClickedInstanceID: 78108
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000607200005a940000
     m_RenameOverlay:

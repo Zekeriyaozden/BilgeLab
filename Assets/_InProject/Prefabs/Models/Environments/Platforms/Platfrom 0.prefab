@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2667595762077497421}
+  - component: {fileID: 2333551811722522171}
   m_Layer: 0
   m_Name: Platfrom 0
   m_TagString: Untagged
@@ -43,6 +44,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &2333551811722522171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7897827786396017690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b629944027655ee42a735274c2c30bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elevator1: {fileID: 5315705660372466812}
+  elevator2: {fileID: 5315705659632834977}
+  door: {fileID: 5315705660579941949}
 --- !u!1001 &356051965759867035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -432,6 +448,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2864788530001587905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315705660372466812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46153b57ba100af4caf0753a0b24e0fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelIndex: 1
+  elevat: {fileID: 0}
+  isComplated: 0
 --- !u!1001 &4973178999832032108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -861,6 +892,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9188976506785871024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315705659632834977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46153b57ba100af4caf0753a0b24e0fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelIndex: 1
+  elevat: {fileID: 0}
+  isComplated: 0
 --- !u!1001 &4973179001648552696
 PrefabInstance:
   m_ObjectHideFlags: 0

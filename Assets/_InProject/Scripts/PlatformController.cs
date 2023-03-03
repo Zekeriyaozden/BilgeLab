@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class PlatformController : MonoBehaviour
@@ -15,6 +16,7 @@ public class PlatformController : MonoBehaviour
     public QuestionData questionData;
     private EnvironmentController env;
     private bool isAdded;
+    public bool isLast;
     
     void Start()
     {
@@ -34,7 +36,6 @@ public class PlatformController : MonoBehaviour
             texts[0].text = questionData.question;
             for (int i = 0; i < answerHoles.Count; i++)
             {
-                Debug.Log(questionData.answers[i]);
                 texts[i+1].text = questionData.answers[i];
                 answerHoles[i].GetComponent<HoleController>().text = texts[i+1];
                 for (int j = 0; j < questionData.indexesOfTrueAnswer.Count; j++)
@@ -76,6 +77,8 @@ public class PlatformController : MonoBehaviour
     {
         
     }
+    
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -86,6 +89,15 @@ public class PlatformController : MonoBehaviour
                 env.addNewPlatform();
                 isAdded = true;
                 env.currentPlatform = gameObject;
+            }
+
+            if (!isStart && env.platforms[env.platforms.Count - 1] == gameObject)
+            {
+                isLast = true;
+                //PlayerPrefs
+                PlayerPrefs.SetInt(env.level.ToString() + "isComplated" , 1);
+                Debug.Log(PlayerPrefs.GetInt(env.level.ToString() + "isComplated") + "--------******");
+                SceneManager.LoadScene(0);
             }
         }
     }
