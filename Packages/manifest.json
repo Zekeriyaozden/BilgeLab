@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.coffee.softmask-for-ugui": "file:C:/Users/Msi/Desktop/CAD/Assets/_Unity Assets/SoftMaskForUGUI-main/SoftMaskForUGUI-main",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "1.17.2",
     "com.unity.feature.development": "1.0.1",
