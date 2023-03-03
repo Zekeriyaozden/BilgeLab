@@ -45,16 +45,17 @@ public class EnvironmentController : MonoBehaviour
         for (int i = 0; i < platforms.Count; i++)
         {
             platforms[i].GetComponent<PlatformController>().questionData = dataReader.selectRandomQuestion(level);
+            Debug.Log(platforms[i].GetComponent<PlatformController>().questionData.id);
         }
         List<GameObject> newList = new List<GameObject>();
         for (int i = 0; i < platforms.Count; i++)
         {
             if (i == 0)
             {
-                Debug.Log(platforms[i].GetComponent<PlatformController>().questionData.id + "--------");
+               // Debug.Log(platforms[i].GetComponent<PlatformController>().questionData.id + "--------");
             }
+            Debug.Log(platforms[i].GetComponent<PlatformController>().questionData.id);
             int _size = platforms[i].GetComponent<PlatformController>().questionData.sizeOfAnswer;
-            Debug.Log("enter");
             GameObject _tempObj;
             if (_size == 3)
             {

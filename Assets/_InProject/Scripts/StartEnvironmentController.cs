@@ -33,6 +33,9 @@ public class StartEnvironmentController : MonoBehaviour
                 _pltfrm.GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>().levelIndexer();
                 sumOfLevel++;
             }
+            
+            
+            
         }
         
     }

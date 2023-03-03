@@ -71,14 +71,8 @@ public class DataReader : MonoBehaviour
     void Read()
     {
         string[] Lines = questdata.text.Split("\n");
-        for (int i = 0; i < Lines.Length; i++)
-        {
-            Debug.Log(Lines[i]);
-        }
-        //Debug.Log(Lines.Length);
         for (int i=0; i<Lines.Length; i++)
         {
-            //Debug.Log(Lines[i]);
             string[] dataLine = Lines[i].Split(";");
             int id, answerSize, subject;
             List<string> answer = new List<string>();
