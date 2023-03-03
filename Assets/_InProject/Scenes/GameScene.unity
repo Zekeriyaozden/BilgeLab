@@ -763,6 +763,7 @@ MonoBehaviour:
   - {fileID: 7561739837889437889, guid: 2377c98a2199a6742a25abf585e0f2af, type: 3}
   pipeTrue: {fileID: 8349681797080449959, guid: 1bed4e2b20abbde42b5c8ce1bbdc9793, type: 3}
   pipeFalse: {fileID: 5050349071220707360, guid: 6b888b9177aa33e4cb42faec12a95d16, type: 3}
+  addedPlatformSize: 0
   level: 1
 --- !u!1 &810445026
 GameObject:
@@ -879,7 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27059cda1c7a01f4da75ec67e60c9989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questdata: {fileID: 4900000, guid: 149cef240378f584d85333bca308bf3e, type: 3}
+  questdata: {fileID: 4900000, guid: e0a2b65e6a5536e459103ac4aa7d66c2, type: 3}
 --- !u!1 &925938723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,6 +1601,7 @@ MonoBehaviour:
   startPlatformPrefs: []
   pipeTrue: {fileID: 0}
   pipeFalse: {fileID: 0}
+  addedPlatformSize: 0
   level: 0
 --- !u!1001 &1724678509
 PrefabInstance:
