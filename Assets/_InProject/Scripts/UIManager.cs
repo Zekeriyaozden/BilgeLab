@@ -4,15 +4,44 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class UIManager : MonoBehaviour
 {
     public GameObject GameScreenCanvas;
     public GameObject WinCanvas;
     public GameObject LeaderBoardCanvas;
+    public List<GameObject> stars;
+    private Transform targetScreen;
     void Start()
     {
-        
+        targetScreen = GameScreenCanvas.transform.GetChild(0).GetChild(0);
+    }
+
+    public void starsStart()
+    {
+        for (int i = 0; i < stars.Count; i++)
+        {
+            StartCoroutine(starCor(stars[i]));
+        }
+    }
+
+    private IEnumerator starCor(GameObject star)
+    {
+        Vector3 startTrans = star.gameObject.transform.position;
+        float sec0,sec1,k = 0;
+        sec1 = Random.Range(0, .4f);
+        sec0 = Random.Range(.6f, 1f);
+        yield return new WaitForSeconds(sec0);
+        star.SetActive(true);
+        yield return new WaitForSeconds(sec1);
+        while (k < 1)
+        {
+            yield return new WaitForEndOfFrame();
+            k += Time.deltaTime;
+            star.transform.position = Vector3.Lerp(startTrans, targetScreen.position, k);
+        }
+       // star.SetActive(false);
     }
 
     public void winButtonClick()

@@ -82,6 +82,7 @@ public class PlatformController : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         env.gm.UIManager.WinCanvas.SetActive(true);
+        env.gm.UIManager.starsStart();
     }
 
     private IEnumerator LeaderBoard(GameObject mainChar)
@@ -89,8 +90,8 @@ public class PlatformController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         mainChar.gameObject.GetComponent<CharacterController>().changeMotion(false);
         PlayerPrefs.SetInt(env.level.ToString() + "isComplated" , 1);
-        env.gm.UIManager.LeaderBoardCanvas.SetActive(true);
-        env.gm.UIManager.LeaderBoardCanvas.GetComponent<Animator>().speed = .2f;
+        //env.gm.UIManager.LeaderBoardCanvas.SetActive(true);
+        //env.gm.UIManager.LeaderBoardCanvas.GetComponent<Animator>().speed = .2f;
         StartCoroutine(winUI());
     }
     
