@@ -81,6 +81,7 @@ public class PlatformController : MonoBehaviour
     private IEnumerator winUI()
     {
         yield return new WaitForSeconds(4f);
+        env.gm.UIManager.winConfety();
         env.gm.UIManager.WinCanvas.SetActive(true);
         env.gm.UIManager.starsStart();
     }

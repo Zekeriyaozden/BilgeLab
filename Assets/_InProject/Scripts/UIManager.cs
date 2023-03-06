@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public GameObject LeaderBoardCanvas;
     public List<GameObject> stars;
     private Transform targetScreen;
+    public GameObject confetiesParent;
     void Start()
     {
         targetScreen = GameScreenCanvas.transform.GetChild(0).GetChild(0);
@@ -50,6 +51,15 @@ public class UIManager : MonoBehaviour
     }
 
 
+    public void winConfety()
+    {
+        int count = confetiesParent.transform.childCount;
+        for (int i = 0; i < count; i++)
+        {
+            confetiesParent.transform.GetChild(i).gameObject.SetActive(true);
+        }
+    }
+    
     public void sliderControl(float start ,float finish)
     {
         StartCoroutine(_slide(start, finish));
