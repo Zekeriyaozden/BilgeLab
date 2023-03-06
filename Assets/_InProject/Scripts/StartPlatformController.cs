@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class StartPlatformController : MonoBehaviour
@@ -10,6 +11,20 @@ public class StartPlatformController : MonoBehaviour
     {
         isOpened = false;
         StartCoroutine(DoorBeh());
+    }
+
+    private IEnumerator dissolve(Material[] mt)
+    {
+        float k = 0 , start = -1.1f , target = 1f;
+        while (k < 1)
+        {
+            yield return new WaitForEndOfFrame();
+            k += Time.deltaTime / 2f;
+            mt[2].SetFloat("_DissolveRing",math.lerp(start,target,k));
+            mt[3].SetFloat("_DissolveRing",math.lerp(start,target,k));
+            mt[4].SetFloat("_DissolveRing",math.lerp(start,target,k));
+            //door.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().materials = mt;
+        }
     }
 
     private IEnumerator DoorBeh()
@@ -23,6 +38,10 @@ public class StartPlatformController : MonoBehaviour
                 elevator2.GetComponent<ElevatorController>().isComplated)
             {
                 door.GetComponent<Animator>().enabled = true;
+                Material[] mt =  door.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().materials;
+                yield return new WaitForSeconds(1.2f);
+                door.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().materials = mt;
+                StartCoroutine(dissolve(mt));
             }   
         }
     }
