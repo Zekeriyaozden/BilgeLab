@@ -15,16 +15,18 @@ public class EnvironmentController : MonoBehaviour
     private float distance;
     public GameObject pipeTrue;
     public GameObject pipeFalse;
-    private GameManager gm;
+    public GameManager gm;
     private List<QuestionData> questionAskedList;
     private DataReader dataReader;
     private int sizeOfData;
     public int addedPlatformSize;
     private bool isAdded;
     public int level;
+    public int countOfTransit;
 
     private void Awake()
     {
+        countOfTransit = 0;
         level = PlayerPrefs.GetInt("Level", 1);
         addedPlatformSize = 3;
         /*for (int i = 0; i < 10; i++)
@@ -40,21 +42,25 @@ public class EnvironmentController : MonoBehaviour
         }*/
     }
 
+    public void transition()
+    {
+        float start, finish;
+        start = ((float)countOfTransit/(float)9);
+        finish = ((float) (countOfTransit + 1) /(float)9);
+        gm.UIManager.sliderControl(start,finish);
+        countOfTransit++;
+    }
+
     public void currentPlatformControl()
     {
         for (int i = 0; i < platforms.Count; i++)
         {
-            platforms[i].GetComponent<PlatformController>().questionData = dataReader.selectRandomQuestion(level);
-            Debug.Log(platforms[i].GetComponent<PlatformController>().questionData.id);
+            QuestionData qd = dataReader.selectRandomQuestion(level);
+            platforms[i].GetComponent<PlatformController>().questionData = qd;
         }
         List<GameObject> newList = new List<GameObject>();
         for (int i = 0; i < platforms.Count; i++)
         {
-            if (i == 0)
-            {
-               // Debug.Log(platforms[i].GetComponent<PlatformController>().questionData.id + "--------");
-            }
-            Debug.Log(platforms[i].GetComponent<PlatformController>().questionData.id);
             int _size = platforms[i].GetComponent<PlatformController>().questionData.sizeOfAnswer;
             GameObject _tempObj;
             if (_size == 3)
@@ -118,14 +124,14 @@ public class EnvironmentController : MonoBehaviour
             distance = platforms[1].transform.position.z - platforms[0].transform.position.z;
             platforms[2].transform.position = platforms[1].transform.position + new Vector3(0, 0, distance);
             currentPlatform = platforms[0];
-            currentPlatformControl();  
+            currentPlatformControl();
         }
     }
     
 
     public void addNewPlatform()
     {
-        if (addedPlatformSize <= 10)
+        if (addedPlatformSize < 10)
         {
             addedPlatformSize++;
             int _platformIndex = 0;
@@ -150,7 +156,11 @@ public class EnvironmentController : MonoBehaviour
             GameObject willDestroy = platforms[0];
             platforms.RemoveAt(0);
             Destroy(willDestroy);
-            Debug.Log("AddedNewPlatform");   
+            Debug.Log("AddedNewPlatform");
+            if (addedPlatformSize == 10)
+            {
+                newPlatform.GetComponent<PlatformController>().isLast = true;
+            }
         }
     }
     

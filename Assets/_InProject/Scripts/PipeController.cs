@@ -26,11 +26,14 @@ public class PipeController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && !isUsed)
         {
+            gm.envController.transition();
            CharacterController _controller = other.gameObject.GetComponent<CharacterController>();
             SplineFollower sp = other.gameObject.AddComponent<SplineFollower>();
             sp.motion.rotationOffset = new Vector3(-90f,0,0);
             _controller.changeMotion(false);
             sp.spline = spline;
+            sp.followMode = SplineFollower.FollowMode.Time;
+            sp.followDuration = 3f;
             _controller.inSpline();
             if (isTrue)
             {

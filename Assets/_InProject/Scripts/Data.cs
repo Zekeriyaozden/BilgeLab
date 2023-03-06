@@ -20,12 +20,6 @@ public class QuestionData
         this.id = _id;
         this.question = _question;
         this.subject = _subject;
-        Debug.Log("--->>>>");
-        for (int i = 0; i < indexesOfTrueAnswer.Count; i++)
-        {
-            Debug.Log(indexesOfTrueAnswer[i]);
-        }
-        Debug.Log("<<<<---");
     }
     
     

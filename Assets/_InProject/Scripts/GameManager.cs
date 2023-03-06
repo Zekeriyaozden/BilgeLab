@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public DataReader dataReader;
     public EnvironmentController envController;
     public float splineSpeed;
+    public UIManager UIManager;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
         levelsOfCharacter = 0;
         if (!isLobby)
         {
+            UIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
             GamePlayEnvs = GameObject.Find("GamePlayEnvs");
             envController = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentController>();
         }

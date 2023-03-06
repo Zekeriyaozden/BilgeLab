@@ -16,7 +16,7 @@ public class PlatformController : MonoBehaviour
     public QuestionData questionData;
     private EnvironmentController env;
     private bool isAdded;
-    public bool isLast;
+    public bool isLast = false;
     
     void Start()
     {
@@ -77,12 +77,28 @@ public class PlatformController : MonoBehaviour
     {
         
     }
+
+    private IEnumerator winUI()
+    {
+        yield return new WaitForSeconds(4f);
+        env.gm.UIManager.WinCanvas.SetActive(true);
+    }
+
+    private IEnumerator LeaderBoard(GameObject mainChar)
+    {
+        yield return new WaitForSeconds(2f);
+        mainChar.gameObject.GetComponent<CharacterController>().changeMotion(false);
+        PlayerPrefs.SetInt(env.level.ToString() + "isComplated" , 1);
+        env.gm.UIManager.LeaderBoardCanvas.SetActive(true);
+        env.gm.UIManager.LeaderBoardCanvas.GetComponent<Animator>().speed = .2f;
+        StartCoroutine(winUI());
+    }
     
     
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && !isAdded)
+        if (other.gameObject.tag == "Player" && !isAdded && !isLast)
         {
             if (!isStart)
             {
@@ -93,12 +109,15 @@ public class PlatformController : MonoBehaviour
 
             if (!isStart && env.platforms[env.platforms.Count - 1] == gameObject)
             {
-                isLast = true;
                 //PlayerPrefs
-                PlayerPrefs.SetInt(env.level.ToString() + "isComplated" , 1);
-                Debug.Log(PlayerPrefs.GetInt(env.level.ToString() + "isComplated") + "--------******");
-                SceneManager.LoadScene(0);
+ 
             }
+        }
+
+        if (isLast)
+        {
+            Debug.Log(gameObject);
+            StartCoroutine(LeaderBoard(other.gameObject));
         }
     }
 }

@@ -495,11 +495,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 960
+      value: 917.7
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 645
+      value: 1800
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -676,8 +676,10 @@ MonoBehaviour:
   startPlatformPrefs: []
   pipeTrue: {fileID: 0}
   pipeFalse: {fileID: 0}
+  gm: {fileID: 0}
   addedPlatformSize: 0
   level: 0
+  countOfTransit: 0
 --- !u!1 &1154825699
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +733,7 @@ MonoBehaviour:
   dataReader: {fileID: 0}
   envController: {fileID: 860487490}
   splineSpeed: 0
+  UIManager: {fileID: 0}
 --- !u!1001 &1253543297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -784,7 +787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2864788530001587905, guid: 688551a5fba08034a92ab548cedbb95a, type: 3}
       propertyPath: isComplated
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4973178999985947009, guid: 688551a5fba08034a92ab548cedbb95a, type: 3}
       propertyPath: m_Enabled
@@ -800,7 +803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9188976506785871024, guid: 688551a5fba08034a92ab548cedbb95a, type: 3}
       propertyPath: isComplated
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 688551a5fba08034a92ab548cedbb95a, type: 3}
