@@ -91,7 +91,7 @@ public class PlatformController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         mainChar.gameObject.GetComponent<CharacterController>().changeMotion(false);
         PlayerPrefs.SetInt(env.level.ToString() + "isComplated" , 1);
-        //env.gm.UIManager.LeaderBoardCanvas.SetActive(true);
+        env.gm.UIManager.LeaderBoardCanvas.SetActive(true);
         //env.gm.UIManager.LeaderBoardCanvas.GetComponent<Animator>().speed = .2f;
         StartCoroutine(winUI());
     }
