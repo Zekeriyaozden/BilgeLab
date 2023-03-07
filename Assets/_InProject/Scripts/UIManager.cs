@@ -11,12 +11,28 @@ public class UIManager : MonoBehaviour
     public GameObject GameScreenCanvas;
     public GameObject WinCanvas;
     public GameObject LeaderBoardCanvas;
+    public GameObject settingUIElement;
     public List<GameObject> stars;
     private Transform targetScreen;
     public GameObject confetiesParent;
     void Start()
     {
         targetScreen = GameScreenCanvas.transform.GetChild(0).GetChild(0);
+        settingUIElement.SetActive(false);
+    }
+    private bool isSetingOpen = false;
+    public void settingUI(bool set)
+    {
+        if (set)
+        {
+            isSetingOpen = true;
+            settingUIElement.SetActive(true);
+        }
+        else
+        {
+            isSetingOpen = false;
+            settingUIElement.SetActive(false);
+        }
     }
 
     public void starsStart()
