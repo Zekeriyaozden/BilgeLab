@@ -6,8 +6,8 @@ public class CameraController : MonoBehaviour
 {
     private GameManager gm;
     private GameObject mainCharacter;
-    private Vector3 offset;
-    [HideInInspector]
+    [HideInInspector]public Vector3 offset;
+    //[HideInInspector]
     public bool inCameraFollow;
     void Start()
     {

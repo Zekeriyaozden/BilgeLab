@@ -44,7 +44,7 @@ public class CharacterController : MonoBehaviour
 
     public void StartBoneElev(GameObject bone)
     {
-        gameObject.transform.position = bone.transform.position;
+        gameObject.transform.position = bone.transform.position + Vector3.up * (0.119021f + 0.024498f);
         changeMotion(false);
         GameObject obj = transform.parent.gameObject;
         transform.SetParent(bone.transform);
@@ -57,6 +57,8 @@ public class CharacterController : MonoBehaviour
         transform.SetParent(parent.transform);
         changeMotion(true);
     }
+    
+    
     
     public bool changeSpeed(float _speed)
     {
@@ -236,30 +238,8 @@ public class CharacterController : MonoBehaviour
     }*/
 
     //Jumping değişecek *-*-*
-    private IEnumerator Jumping(Vector3 _target)
-    {
-        Vector3 start = gameObject.transform.position;
-        _target.y = start.y;
-        Vector3 mid = (start + _target) / 2;
-        mid.y = start.y + 3f;
-        float k = 0;
-        while (k<1)
-        {
-            k += Time.deltaTime/2f;
-            yield return new WaitForEndOfFrame();
-            Vector3 startToMid = Vector3.Lerp(start,mid,k);
-            Vector3 midToTarget = Vector3.Lerp(mid,_target,k);
-            Vector3 _motion = Vector3.Lerp(startToMid,midToTarget,k);
-            gameObject.transform.position = _motion;
-        }
-        
-        
-        letChangeTheMotion = true;
-        changeMotion(true);
-        inTunnel = false;
-        gameObject.transform.position = _target;
-
-    }
+    //private IEnumerator Jumping(Vector3 _target)
+    
     
     
     private void motionOfCharacter()

@@ -24,8 +24,8 @@ public class DataReader : MonoBehaviour
     
     public QuestionData selectRandomQuestion(int Level)
     {
-
         List<int> selectebleIndexes = new List<int>();
+        
         
         for (int i = 0; i < dataSet.Count; i++)
         {

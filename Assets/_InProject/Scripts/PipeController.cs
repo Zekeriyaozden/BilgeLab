@@ -25,8 +25,7 @@ public class PipeController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            gm.envController.transition();
-           CharacterController _controller = other.gameObject.GetComponent<CharacterController>();
+            CharacterController _controller = other.gameObject.GetComponent<CharacterController>();
             SplineFollower sp = other.gameObject.AddComponent<SplineFollower>();
             sp.motion.rotationOffset = new Vector3(-90f,0,0);
             _controller.changeMotion(false);
@@ -36,6 +35,7 @@ public class PipeController : MonoBehaviour
             _controller.inSpline();
             if (isTrue)
             {
+                gm.envController.transition();
                 gameObject.transform.parent = null;
             }
             //isUsed = true;

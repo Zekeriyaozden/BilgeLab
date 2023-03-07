@@ -114,10 +114,11 @@ public class EnvironmentController : MonoBehaviour
             platforms.Add(newList[i]);
         }
     }
-
+    
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        Vector3 distanceCamAndMain = Camera.main.gameObject.transform.position - gm.mainCharacter.transform.position;
         dataReader = gm.dataReader;
         if (!gm.isLobby)
         {
@@ -125,9 +126,20 @@ public class EnvironmentController : MonoBehaviour
             platforms[2].transform.position = platforms[1].transform.position + new Vector3(0, 0, distance);
             currentPlatformControl();
             currentPlatform = platforms[0];
+            Camera.main.gameObject.GetComponent<CameraController>().offset = distanceCamAndMain;
+            Camera.main.gameObject.GetComponent<CameraController>().inCameraFollow = false;
             gm.mainCharacterController.StartBoneElev(platforms[0].gameObject.GetComponent<PlatformController>().elevatorBone);
+            Camera.main.transform.position = distanceCamAndMain + gm.mainCharacter.transform.position;
+            StartCoroutine(cameraFollowWait(distanceCamAndMain));
         }
         
+    }
+
+    private IEnumerator cameraFollowWait(Vector3 _dist)
+    {
+        yield return new WaitForSeconds(2f);
+        Camera.main.gameObject.GetComponent<CameraController>().inCameraFollow = true;
+        Camera.main.gameObject.transform.position = gm.mainCharacter.transform.position + _dist;
     }
     
 
