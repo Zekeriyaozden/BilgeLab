@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTrue: 0
+  text: {fileID: 0}
 --- !u!1 &3243184638364979214
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTrue: 0
+  text: {fileID: 0}
 --- !u!1 &4553417320340099211
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTrue: 0
+  text: {fileID: 0}
 --- !u!1 &5273154642826143958
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTrue: 0
+  text: {fileID: 0}
 --- !u!1 &5907367701306532615
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTrue: 0
+  text: {fileID: 0}
 --- !u!1 &6897580242261499149
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +364,8 @@ MonoBehaviour:
   - {fileID: 4893097188933809517}
   - {fileID: 5907367701306532615}
   - {fileID: 1167005373432351174}
+  isLast: 0
+  elevatorBone: {fileID: 7387213955778531479}
 --- !u!54 &2625467881210311909
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -646,6 +653,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &7387213955778531479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8181890821359418117, guid: 7597ce88f62e23141aa2cca06d14a07e, type: 3}
+  m_PrefabInstance: {fileID: 7561739839078077548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8032745171635827591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7597ce88f62e23141aa2cca06d14a07e, type: 3}

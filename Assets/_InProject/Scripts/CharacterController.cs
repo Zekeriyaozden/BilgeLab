@@ -39,8 +39,25 @@ public class CharacterController : MonoBehaviour
         inMotion = true;
         letChangeTheMotion = true;
         dynamicJoystick = gm.envController.dynamicJoystick;
+        
     }
 
+    public void StartBoneElev(GameObject bone)
+    {
+        gameObject.transform.position = bone.transform.position;
+        changeMotion(false);
+        GameObject obj = transform.parent.gameObject;
+        transform.SetParent(bone.transform);
+        StartCoroutine(boneControl(obj));
+    }
+
+    private IEnumerator boneControl(GameObject parent)
+    {
+        yield return new WaitForSeconds(1f);
+        transform.SetParent(parent.transform);
+        changeMotion(true);
+    }
+    
     public bool changeSpeed(float _speed)
     {
         speed = _speed;

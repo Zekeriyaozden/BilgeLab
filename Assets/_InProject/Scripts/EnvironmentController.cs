@@ -56,6 +56,7 @@ public class EnvironmentController : MonoBehaviour
         for (int i = 0; i < platforms.Count; i++)
         {
             QuestionData qd = dataReader.selectRandomQuestion(level);
+            Debug.Log("-->>" + qd.id);
             platforms[i].GetComponent<PlatformController>().questionData = qd;
         }
         List<GameObject> newList = new List<GameObject>();
@@ -105,7 +106,6 @@ public class EnvironmentController : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            Debug.Log("Destroy");
             Destroy(platforms[i]);
         }
         platforms.Clear();
@@ -123,9 +123,11 @@ public class EnvironmentController : MonoBehaviour
         {
             distance = platforms[1].transform.position.z - platforms[0].transform.position.z;
             platforms[2].transform.position = platforms[1].transform.position + new Vector3(0, 0, distance);
-            currentPlatform = platforms[0];
             currentPlatformControl();
+            currentPlatform = platforms[0];
+            gm.mainCharacterController.StartBoneElev(platforms[0].gameObject.GetComponent<PlatformController>().elevatorBone);
         }
+        
     }
     
 

@@ -17,6 +17,8 @@ public class CameraController : MonoBehaviour
         offset = gameObject.transform.position - mainCharacter.transform.position;
     }
 
+    
+    
     private void follow()
     {
         if (inCameraFollow)

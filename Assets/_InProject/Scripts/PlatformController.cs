@@ -17,7 +17,7 @@ public class PlatformController : MonoBehaviour
     private EnvironmentController env;
     private bool isAdded;
     public bool isLast = false;
-    
+    public GameObject elevatorBone;
     void Start()
     {
         isAdded = false;

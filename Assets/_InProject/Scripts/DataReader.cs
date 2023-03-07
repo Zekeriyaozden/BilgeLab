@@ -34,7 +34,7 @@ public class DataReader : MonoBehaviour
                 selectebleIndexes.Add(i);   
             }
         }
-
+        
         if (selectebleIndexes.Count < 10)
         {
             int _counter = selectebleIndexes.Count;

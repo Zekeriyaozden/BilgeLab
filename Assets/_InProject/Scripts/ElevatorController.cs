@@ -51,6 +51,7 @@ public class ElevatorController : MonoBehaviour
             main.transform.position = Vector3.Lerp(startPos,targetPos,k);
         }
         yield return new WaitForSeconds(1f);
+        Debug.Log("sds");
         Camera.main.gameObject.GetComponent<CameraController>().enabled = false;
         GetComponent<Animator>().enabled = true;
         gameObject.GetComponent<Animator>().enabled = true;
