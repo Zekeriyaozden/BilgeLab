@@ -640,6 +640,7 @@ MonoBehaviour:
   levelIndex: 0
   elevat: {fileID: 0}
   isComplated: 0
+  wing: {fileID: 6268130554192434023}
 --- !u!4 &6752882846959868274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
@@ -780,6 +781,7 @@ MonoBehaviour:
   levelIndex: 0
   elevat: {fileID: 0}
   isComplated: 0
+  wing: {fileID: 6268130552665923148}
 --- !u!4 &6752882846709986139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
