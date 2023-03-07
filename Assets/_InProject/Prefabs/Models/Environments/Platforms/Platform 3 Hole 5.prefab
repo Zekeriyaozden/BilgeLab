@@ -419,6 +419,8 @@ MonoBehaviour:
   - {fileID: 5259555486950221376}
   - {fileID: 6548616001171140650}
   - {fileID: 1956951591259675371}
+  isLast: 0
+  elevatorBone: {fileID: 0}
 --- !u!54 &5571582429512885176
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -556,6 +558,10 @@ PrefabInstance:
     - target: {fileID: 2266555978349878949, guid: cde876186a5896a4da5a60d531e5c28a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583616500473607073, guid: cde876186a5896a4da5a60d531e5c28a, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cde876186a5896a4da5a60d531e5c28a, type: 3}
