@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 8917914688959510698}
   - component: {fileID: 6640059988380978272}
   m_Layer: 0
-  m_Name: Platform 1.2 old
+  m_Name: Platform 1.2 old1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
