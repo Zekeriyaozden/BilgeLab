@@ -1082,7 +1082,7 @@ MonoBehaviour:
   - {fileID: 1253543298}
   - {fileID: 806233354}
   sizeOfQuestion: 0
-  lastPlatformPrefab: {fileID: 5127004100698058165, guid: 9c77a801c9843e44e9d88ab5cc755268, type: 3}
+  lastPlatformPrefab: {fileID: 8752307840085449570, guid: 363f21995b6ae9d498f22280e3fac090, type: 3}
 --- !u!1 &1771641570
 GameObject:
   m_ObjectHideFlags: 0

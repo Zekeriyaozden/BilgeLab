@@ -20,12 +20,18 @@ public class ElevatorController : MonoBehaviour
 
     void Start()
     {
+        lockObject.gameObject.GetComponent<Animator>().enabled = false;
         GetComponent<Animator>().enabled = false;
         wing.gameObject.GetComponent<Animator>().enabled = false;
         elevat = transform.GetChild(0).GetChild(0).gameObject;
         StartCoroutine(unLock());
     }
 
+    /*private IEnumerator lockAnimStart()
+    {
+        
+    }*/
+    
     private IEnumerator unLock()
     {
         yield return new WaitForSeconds(1.5f);

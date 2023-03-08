@@ -193,6 +193,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9918026e379104b9506fdd615708ca, type: 3}
+--- !u!1 &8513510197028816136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7443927846697311975, guid: bd9918026e379104b9506fdd615708ca, type: 3}
+  m_PrefabInstance: {fileID: 1254310242890128367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9038091985837219762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7783896100766237789, guid: bd9918026e379104b9506fdd615708ca, type: 3}
@@ -474,6 +479,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7783896100766237789, guid: bd9918026e379104b9506fdd615708ca, type: 3}
   m_PrefabInstance: {fileID: 4099756265236778591}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6893716310859370680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7443927846697311975, guid: bd9918026e379104b9506fdd615708ca, type: 3}
+  m_PrefabInstance: {fileID: 4099756265236778591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4973178999758225709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -615,7 +625,7 @@ MonoBehaviour:
   elevat: {fileID: 0}
   isComplated: 0
   wing: {fileID: 5315705659358178275}
-  lockObject: {fileID: 0}
+  lockObject: {fileID: 8513510197028816136}
 --- !u!1001 &4973178999832032108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -974,7 +984,7 @@ MonoBehaviour:
   elevat: {fileID: 0}
   isComplated: 0
   wing: {fileID: 5315705659042080681}
-  lockObject: {fileID: 0}
+  lockObject: {fileID: 6893716310859370680}
 --- !u!1001 &4973179001648552696
 PrefabInstance:
   m_ObjectHideFlags: 0
