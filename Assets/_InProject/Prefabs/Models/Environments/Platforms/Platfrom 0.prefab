@@ -180,6 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4b50c65a64b7f842ad2d2441cdceed1, type: 3}
+--- !u!1 &5771454462796449859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6233994761304902972, guid: c4b50c65a64b7f842ad2d2441cdceed1, type: 3}
+  m_PrefabInstance: {fileID: 476196792353604991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6580748538725208825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6757732159488382854, guid: c4b50c65a64b7f842ad2d2441cdceed1, type: 3}
@@ -242,6 +247,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4b50c65a64b7f842ad2d2441cdceed1, type: 3}
+--- !u!1 &4935210344060866367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6233994761304902972, guid: c4b50c65a64b7f842ad2d2441cdceed1, type: 3}
+  m_PrefabInstance: {fileID: 1368806885606375939}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5707946409163265413 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6757732159488382854, guid: c4b50c65a64b7f842ad2d2441cdceed1, type: 3}
@@ -590,6 +600,7 @@ MonoBehaviour:
   elevat: {fileID: 0}
   isComplated: 0
   wing: {fileID: 5315705659358178275}
+  lockObject: {fileID: 5771454462796449859}
 --- !u!1001 &4973178999832032108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -948,6 +959,7 @@ MonoBehaviour:
   elevat: {fileID: 0}
   isComplated: 0
   wing: {fileID: 5315705659042080681}
+  lockObject: {fileID: 4935210344060866367}
 --- !u!1001 &4973179001648552696
 PrefabInstance:
   m_ObjectHideFlags: 0

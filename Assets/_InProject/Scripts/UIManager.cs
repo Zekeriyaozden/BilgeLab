@@ -90,7 +90,7 @@ public class UIManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
             k += Time.deltaTime / 3f;
             s = math.lerp(start, finish, k);
-            GameScreenCanvas.transform.GetChild(3).gameObject.GetComponent<Slider>().value = s;
+            GameScreenCanvas.transform.GetChild(1).gameObject.GetComponent<Slider>().value = s;
         }
     }
     

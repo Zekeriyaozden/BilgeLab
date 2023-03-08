@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05778cc910936b4cb58b421945fd655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: 0}
   inCameraFollow: 0
 --- !u!114 &51892860
 MonoBehaviour:
@@ -673,6 +674,7 @@ MonoBehaviour:
   platforms: []
   currentPlatform: {fileID: 0}
   platformPrefs: []
+  platformPrefLast: {fileID: 0}
   startPlatformPrefs: []
   pipeTrue: {fileID: 0}
   pipeFalse: {fileID: 0}
@@ -1080,6 +1082,7 @@ MonoBehaviour:
   - {fileID: 1253543298}
   - {fileID: 806233354}
   sizeOfQuestion: 0
+  lastPlatformPrefab: {fileID: 5127004100698058165, guid: 9c77a801c9843e44e9d88ab5cc755268, type: 3}
 --- !u!1 &1771641570
 GameObject:
   m_ObjectHideFlags: 0

@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7783896100766237789}
-  - component: {fileID: 7750498413055933814}
+  - component: {fileID: -8446614535142828016}
   m_Layer: 0
   m_Name: Lock Unlock Anim
   m_TagString: Untagged
@@ -349,7 +349,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &7750498413055933814
+--- !u!95 &-8446614535142828016
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -359,10 +359,10 @@ Animator:
   m_GameObject: {fileID: 7443927846697311975}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b4ef4669fe2675d44a8e6bc5419fb459, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2325132bf2a2aa4429552a1400098614, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

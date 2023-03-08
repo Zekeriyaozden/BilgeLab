@@ -11,6 +11,7 @@ public class EnvironmentController : MonoBehaviour
     public List<GameObject> platforms;
     public GameObject currentPlatform;
     public List<GameObject> platformPrefs;
+    public GameObject platformPrefLast;
     public List<GameObject> startPlatformPrefs;
     private float distance;
     public GameObject pipeTrue;
@@ -23,6 +24,7 @@ public class EnvironmentController : MonoBehaviour
     private bool isAdded;
     public int level;
     public int countOfTransit;
+    
 
     private void Awake()
     {
@@ -161,7 +163,15 @@ public class EnvironmentController : MonoBehaviour
             {
                 _platformIndex = 2;
             }
-            GameObject newPlatform = Instantiate(platformPrefs[_platformIndex]);
+            GameObject newPlatform;
+            if (addedPlatformSize == 10)
+            {
+                newPlatform = Instantiate(platformPrefLast);   
+            }
+            else
+            {
+                newPlatform = Instantiate(platformPrefs[_platformIndex]);   
+            }
             newPlatform.GetComponent<PlatformController>().questionData = questionData;
             newPlatform.transform.parent = gamePlayEnvs.transform;
             newPlatform.transform.eulerAngles = platforms[platforms.Count - 1].transform.eulerAngles;

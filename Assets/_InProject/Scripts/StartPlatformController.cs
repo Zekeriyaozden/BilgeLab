@@ -7,6 +7,7 @@ public class StartPlatformController : MonoBehaviour
 {
     public GameObject elevator1 , elevator2 , door;
     private bool isOpened;
+    public bool isLast;
     void Start()
     {
         isOpened = false;
@@ -33,16 +34,19 @@ public class StartPlatformController : MonoBehaviour
         if (!isOpened)
         {
             isOpened = true;
-            door.GetComponent<Animator>().enabled = false;
-            if (elevator1.GetComponent<ElevatorController>().isComplated &&
-                elevator2.GetComponent<ElevatorController>().isComplated)
+            if (isLast)
             {
-                door.GetComponent<Animator>().enabled = true;
-                Material[] mt =  door.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().materials;
-                yield return new WaitForSeconds(1.2f);
-                door.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().materials = mt;
-                StartCoroutine(dissolve(mt));
-            }   
+                door.GetComponent<Animator>().enabled = false;
+                if (elevator1.GetComponent<ElevatorController>().isComplated &&
+                    elevator2.GetComponent<ElevatorController>().isComplated)
+                {
+                    door.GetComponent<Animator>().enabled = true;
+                    Material[] mt =  door.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().materials;
+                    yield return new WaitForSeconds(1.2f);
+                    door.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().materials = mt;
+                    StartCoroutine(dissolve(mt));
+                }   
+            }
         }
     }
     

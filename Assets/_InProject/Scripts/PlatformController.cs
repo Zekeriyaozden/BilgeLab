@@ -22,7 +22,10 @@ public class PlatformController : MonoBehaviour
     {
         isAdded = false;
         env = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentController>();
-        _holeAns();
+        if (!isLast)
+        {
+            _holeAns();
+        }
     }
     
     

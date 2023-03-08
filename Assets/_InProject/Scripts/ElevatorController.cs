@@ -10,6 +10,7 @@ public class ElevatorController : MonoBehaviour
     public GameObject elevat;
     public bool isComplated;
     public GameObject wing;
+    public GameObject lockObject;
 
 
     private void Awake()
@@ -22,6 +23,16 @@ public class ElevatorController : MonoBehaviour
         GetComponent<Animator>().enabled = false;
         wing.gameObject.GetComponent<Animator>().enabled = false;
         elevat = transform.GetChild(0).GetChild(0).gameObject;
+        StartCoroutine(unLock());
+    }
+
+    private IEnumerator unLock()
+    {
+        yield return new WaitForSeconds(1.5f);
+        if (isComplated)
+        {
+            lockObject.gameObject.GetComponent<Animator>().SetBool("Unlock",true);   
+        }
     }
 
     public void levelIndexer()
