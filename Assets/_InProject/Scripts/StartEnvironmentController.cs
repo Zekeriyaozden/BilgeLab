@@ -10,6 +10,8 @@ public class StartEnvironmentController : MonoBehaviour
     public int sizeOfQuestion;
     private int sumOfLevel;
     public GameObject lastPlatformPrefab;
+    public GameObject targetPlatform;
+    public GameObject targetElev;
     void Start()
     {
         distance = startPlatforms[1].transform.position.z - startPlatforms[0].transform.position.z;
@@ -33,6 +35,7 @@ public class StartEnvironmentController : MonoBehaviour
                 _pltfrm.transform.position = new Vector3(startPlatforms[1].transform.position.x,
                     startPlatforms[1].transform.position.y, startPlatforms[startPlatforms.Count - 1].transform.position.z + 28);
                 startPlatforms.Add(_pltfrm);
+                Debug.Log(_pltfrm);
                 _pltfrm.GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>()
                     .levelIndex = sumOfLevel;
                 _pltfrm.GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>().levelIndexer();
@@ -43,9 +46,49 @@ public class StartEnvironmentController : MonoBehaviour
                 sumOfLevel++;
             }
         }
-        
+        findFirstUncomplatedElev();
+        targetPlatform.GetComponent<StartPlatformController>().setPlatformDests(targetElev);
     }
+    
+    public void findFirstUncomplatedElev()
+    {
+        int _count = startPlatforms.Count;
+        bool breakFlag = false;
+        for (int i = 0; i < _count; i++)
+        {
+            if (startPlatforms[i].GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>()
+                .isComplated)
+            {
+                
+            }
+            else
+            {
+                targetPlatform = startPlatforms[i];
+                targetElev = startPlatforms[i].GetComponent<StartPlatformController>().elevator1;
+                breakFlag = true;
+                break;
+            }
 
+            if (startPlatforms[i].GetComponent<StartPlatformController>().elevator2
+                .GetComponent<ElevatorController>().isComplated)
+            {
+                
+            }else
+            {
+                targetPlatform = startPlatforms[i];
+                targetElev = startPlatforms[i].GetComponent<StartPlatformController>().elevator1;
+                breakFlag = true;
+                break;
+            }
+        }
+        Debug.Log("ent" + breakFlag);
+        if (!breakFlag)
+        {
+            targetPlatform = startPlatforms[_count - 1];
+            targetElev = startPlatforms[_count - 1].GetComponent<StartPlatformController>().elevator2;
+        }
+    }
+    
     private void levelIndex()
     {
         startPlatforms[0].GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>()

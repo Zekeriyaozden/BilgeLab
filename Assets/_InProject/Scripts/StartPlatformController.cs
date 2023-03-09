@@ -8,12 +8,22 @@ public class StartPlatformController : MonoBehaviour
     public GameObject elevator1 , elevator2 , door;
     private bool isOpened;
     public bool isLast;
+    public List<GameObject> dests;
     void Start()
     {
         isOpened = false;
         StartCoroutine(DoorBeh());
     }
-
+    
+    public void setPlatformDests(GameObject elev)
+    {
+        dests.Add(elev.GetComponent<ElevatorController>().elevat);
+        elev.GetComponent<ElevatorController>().sphere.SetActive(false);
+        StartCoroutine(elev.GetComponent<ElevatorController>().unLock(true));
+        elev.GetComponent<Collider>().isTrigger = true;
+        GameObject.Find("AIManager").GetComponent<AIManager>().setDest(dests);
+    }
+    
     private IEnumerator dissolve(Material[] mt)
     {
         float k = 0 , start = -1.1f , target = 1f;
@@ -34,7 +44,7 @@ public class StartPlatformController : MonoBehaviour
         if (!isOpened)
         {
             isOpened = true;
-            if (isLast)
+            if (!isLast)
             {
                 door.GetComponent<Animator>().enabled = false;
                 if (elevator1.GetComponent<ElevatorController>().isComplated &&

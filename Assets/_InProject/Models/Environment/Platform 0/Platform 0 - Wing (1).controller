@@ -11,14 +11,14 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 7597432159548581755}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 450, y: -90, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_EntryPosition: {x: 70, y: 110, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 7597432159548581755}
@@ -30,7 +30,13 @@ AnimatorController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Platform 0 - Wing (1)
   serializedVersion: 5
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: Direct
+    m_Type: 1
+    m_DefaultFloat: 1
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -51,7 +57,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 0_Wing 1|Armature_010Action
+  m_Name: Wing
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -60,13 +66,13 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7605752010741175751, guid: cfc306e3b5a25ba42b416b35c0100f81, type: 3}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: Direct
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
