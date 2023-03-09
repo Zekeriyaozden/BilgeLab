@@ -1,0 +1,9 @@
+Asansor Sesi --> Karakter asansöre bindiği an devreye girecek
+Boru kayma --> Karakter boruya bindiği an
+Button SFX --> Bütün buton
+Doğru Boru SFX --> Karakter doğru borudan çıktığı an çalacak
+Yanlis SFX --> Karakter yanlisdan çıktığı an
+Game Music --> Oyun başladığı an çalmaya başlayacak
+Loading Screen Music --> Loading canvas ile çalmaya başlayıp karakter seçim ekranında 
+oynaya basana kadar
+ 
