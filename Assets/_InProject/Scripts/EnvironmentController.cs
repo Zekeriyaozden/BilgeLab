@@ -103,6 +103,7 @@ public class EnvironmentController : MonoBehaviour
                 platforms[i].GetComponent<PlatformController>().questionData;
             _tempObj.transform.eulerAngles = platforms[i].transform.eulerAngles;
             _tempObj.transform.position = platforms[i].transform.position;
+            _tempObj.gameObject.GetComponent<PlatformController>().level = i;
             newList.Add(_tempObj);
         }
 
@@ -176,10 +177,11 @@ public class EnvironmentController : MonoBehaviour
             newPlatform.transform.parent = gamePlayEnvs.transform;
             newPlatform.transform.eulerAngles = platforms[platforms.Count - 1].transform.eulerAngles;
             newPlatform.transform.position = platforms[platforms.Count - 1].transform.position + new Vector3(0,0,distance);
+            newPlatform.gameObject.GetComponent<PlatformController>().level = addedPlatformSize - 1;
             platforms.Add(newPlatform);
             GameObject willDestroy = platforms[0];
             platforms.RemoveAt(0);
-            Destroy(willDestroy);
+            //Destroy(willDestroy);
             Debug.Log("AddedNewPlatform");
             if (addedPlatformSize == 10)
             {

@@ -318,6 +318,11 @@ public class CharacterController : MonoBehaviour
             changeMotion(false);
             letChangeTheMotion = false;
         }
+        if (other.tag == "Platform")
+        {
+            GameObject.Find("AIManager").GetComponent<AIManager>().levelOfMainChar =
+                other.gameObject.GetComponent<PlatformController>().level;
+        }
     }
 
     

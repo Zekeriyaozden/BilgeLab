@@ -18,13 +18,18 @@ public class PlatformController : MonoBehaviour
     private bool isAdded;
     public bool isLast = false;
     public GameObject elevatorBone;
+    public List<GameObject> dests;
+    public bool isHoled;
+    public int level;
     void Start()
     {
+        isHoled = false;
         isAdded = false;
         env = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentController>();
         if (!isLast)
         {
             _holeAns();
+            isHoled = true;
         }
     }
     

@@ -6,9 +6,11 @@ public class AIManager : MonoBehaviour
 {
     public List<GameObject> destList;
     public List<GameObject> AIList;
+    public int levelOfMainChar;
     void Start()
     {
-        
+        //Değişecek
+
     }
 
     public void setDest(List<GameObject> dests)
