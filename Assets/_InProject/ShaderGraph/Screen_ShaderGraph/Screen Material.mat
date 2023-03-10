@@ -24,6 +24,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: ab64aa794dbe61a48945153a0810f998, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_a0deb4723205406aa17a6366f5c5a046_Texture_1:
+        m_Texture: {fileID: 2800000, guid: ab64aa794dbe61a48945153a0810f998, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_e7d839f72e174290befc29720e36cbac_Texture_1:
+        m_Texture: {fileID: 2800000, guid: ab64aa794dbe61a48945153a0810f998, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -38,10 +46,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BlackScreenTime: 0.025
+    - _EmissionPower: 1.5
+    - _Metallic: 0
+    - _Opacity: 0.571
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Smoothness: 0.342
     m_Colors:
-    - _TextureSpeed: {r: 0, g: 1, b: 0, a: 0}
+    - _NewTextureSpeed: {r: 0.01, g: 0.05, b: 0, a: 0}
+    - _ScreenOffColor: {r: 0, g: 0, b: 0, a: 0}
+    - _TextureSpeed: {r: -0.3, g: 0, b: 0, a: 0}
+    - _Tiling: {r: 0.25, g: 0.2, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4640962875922062314
 MonoBehaviour:
