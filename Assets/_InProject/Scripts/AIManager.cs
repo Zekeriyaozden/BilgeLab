@@ -12,7 +12,8 @@ public class AIManager : MonoBehaviour
         //Değişecek
 
     }
-
+    
+    
     public void setDest(List<GameObject> dests)
     {
         destList = dests;

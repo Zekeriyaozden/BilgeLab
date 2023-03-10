@@ -20,6 +20,7 @@ public class ElevatorController : MonoBehaviour
     public GameObject sphere;
     private List<GameObject> aiList;
     private AIManager aiManager;
+    private bool mainCharInElev;
     private void Awake()
     {
         aiList = new List<GameObject>();
@@ -31,6 +32,7 @@ public class ElevatorController : MonoBehaviour
 
     void Start()
     {
+        mainCharInElev = false;
         aiManager = GameObject.Find("AIManager").GetComponent<AIManager>();
         //destsElev.Add(transform.GetChild(transform.childCount - 1).GetChild(0).transform.position);
         lockObject.gameObject.GetComponent<Animator>().enabled = true;
@@ -96,11 +98,15 @@ public class ElevatorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerCountInElev >= 5 && !isElevMotion)
+
+        if (playerCountInElev > 7)
         {
             sphere.SetActive(true);
-            StartCoroutine(ElevMotion());
-            isElevMotion = true;
+            if (!isElevMotion && mainCharInElev)
+            {
+                StartCoroutine(ElevMotion());
+                isElevMotion = true;
+            }
         }
     }
 
@@ -124,6 +130,7 @@ public class ElevatorController : MonoBehaviour
 
     private IEnumerator ElevMotion()
     {
+        
         sphere.SetActive(true);
         aiManager.randomMove();
         wing.gameObject.GetComponent<Animator>().enabled = false;
@@ -192,6 +199,7 @@ public class ElevatorController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            mainCharInElev = true;
             other.gameObject.transform.parent = elevat.transform;
             StartCoroutine(elevCenter(other.gameObject));
             isMainInElev = true;

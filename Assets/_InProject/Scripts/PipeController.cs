@@ -43,20 +43,12 @@ public class PipeController : MonoBehaviour
         
         else if (other.gameObject.tag == "AI")
         {
-
-            if (isTrue)
-            {
-                SplineFollower sp = other.gameObject.AddComponent<SplineFollower>();
+            SplineFollower sp = other.gameObject.AddComponent<SplineFollower>();
                 sp.motion.rotationOffset = new Vector3(-90f,0,0);
                 sp.spline = spline;
                 sp.followMode = SplineFollower.FollowMode.Time;
                 sp.followDuration = 3f;
                 other.gameObject.GetComponent<AIController>().inSpline();
-            }
-            else
-            {
-                
-            }
         }
     }
 }

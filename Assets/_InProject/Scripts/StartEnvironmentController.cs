@@ -48,6 +48,34 @@ public class StartEnvironmentController : MonoBehaviour
         }
         findFirstUncomplatedElev();
         targetPlatform.GetComponent<StartPlatformController>().setPlatformDests(targetElev);
+        startElev();
+    }
+
+    public void startElev()
+    {
+        int _count = startPlatforms.Count;
+        for (int i = 0; i < _count; i++)
+        {
+            if (startPlatforms[i].gameObject.GetComponent<StartPlatformController>().elevator1
+                .GetComponent<ElevatorController>().isComplated)
+            {
+                startPlatforms[i].gameObject.GetComponent<StartPlatformController>().elevator1
+                    .GetComponent<ElevatorController>().lockObject.SetActive(false);
+            }
+            else
+            {
+                startPlatforms[i].gameObject.GetComponent<StartPlatformController>().elevator1
+                    .GetComponent<ElevatorController>().lockObject.SetActive(true);
+                startPlatforms[i].gameObject.GetComponent<StartPlatformController>().elevator1
+                    .GetComponent<ElevatorController>().sphere.SetActive(true);
+                startPlatforms[i].gameObject.GetComponent<StartPlatformController>().elevator1
+                    .GetComponent<ElevatorController>().sphere.GetComponent<SphereCollider>().enabled = true;
+                
+            }
+        }
+       targetElev.GetComponent<ElevatorController>().lockObject.SetActive(true);
+       targetElev.GetComponent<ElevatorController>().sphere.SetActive(false);
+       targetElev.GetComponent<ElevatorController>().sphere.GetComponent<SphereCollider>().enabled = false;
     }
     
     public void findFirstUncomplatedElev()
@@ -81,7 +109,6 @@ public class StartEnvironmentController : MonoBehaviour
                 break;
             }
         }
-        Debug.Log("ent" + breakFlag);
         if (!breakFlag)
         {
             targetPlatform = startPlatforms[_count - 1];

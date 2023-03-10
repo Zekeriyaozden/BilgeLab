@@ -19,6 +19,7 @@ public class AIController : MonoBehaviour
     public bool TargetForGamePlay;
     public GameObject ElevatorForGamePlay;
     private Vector3 startPos;
+    private Vector3 startRot;
     private Transform startParent;
     public float speed;
     private bool isNavmeshed;
@@ -30,8 +31,10 @@ public class AIController : MonoBehaviour
     private bool isLobby;
     private int select;
     private bool isSpline;
+    private GameObject currentPlatform;
     void Start()
     {
+        startRot = transform.eulerAngles;
         isSpline = false;
         destTrue = new List<GameObject>();
         destFalse = new List<GameObject>();
@@ -64,7 +67,7 @@ public class AIController : MonoBehaviour
         SplineFollower sf = gameObject.GetComponent<SplineFollower>();
         StartCoroutine(splineListener(sf));
     }
-
+    
     private IEnumerator splineListener(SplineFollower sf)
     {
         bool _flag = true;
@@ -76,10 +79,49 @@ public class AIController : MonoBehaviour
                 _flag = false;
             }
         }
+        endOfSpline(sf);
+    }
+    
+    private void endOfSpline(SplineFollower sf)
+    {
+        gameObject.transform.eulerAngles = startRot;
+        if (sf.spline.gameObject.transform.parent.gameObject.GetComponent<PipeController>().isTrue)
+        {
+            Destroy(sf);
+            navMesh.enabled = true;
+            isNav = true;
+            isSpline = false;
+        }
+        else
+        {
+            Destroy(sf);
+            gameObject.transform.eulerAngles = startRot;
+            gameObject.transform.position = new Vector3(currentPlatform.transform.position.x,transform.position.y,currentPlatform.transform.position.z);
+            StartCoroutine(endSplineMotion(
+                new Vector3(currentPlatform.transform.position.x, startPos.y,
+                    currentPlatform.transform.position.z - 10f), startRot));
+        }
+
+    }
+    
+    private IEnumerator endSplineMotion(Vector3 targetPos,Vector3 targetRot)
+    {
+        Debug.Log("inThere");
+        //onParachute(true);
+        float k = 0;
+        Vector3 startRot = gameObject.transform.eulerAngles;
+        Vector3 startPos = gameObject.transform.position;
+        while (k <= 1)
+        {
+            yield return new WaitForEndOfFrame();
+            gameObject.transform.position = Vector3.Lerp(startPos,targetPos,k);
+            k += Time.deltaTime * gm.endOfSplineSpeed / 2f;
+        }
         navMesh.enabled = true;
         isNav = true;
         isSpline = false;
-        Destroy(sf);
+        //onParachute(false);
+        //changeMotion(true);
     }
     
     public void randomDest()
@@ -100,7 +142,8 @@ public class AIController : MonoBehaviour
         isNav = true;
         FinalDest = dest[Random.Range(0, dest.Count)];
     }
-
+    
+    
     public void animControl()
     {
         if (navMesh)
@@ -242,6 +285,7 @@ public class AIController : MonoBehaviour
     {
         if (other.tag == "Platform")
         {
+            currentPlatform = other.gameObject;
             if (other.gameObject.GetComponent<PlatformController>().level == currentLevel && currentLevel != 0)
             {
                 
