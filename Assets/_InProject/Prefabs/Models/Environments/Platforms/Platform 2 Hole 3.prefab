@@ -279,6 +279,8 @@ MonoBehaviour:
   - {fileID: 7702676366665568023}
   - {fileID: 7306623826762899812}
   - {fileID: 5391795868747401593}
+  isHoled: 0
+  level: 0
 --- !u!54 &4470802418482952159
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -573,6 +575,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7861966083453907402}
     m_Modifications:
+    - target: {fileID: 4190341749374507340, guid: 31b6de07a9002064b8f39f0d51fa7062, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7507364953613726792, guid: 31b6de07a9002064b8f39f0d51fa7062, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
