@@ -32,6 +32,7 @@ public class AIController : MonoBehaviour
     private int select;
     private bool isSpline;
     private GameObject currentPlatform;
+    public GameObject parachute;
     void Start()
     {
         startRot = transform.eulerAngles;
@@ -63,6 +64,22 @@ public class AIController : MonoBehaviour
     public void setActive()
     {
         gameObject.SetActive(true);
+    }
+
+    public void onParachute(bool _parac)
+    {
+        if (_parac)
+        {
+            parachute.SetActive(true);
+            gameObject.GetComponent<Animator>().SetBool("Parachute",true);
+            isParachuted = true;
+        }
+        else
+        {
+            isParachuted = false;
+            parachute.SetActive(false);
+            gameObject.GetComponent<Animator>().SetBool("Parachute",false);
+        }
     }
     
     public void inSpline()
@@ -100,6 +117,7 @@ public class AIController : MonoBehaviour
         }
         else
         {
+            onParachute(true);
             Destroy(sf);
             gameObject.transform.eulerAngles = startRot;
             gameObject.transform.position = new Vector3(currentPlatform.transform.position.x,transform.position.y,currentPlatform.transform.position.z);
@@ -123,6 +141,7 @@ public class AIController : MonoBehaviour
             gameObject.transform.position = Vector3.Lerp(startPos,targetPos,k);
             k += Time.deltaTime * gm.endOfSplineSpeed / 2f;
         }
+        onParachute(false);
         navMesh.enabled = true;
         isNav = true;
         isSpline = false;
@@ -169,7 +188,9 @@ public class AIController : MonoBehaviour
         {
             if (isParachuted)
             {
-                
+                anim.SetBool("Idle" , false);
+                anim.SetBool("Walk" , false);
+                anim.SetBool("Run" , false);
             }else if (isSki)
             {
                 

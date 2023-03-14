@@ -68,6 +68,8 @@ public class UIManager : MonoBehaviour
             targetScreen = GameScreenCanvas.transform.GetChild(0).GetChild(0);
             settingUIElement.SetActive(false);
         }
+
+        Debug.Log("load");
         loadingCanvas.SetActive(true);
         StartCoroutine(load());
     }

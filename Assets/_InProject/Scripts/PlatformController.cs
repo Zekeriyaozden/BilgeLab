@@ -21,8 +21,11 @@ public class PlatformController : MonoBehaviour
     public List<GameObject> dests;
     public bool isHoled;
     public int level;
+    public List<GameObject> arrows;
+    private List<GameObject> trueArrows;
     void Start()
     {
+        trueArrows = new List<GameObject>();
         isHoled = false;
         isAdded = false;
         env = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentController>();
@@ -51,6 +54,7 @@ public class PlatformController : MonoBehaviour
                     if (questionData.indexesOfTrueAnswer[j] == i)
                     {
                         answerHoles[i].GetComponent<HoleController>().isTrue = true;
+                        trueArrows.Add(arrows[i]);
                     }
                 }
             }
@@ -108,7 +112,15 @@ public class PlatformController : MonoBehaviour
         //env.gm.UIManager.LeaderBoardCanvas.GetComponent<Animator>().speed = .2f;
         StartCoroutine(winUI());
     }
-    
+
+    public void onArrows()
+    {
+        int _count = trueArrows.Count;
+        for (int i = 0; i < _count; i++)
+        {
+            trueArrows[i].SetActive(true);
+        }
+    }
     
 
     private void OnTriggerEnter(Collider other)

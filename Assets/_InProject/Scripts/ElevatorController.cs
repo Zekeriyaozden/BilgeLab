@@ -15,7 +15,7 @@ public class ElevatorController : MonoBehaviour
     public GameObject lockObject;
     public List<Transform> destsElev;
     private int indexOfDests;
-    private int playerCountInElev;
+    public int playerCountInElev;
     private bool isMainInElev;
     private bool isElevMotion;
     public GameObject sphere;
@@ -24,9 +24,11 @@ public class ElevatorController : MonoBehaviour
     private bool mainCharInElev;
     public int countOfPlayer;
     public GameObject canvasNew;
+    public GameObject Unlockparticle;
     
     private void Awake()
     {
+        Unlockparticle.SetActive(false);
         countOfPlayer = 0;
         aiList = new List<GameObject>();
         isElevMotion = false;
@@ -59,6 +61,7 @@ public class ElevatorController : MonoBehaviour
         {
             Debug.Log(unlockForce);
             lockObject.gameObject.GetComponent<Animator>().SetBool("Unlock",true);
+            Unlockparticle.SetActive(true);
             gameObject.GetComponent<Collider>().isTrigger = true;
         }
         else
@@ -79,6 +82,11 @@ public class ElevatorController : MonoBehaviour
 
     private void AIControlForElev(GameObject ai)
     {
+        if (aiList.Count >= 8)
+        {
+            ai.gameObject.GetComponent<AIController>().randomDest();
+            return;
+        }
         aiList.Add(ai.gameObject);
         ai.gameObject.transform.parent = elevat.transform;
         ai.gameObject.GetComponent<AIController>().isNav = false;
@@ -108,9 +116,11 @@ public class ElevatorController : MonoBehaviour
         canvasNew.transform.LookAt(Camera.main.gameObject.transform);
         canvasNew.transform.eulerAngles += new Vector3(0, 180, 0);
         countOfPlayer = playerCountInElev;
-        if (playerCountInElev > 8)
+        if ((playerCountInElev > 8 && mainCharInElev) || (playerCountInElev > 7 && !mainCharInElev))
         {
+            
             countOfPlayer = playerCountInElev;
+            aiManager.randomMove();
             sphere.SetActive(true);
             if (!isElevMotion && mainCharInElev)
             {
@@ -119,6 +129,10 @@ public class ElevatorController : MonoBehaviour
             }
         }
         
+        if (countOfPlayer > 9)
+        {
+            countOfPlayer = 9;
+        }
         numberOfPerson = countOfPlayer.ToString() + "/9";
         canvasNew.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = numberOfPerson;
 
@@ -127,18 +141,19 @@ public class ElevatorController : MonoBehaviour
     private IEnumerator setElevMot()
     {
         yield return new WaitForSeconds(2f);
-        //gameObject.GetComponent<Animator>().enabled = false;
-        //wing.gameObject.GetComponent<Animator>().enabled = false;
+        gameObject.GetComponent<Animator>().enabled = false;
+        wing.gameObject.GetComponent<Animator>().enabled = false;
         for (int i = 0; i < aiList.Count; i++)
         {
             aiList[i].GetComponent<AIController>().reset();
         }
         aiList.Clear();
         wing.gameObject.GetComponent<Animator>().SetFloat("Direct",-1);
+        wing.gameObject.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(1f);
         Animator anim = gameObject.GetComponent<Animator>();
-        //Animation animet = anim
         anim.SetFloat("Direct",-1);
+        anim.enabled = true;
         sphere.SetActive(false);
     }
 
@@ -147,19 +162,16 @@ public class ElevatorController : MonoBehaviour
         
         sphere.SetActive(true);
         aiManager.randomMove();
-        wing.gameObject.GetComponent<Animator>().enabled = false;
-        gameObject.GetComponent<Animator>().enabled = false;
-        aiManager.randomMove();
         yield return new WaitForSeconds(1f);
-        wing.gameObject.GetComponent<Animator>().SetFloat("Direct",1f);
+        gameObject.GetComponent<Animator>().enabled = true;
         gameObject.GetComponent<Animator>().SetFloat("Direct",1f);
         if (isMainInElev)
         {
             GetComponent<Animator>().enabled = true;
-            gameObject.GetComponent<Animator>().enabled = true;
             yield return new WaitForSeconds(2f);
             wing.gameObject.GetComponent<Animator>().enabled = true;
-            yield return new WaitForSeconds(1f);
+            wing.gameObject.GetComponent<Animator>().SetFloat("Direct",1f);
+            yield return new WaitForSeconds(3f);
             PlayerPrefs.SetInt("Level",levelIndex);
             SceneManager.LoadScene(2);
         }
@@ -219,7 +231,11 @@ public class ElevatorController : MonoBehaviour
             other.gameObject.transform.parent = elevat.transform;
             StartCoroutine(elevCenter(other.gameObject));
             isMainInElev = true;
-            Call();
+            if (playerCountInElev < 9)
+            {
+                Call();    
+            }
+            
         }
         else if (other.tag == "AI")
         {

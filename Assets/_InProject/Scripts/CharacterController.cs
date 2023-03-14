@@ -127,6 +127,7 @@ public class CharacterController : MonoBehaviour
             StartCoroutine(endSplineMotion(
                 new Vector3(gm.envController.currentPlatform.transform.position.x, startPosition.y,
                     gm.envController.currentPlatform.transform.position.z - 10f), startRotation));
+            gm.envController.currentPlatform.GetComponent<PlatformController>().onArrows();
         }
 
     }

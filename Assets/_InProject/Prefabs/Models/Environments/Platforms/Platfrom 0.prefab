@@ -975,6 +975,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9918026e379104b9506fdd615708ca, type: 3}
+--- !u!1 &7198987768431907917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8255034065961193378, guid: bd9918026e379104b9506fdd615708ca, type: 3}
+  m_PrefabInstance: {fileID: 1254310242890128367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8513510197028816136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7443927846697311975, guid: bd9918026e379104b9506fdd615708ca, type: 3}
@@ -1256,6 +1261,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9918026e379104b9506fdd615708ca, type: 3}
+--- !u!1 &5362246899208503805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8255034065961193378, guid: bd9918026e379104b9506fdd615708ca, type: 3}
+  m_PrefabInstance: {fileID: 4099756265236778591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6116089338328943106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7783896100766237789, guid: bd9918026e379104b9506fdd615708ca, type: 3}
@@ -1479,9 +1489,11 @@ MonoBehaviour:
   - {fileID: 4868579334826960071}
   - {fileID: 2433408791952499076}
   - {fileID: 5284281239095814501}
+  playerCountInElev: 0
   sphere: {fileID: 2948024678017224184}
   countOfPlayer: 0
   canvasNew: {fileID: 6734563769649982506}
+  Unlockparticle: {fileID: 7198987768431907917}
 --- !u!1001 &4973178999832032108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1850,9 +1862,11 @@ MonoBehaviour:
   - {fileID: 8212930481314589845}
   - {fileID: 217804948660438979}
   - {fileID: 1547718579859738858}
+  playerCountInElev: 0
   sphere: {fileID: 3988441329860255412}
   countOfPlayer: 0
   canvasNew: {fileID: 3430803166380537558}
+  Unlockparticle: {fileID: 5362246899208503805}
 --- !u!1001 &4973179001648552696
 PrefabInstance:
   m_ObjectHideFlags: 0
