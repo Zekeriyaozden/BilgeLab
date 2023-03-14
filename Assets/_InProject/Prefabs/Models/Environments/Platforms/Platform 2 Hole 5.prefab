@@ -339,6 +339,7 @@ Transform:
   - {fileID: 5083728394324654956}
   - {fileID: 7435856771658163727}
   - {fileID: 2979476687408608306}
+  - {fileID: 3911925498803938639}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -379,6 +380,8 @@ MonoBehaviour:
   - {fileID: 7752150769639383165}
   - {fileID: 7211983729166519822}
   - {fileID: 5450422709867390483}
+  isHoled: 0
+  level: 0
 --- !u!54 &2625467881210311909
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -565,6 +568,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1040886926548747028, guid: 7f2b5bb24c4ac2f4cb17b4540cd6346e, type: 3}
   m_PrefabInstance: {fileID: 1030511261916071110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1107715021182764499
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7561739837889437888}
+    m_Modifications:
+    - target: {fileID: 4113641827913359516, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113641827913359516, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113641827913359516, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.419
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113641827913359516, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113641827913359516, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113641827913359516, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113641827913359516, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113641827913359516, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113641827913359516, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113641827913359516, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113641827913359516, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342385122884234768, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+      propertyPath: m_Name
+      value: SoruBottom
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+--- !u!4 &3911925498803938639 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4113641827913359516, guid: 8f2ef3fd95838ae49a03de3d8e80eddc, type: 3}
+  m_PrefabInstance: {fileID: 1107715021182764499}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1630595449682865573
 PrefabInstance:
@@ -858,7 +923,7 @@ PrefabInstance:
     - target: {fileID: -619059459964139661, guid: 7597ce88f62e23141aa2cca06d14a07e, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 242a0bce53a6e754d8c8445b253a1162, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a765c8e553fca04faced8272b31e733, type: 2}
     - target: {fileID: 919132149155446097, guid: 7597ce88f62e23141aa2cca06d14a07e, type: 3}
       propertyPath: m_Name
       value: Platform 2 - Asansor

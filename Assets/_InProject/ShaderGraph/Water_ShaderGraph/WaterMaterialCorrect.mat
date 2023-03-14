@@ -34,7 +34,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.17
+    - _Alpha: 0.35
     - _BottomStrength: 48.74
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -46,7 +46,7 @@ Material:
     m_Colors:
     - _RippleSpeed: {r: 0, g: 0.15, b: 0, a: 0}
     - _Tiling: {r: 0.2, g: 1, b: 0, a: 0}
-    - _WaterColor: {r: 1.0781386, g: 1.6511564, b: 5.3403134, a: 1}
+    - _WaterColor: {r: 0, g: 1.0223774, b: 1.9169577, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &602850577652860922
 MonoBehaviour:

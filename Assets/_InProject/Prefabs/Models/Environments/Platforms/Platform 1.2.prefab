@@ -128,6 +128,7 @@ MonoBehaviour:
   elevator2: {fileID: 8968876103064843879}
   door: {fileID: 3296877310530880542}
   isLast: 0
+  dests: []
 --- !u!1 &6502553920520601559
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,6 +196,7 @@ MonoBehaviour:
   elevator2: {fileID: 6268130553066318305}
   door: {fileID: 6268130553241460236}
   isLast: 0
+  dests: []
 --- !u!1 &7077833853224501114
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +406,10 @@ PrefabInstance:
       propertyPath: wing
       value: 
       objectReference: {fileID: 6333236047295910343}
+    - target: {fileID: 4178601567611390667, guid: e1ae64def49466a429762aaaabf440f8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a765c8e553fca04faced8272b31e733, type: 2}
     - target: {fileID: 8283440530274004939, guid: e1ae64def49466a429762aaaabf440f8, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1016,9 +1022,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4821321569709775190, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.83
+      objectReference: {fileID: 0}
+    - target: {fileID: -4821321569709775190, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.18
+      objectReference: {fileID: 0}
+    - target: {fileID: -4821321569709775190, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.93
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
       propertyPath: m_Name
       value: Platform 1 - Asansor 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5513346883808740075, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1027,7 +1049,11 @@ PrefabInstance:
     - target: {fileID: 5513346883808740075, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 6e73d351e4d10f64eb553fdf72b35b6d, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a765c8e553fca04faced8272b31e733, type: 2}
+    - target: {fileID: 7994532730288662194, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
 --- !u!4 &2315396683674509972 stripped
@@ -1107,6 +1133,8 @@ MonoBehaviour:
   isComplated: 0
   wing: {fileID: 6893785281726991191}
   lockObject: {fileID: 0}
+  destsElev: []
+  sphere: {fileID: 0}
 --- !u!1001 &3405775122390588560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1118,6 +1146,10 @@ PrefabInstance:
       propertyPath: wing
       value: 
       objectReference: {fileID: 6268130552665923148}
+    - target: {fileID: 4178601567611390667, guid: e1ae64def49466a429762aaaabf440f8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a765c8e553fca04faced8272b31e733, type: 2}
     - target: {fileID: 8283440530274004939, guid: e1ae64def49466a429762aaaabf440f8, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1676,6 +1708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform 1 - Base
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c189adb3a9431224d89db0a5ff2b9a94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2716290727740520619, guid: c189adb3a9431224d89db0a5ff2b9a94, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1916,7 +1952,7 @@ PrefabInstance:
     - target: {fileID: 5513346883808740075, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 6e73d351e4d10f64eb553fdf72b35b6d, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a765c8e553fca04faced8272b31e733, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}
 --- !u!1 &6268130553857262536 stripped
@@ -1991,6 +2027,8 @@ MonoBehaviour:
   isComplated: 0
   wing: {fileID: 6268130554192434023}
   lockObject: {fileID: 0}
+  destsElev: []
+  sphere: {fileID: 0}
 --- !u!4 &6752882846959868274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7efc7f16e2b456341a46984c9d8fceef, type: 3}

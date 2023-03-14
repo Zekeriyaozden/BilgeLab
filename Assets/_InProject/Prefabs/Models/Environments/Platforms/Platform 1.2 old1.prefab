@@ -227,6 +227,9 @@ MonoBehaviour:
   elevat: {fileID: 0}
   isComplated: 0
   wing: {fileID: 0}
+  lockObject: {fileID: 0}
+  destsElev: []
+  sphere: {fileID: 0}
 --- !u!1 &2067782860114063668
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +426,9 @@ MonoBehaviour:
   elevat: {fileID: 0}
   isComplated: 0
   wing: {fileID: 0}
+  lockObject: {fileID: 0}
+  destsElev: []
+  sphere: {fileID: 0}
 --- !u!1 &2414203461991349448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,7 +1490,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 4f10ba784c88e684f89a16f1768dfa67, type: 2}
-  - {fileID: 2100000, guid: 6e73d351e4d10f64eb553fdf72b35b6d, type: 2}
+  - {fileID: 2100000, guid: 8a765c8e553fca04faced8272b31e733, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1821,7 +1827,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 4f10ba784c88e684f89a16f1768dfa67, type: 2}
-  - {fileID: 2100000, guid: 6e73d351e4d10f64eb553fdf72b35b6d, type: 2}
+  - {fileID: 2100000, guid: 8a765c8e553fca04faced8272b31e733, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

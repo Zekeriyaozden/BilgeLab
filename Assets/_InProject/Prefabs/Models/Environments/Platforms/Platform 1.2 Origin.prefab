@@ -76,6 +76,14 @@ PrefabInstance:
       propertyPath: lockObject
       value: 
       objectReference: {fileID: 8567210450617572540}
+    - target: {fileID: 1638995327775095922, guid: f5b963d4e3d02944096fa1a654dc6fa4, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a765c8e553fca04faced8272b31e733, type: 2}
+    - target: {fileID: 1638995329135810139, guid: f5b963d4e3d02944096fa1a654dc6fa4, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a765c8e553fca04faced8272b31e733, type: 2}
     - target: {fileID: 4107346181004961250, guid: f5b963d4e3d02944096fa1a654dc6fa4, type: 3}
       propertyPath: m_IsActive
       value: 0
