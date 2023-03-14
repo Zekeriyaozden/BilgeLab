@@ -22,9 +22,39 @@ public class UIManager : MonoBehaviour
     public List<string> leaderBoardAIName;
     public bool isLobby;
     public GameObject loadingCanvas;
+    public GameObject soundOn, soundOff, musicOn, musicOff;
+    public bool music, sound;
     
     void Start()
     {
+        int _sound = PlayerPrefs.GetInt("Sound", 1);
+        int _music = PlayerPrefs.GetInt("Music", 1);
+        if (_sound == 1)
+        {
+            sound = true;
+            soundOff.SetActive(false);
+            soundOn.SetActive(true);
+        }
+        else
+        {
+            sound = false;
+            soundOff.SetActive(true);
+            soundOn.SetActive(false); 
+        }
+
+        if (_music == 1)
+        {
+            music = true;
+            musicOn.SetActive(true);
+            musicOff.SetActive(false);
+        }
+        else
+        {
+            music = false;
+            musicOn.SetActive(false);
+            musicOff.SetActive(true);
+        }
+        
         if (!isLobby)
         {
             int _boardCount = leaderBoardAI.Count;
@@ -41,6 +71,43 @@ public class UIManager : MonoBehaviour
         loadingCanvas.SetActive(true);
         StartCoroutine(load());
     }
+
+    public void setSound(bool _sound)
+    {
+        if (_sound)
+        {
+            PlayerPrefs.SetInt("Sound", 1);
+            sound = true;
+            soundOff.SetActive(false);
+            soundOn.SetActive(true);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Sound", 0);
+            sound = false;
+            soundOff.SetActive(true);
+            soundOn.SetActive(false); 
+        }
+    }
+    
+    public void setMusic(bool _music)
+    {
+        if (_music)
+        {
+            PlayerPrefs.SetInt("Music", 1);
+            music = true;
+            musicOn.SetActive(true);
+            musicOff.SetActive(false);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Music", 0);
+            music = false;
+            musicOn.SetActive(false);
+            musicOff.SetActive(true);
+        }
+    }
+    
 
     private IEnumerator load()
     {
