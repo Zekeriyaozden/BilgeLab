@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -21,8 +22,12 @@ public class ElevatorController : MonoBehaviour
     private List<GameObject> aiList;
     private AIManager aiManager;
     private bool mainCharInElev;
+    public int countOfPlayer;
+    public GameObject canvasNew;
+    
     private void Awake()
     {
+        countOfPlayer = 0;
         aiList = new List<GameObject>();
         isElevMotion = false;
         playerCountInElev = 0;
@@ -96,11 +101,16 @@ public class ElevatorController : MonoBehaviour
     }
 
     // Update is called once per frame
+    private string numberOfPerson;
     void Update()
     {
 
-        if (playerCountInElev > 7)
+        canvasNew.transform.LookAt(Camera.main.gameObject.transform);
+        canvasNew.transform.eulerAngles += new Vector3(0, 180, 0);
+        countOfPlayer = playerCountInElev;
+        if (playerCountInElev > 8)
         {
+            countOfPlayer = playerCountInElev;
             sphere.SetActive(true);
             if (!isElevMotion && mainCharInElev)
             {
@@ -108,6 +118,10 @@ public class ElevatorController : MonoBehaviour
                 isElevMotion = true;
             }
         }
+
+        numberOfPerson = countOfPlayer.ToString() + "/9";
+        canvasNew.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = numberOfPerson;
+
     }
 
     private IEnumerator setElevMot()
@@ -199,6 +213,7 @@ public class ElevatorController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            playerCountInElev++;
             mainCharInElev = true;
             other.gameObject.transform.parent = elevat.transform;
             StartCoroutine(elevCenter(other.gameObject));

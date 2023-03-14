@@ -190,11 +190,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7458570083447072811, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
   m_PrefabInstance: {fileID: 2115392046}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &55469903 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4033779087826192748, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
-  m_PrefabInstance: {fileID: 1735145873}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &55469907 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4033779087826192749, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
@@ -205,6 +200,51 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5569018607000375372, guid: 4cf658268f566574bbf81123652fecd4, type: 3}
   m_PrefabInstance: {fileID: 229981390}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &89438193
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2DxFX/Standard/Lightning
+  m_Shader: {fileID: 4800000, guid: 2fe709954df631a4092385650f116e77, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 2800000, guid: 21297ee56dfcb3744aeca141dd1a29de, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 0
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _Value1: 10
+    - _Value2: 1.65
+    - _Value3: 1
+    - _Value4: 0
+    - _Value5: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &144622396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -545,51 +585,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
   m_PrefabInstance: {fileID: 311075040}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &331667058
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 2DxFX/Standard/Lightning
-  m_Shader: {fileID: 4800000, guid: 2fe709954df631a4092385650f116e77, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex2:
-        m_Texture: {fileID: 2800000, guid: 21297ee56dfcb3744aeca141dd1a29de, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Alpha: 0
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _Value1: 10
-    - _Value2: 1.65
-    - _Value3: 1
-    - _Value4: 0
-    - _Value5: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &342215703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,7 +1673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d147b12c469f9f4eb3ef934ad5a988c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameScreenCanvas: {fileID: 55469903}
+  GameScreenCanvas: {fileID: 1754359106}
   WinCanvas: {fileID: 672278580}
   LeaderBoardCanvas: {fileID: 1203602775}
   settingUIElement: {fileID: 1690940246}
@@ -4276,7 +4271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033779086626873823, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4033779086626873823, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
       propertyPath: m_AnchorMin.x
@@ -4288,7 +4283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033779086755760807, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4033779087242439690, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -4328,7 +4323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033779087826192748, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4033779087826192749, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
       propertyPath: m_Pivot.x
@@ -4447,13 +4442,73 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4033779086288958846, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033779086288958846, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033779086288958846, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 668771480}
+    - target: {fileID: 4033779086288958846, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033779086288958846, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: settingUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033779086288958846, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033779086288958846, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033779086288958846, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4033779086626873823, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4033779086755760807, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033779087242439690, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033779087242439690, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033779087242439690, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 668771480}
+    - target: {fileID: 4033779087242439690, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033779087242439690, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: settingUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033779087242439690, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033779087242439690, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4033779087492666067, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
       propertyPath: m_IsActive
@@ -4549,7 +4604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033779088024836402, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4033779088273340846, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
       propertyPath: m_Material
@@ -4557,6 +4612,11 @@ PrefabInstance:
       objectReference: {fileID: 534735659}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+--- !u!1 &1754359106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4033779087826192748, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+  m_PrefabInstance: {fileID: 1754359105}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1773196774
 GameObject:
   m_ObjectHideFlags: 0
