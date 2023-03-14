@@ -57,8 +57,14 @@ public class AIController : MonoBehaviour
         {
             FinalDest = dest[Random.Range(0, dest.Count)];
         }
+        gameObject.SetActive(false);
     }
 
+    public void setActive()
+    {
+        gameObject.SetActive(true);
+    }
+    
     public void inSpline()
     {
         isSpline = true;

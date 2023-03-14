@@ -20,20 +20,36 @@ public class UIManager : MonoBehaviour
     public GameObject confetiesParent;
     public List<GameObject> leaderBoardAI;
     public List<string> leaderBoardAIName;
+    public bool isLobby;
+    public GameObject loadingCanvas;
     
     void Start()
     {
-        int _boardCount = leaderBoardAI.Count;
-        for (int i = 0; i < _boardCount; i++)
+        if (!isLobby)
         {
-            leaderBoardAI[i].transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "#" + (i + 2).ToString();
-            leaderBoardAI[i].transform.GetChild(0).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "#" + (i + 2).ToString();
-            leaderBoardAI[i].transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = leaderBoardAIName[i];
-            leaderBoardAI[i].transform.GetChild(1).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = leaderBoardAIName[i];
+            int _boardCount = leaderBoardAI.Count;
+            for (int i = 0; i < _boardCount; i++)
+            {
+                leaderBoardAI[i].transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "#" + (i + 2).ToString();
+                leaderBoardAI[i].transform.GetChild(0).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "#" + (i + 2).ToString();
+                leaderBoardAI[i].transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = leaderBoardAIName[i];
+                leaderBoardAI[i].transform.GetChild(1).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = leaderBoardAIName[i];
+            }
+            targetScreen = GameScreenCanvas.transform.GetChild(0).GetChild(0);
+            settingUIElement.SetActive(false);
         }
-        targetScreen = GameScreenCanvas.transform.GetChild(0).GetChild(0);
-        settingUIElement.SetActive(false);
+        loadingCanvas.SetActive(true);
+        StartCoroutine(load());
     }
+
+    private IEnumerator load()
+    {
+        yield return new WaitForSeconds(5f);
+        loadingCanvas.SetActive(false);
+        GameObject.Find("AIManager").GetComponent<AIManager>().aiSetActive();
+    }
+    
+    
     private bool isSetingOpen = false;
     public void settingUI(bool set)
     {
@@ -48,6 +64,7 @@ public class UIManager : MonoBehaviour
             settingUIElement.SetActive(false);
         }
     }
+
 
     public void pipeControl(bool pipe)
     {

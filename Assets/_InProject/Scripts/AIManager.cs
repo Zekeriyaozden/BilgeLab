@@ -13,6 +13,14 @@ public class AIManager : MonoBehaviour
 
     }
     
+    public void aiSetActive()
+    {
+        int _count = AIList.Count;
+        for (int i = 0; i < _count; i++)
+        {
+            AIList[i].gameObject.GetComponent<AIController>().setActive();
+        }
+    }
     
     public void setDest(List<GameObject> dests)
     {
