@@ -2086,11 +2086,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dest: []
+  destTrue: []
+  destFalse: []
   FinalDest: {fileID: 0}
   isNav: 0
   TargetForGamePlay: 0
   ElevatorForGamePlay: {fileID: 0}
   speed: 0
+  currentLevel: 0
 --- !u!65 &-3481654853889543459
 BoxCollider:
   m_ObjectHideFlags: 0
