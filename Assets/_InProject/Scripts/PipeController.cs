@@ -35,10 +35,16 @@ public class PipeController : MonoBehaviour
             _controller.inSpline();
             if (isTrue)
             {
+                Debug.Log("truePipe");
+                gm.UIManager.pipeControl(true);
                 gm.envController.transition();
                 gameObject.transform.parent = null;
             }
-            //isUsed = true;
+            else
+            {
+                Debug.Log("falsePipe");
+                gm.UIManager.pipeControl(false);
+            }
         }
         
         else if (other.gameObject.tag == "AI")

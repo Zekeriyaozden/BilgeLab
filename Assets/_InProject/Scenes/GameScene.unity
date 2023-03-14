@@ -200,51 +200,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5569018607000375372, guid: 4cf658268f566574bbf81123652fecd4, type: 3}
   m_PrefabInstance: {fileID: 229981390}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &89438193
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 2DxFX/Standard/Lightning
-  m_Shader: {fileID: 4800000, guid: 2fe709954df631a4092385650f116e77, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex2:
-        m_Texture: {fileID: 2800000, guid: 21297ee56dfcb3744aeca141dd1a29de, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Alpha: 0
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _Value1: 10
-    - _Value2: 1.65
-    - _Value3: 1
-    - _Value4: 0
-    - _Value5: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &144622396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1674,6 +1629,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameScreenCanvas: {fileID: 1754359106}
+  truePipe: {fileID: 1754359108}
+  falsePipe: {fileID: 1754359107}
   WinCanvas: {fileID: 672278580}
   LeaderBoardCanvas: {fileID: 1203602775}
   settingUIElement: {fileID: 1690940246}
@@ -3580,7 +3537,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 86494bb33202d1e4c99535e610dae0e8, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86494bb33202d1e4c99535e610dae0e8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3702,6 +3659,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
   m_PrefabInstance: {fileID: 1405935728}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1479243408
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2DxFX/Standard/Lightning
+  m_Shader: {fileID: 4800000, guid: 2fe709954df631a4092385650f116e77, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 2800000, guid: 21297ee56dfcb3744aeca141dd1a29de, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 0
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _Value1: 10
+    - _Value2: 1.65
+    - _Value3: 1
+    - _Value4: 0
+    - _Value5: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1540609046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86494bb33202d1e4c99535e610dae0e8, type: 3}
@@ -4610,11 +4612,29 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 534735659}
+    - target: {fileID: 8177402266391958625, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9066985957612090548, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
 --- !u!1 &1754359106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4033779087826192748, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+  m_PrefabInstance: {fileID: 1754359105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1754359107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8177402266391958625, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
+  m_PrefabInstance: {fileID: 1754359105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1754359108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9066985957612090548, guid: 63b496efde4d552479ae32f5a44bd56e, type: 3}
   m_PrefabInstance: {fileID: 1754359105}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1773196774

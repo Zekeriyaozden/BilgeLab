@@ -24,10 +24,11 @@ public class CharacterController : MonoBehaviour
     public GameObject parachute;
     private bool parachuteOn;
     private bool skingOn;
-    
+    public bool gameEnd;
 
     void Start()
     {
+        gameEnd = false;
         skingOn = parachuteOn = false;
         startRotation = gameObject.transform.rotation.eulerAngles;
         startPosition = transform.position;
@@ -162,6 +163,12 @@ public class CharacterController : MonoBehaviour
     
     public void animatorController(float s,bool idle=false)
     {
+        if (gameEnd)
+        {
+            anim.SetBool("Dance",true);
+            changeMotion(false);
+            return;
+        }
         if (!parachuteOn)
         {
             anim.SetBool("Parachute",false);

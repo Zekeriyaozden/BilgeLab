@@ -9,6 +9,8 @@ using Random = UnityEngine.Random;
 public class UIManager : MonoBehaviour
 {
     public GameObject GameScreenCanvas;
+    public GameObject truePipe;
+    public GameObject falsePipe;
     public GameObject WinCanvas;
     public GameObject LeaderBoardCanvas;
     public GameObject settingUIElement;
@@ -35,6 +37,19 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void pipeControl(bool pipe)
+    {
+        truePipe.SetActive(false);
+        falsePipe.SetActive(false);
+        if (pipe)
+        {
+            truePipe.SetActive(true);
+        }
+        else
+        {
+            falsePipe.SetActive(true);
+        }
+    }
     public void starsStart()
     {
         for (int i = 0; i < stars.Count; i++)

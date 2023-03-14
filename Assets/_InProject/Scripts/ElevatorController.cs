@@ -118,7 +118,7 @@ public class ElevatorController : MonoBehaviour
                 isElevMotion = true;
             }
         }
-
+        
         numberOfPerson = countOfPlayer.ToString() + "/9";
         canvasNew.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = numberOfPerson;
 
@@ -188,6 +188,7 @@ public class ElevatorController : MonoBehaviour
             aiManager.AIList[i].GetComponent<AIController>().Call(elevat.gameObject);
         }
     }
+    
     
     
     

@@ -17,6 +17,25 @@ public class CameraController : MonoBehaviour
         offset = gameObject.transform.position - mainCharacter.transform.position;
     }
 
+
+    public void endGame()
+    {
+        inCameraFollow = false;
+        StartCoroutine(cameraMotionEnd(mainCharacter.transform.position));
+    }
+
+    private IEnumerator cameraMotionEnd(Vector3 charPos)
+    {
+        float k = 0;
+        Vector3 startPos = gameObject.transform.position;
+        while (k < .4f)
+        {
+            k += Time.deltaTime / 2f;
+            transform.position = Vector3.Lerp(startPos, charPos, k);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+    
     
     
     private void follow()

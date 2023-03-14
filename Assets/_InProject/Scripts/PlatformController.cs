@@ -88,16 +88,21 @@ public class PlatformController : MonoBehaviour
 
     private IEnumerator winUI()
     {
-        yield return new WaitForSeconds(4f);
+        env.gm.mainCharacterController.gameEnd = true;
+        yield return new WaitForSeconds(1f);
         env.gm.UIManager.winConfety();
+        yield return new WaitForSeconds(1f);
         env.gm.UIManager.WinCanvas.SetActive(true);
         env.gm.UIManager.starsStart();
     }
 
+    
+    
     private IEnumerator LeaderBoard(GameObject mainChar)
     {
         yield return new WaitForSeconds(2f);
         mainChar.gameObject.GetComponent<CharacterController>().changeMotion(false);
+        Camera.main.gameObject.GetComponent<CameraController>().endGame();
         PlayerPrefs.SetInt(env.level.ToString() + "isComplated" , 1);
         env.gm.UIManager.LeaderBoardCanvas.SetActive(true);
         //env.gm.UIManager.LeaderBoardCanvas.GetComponent<Animator>().speed = .2f;
