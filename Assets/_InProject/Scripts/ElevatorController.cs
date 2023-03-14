@@ -161,7 +161,7 @@ public class ElevatorController : MonoBehaviour
             wing.gameObject.GetComponent<Animator>().enabled = true;
             yield return new WaitForSeconds(1f);
             PlayerPrefs.SetInt("Level",levelIndex);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
         else
         {

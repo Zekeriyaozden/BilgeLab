@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public float mainCharacterSpeed;
     public float endOfSplineSpeed;
     public bool isLobby = false;
-    //[HideInInspector]
+    public List<GameObject> mainChars;
+    [HideInInspector]
     public GameObject mainCharacter;
     public CharacterController mainCharacterController;
     public int levelsOfCharacter;
@@ -21,6 +22,17 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("playerPrefs" + PlayerPrefs.GetInt("Character",-1));
+        if (PlayerPrefs.GetInt("Character", -1) == 0)
+        {
+            mainCharacter = mainChars[0];
+            mainChars[1].SetActive(false);
+        }
+        else
+        {
+            mainCharacter = mainChars[1];
+            mainChars[0].SetActive(false);
+        }
         mainCharacterController = mainCharacter.GetComponent<CharacterController>();
         mainCharacterController.changeSpeed(mainCharacterSpeed);
         dataReader = GameObject.Find("DataManager").GetComponent<DataReader>();

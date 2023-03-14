@@ -107,7 +107,7 @@ public class UIManager : MonoBehaviour
 
     public void winButtonClick()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
 

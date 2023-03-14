@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &76048151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1502972766099341162, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+  m_PrefabInstance: {fileID: 1616139923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &389751967 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7613703417410334667, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
@@ -182,7 +187,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 389751969}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1616139926}
+        m_TargetAssemblyTypeName: CharacterSelectionController, Assembly-CSharp
+        m_MethodName: characterSelect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &449637112
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +318,31 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &921752381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6002955358752617116, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+  m_PrefabInstance: {fileID: 1616139923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &921752382
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921752381}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc2149e271db0ca40a77beb4c93bdbd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1094705899
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +458,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &1169414903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4768953588167043318, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+  m_PrefabInstance: {fileID: 1616139923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1535588714 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7613703416343461968, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
@@ -475,7 +522,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1535588716}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1616139926}
+        m_TargetAssemblyTypeName: CharacterSelectionController, Assembly-CSharp
+        m_MethodName: characterSelect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1616139923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -483,6 +542,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 972325333007578690, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3452674853871708179, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7613703416527380940, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
       propertyPath: m_Name
       value: CharacterSelectionCanvas (1)
@@ -571,8 +638,95 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7613703418122685327, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613703418122685327, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613703418122685327, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1616139926}
+    - target: {fileID: 7613703418122685327, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613703418122685327, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: startGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613703418122685327, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CharacterSelectionController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613703418122685327, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+--- !u!1 &1616139924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7613703416527380940, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+  m_PrefabInstance: {fileID: 1616139923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1616139925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7613703418122685321, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+  m_PrefabInstance: {fileID: 1616139923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1616139926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616139924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb06b8a4fc613241ac969e9082dfeb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boy: 0
+  girl: 0
+  boyButton: {fileID: 389751967}
+  girlButton: {fileID: 1535588714}
+  startButton: {fileID: 1616139925}
+  mtBoy: {fileID: 2100000, guid: 36fe3e1a5f04e99409e60e6574f89ff4, type: 2}
+  mtGirl: {fileID: 2100000, guid: 938bb385e886383438bd7a7e60c2f846, type: 2}
+  mtStart: {fileID: 2100000, guid: a4d645ae20d285b46b1452a8f6c90356, type: 2}
+  emojiThink: {fileID: 76048151}
+  emojiGlass: {fileID: 1169414903}
+  boyObj: {fileID: 1616139927}
+  girlObj: {fileID: 921752381}
+--- !u!1 &1616139927 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1743439355246621686, guid: 6e557e971bbc37349b92739fba340d15, type: 3}
+  m_PrefabInstance: {fileID: 1616139923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1616139928
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616139927}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2dc516f81c7572e43b38bc2669d5004d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2008992712
 GameObject:
   m_ObjectHideFlags: 0
