@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,8 +18,19 @@ public class UIManager : MonoBehaviour
     public List<GameObject> stars;
     private Transform targetScreen;
     public GameObject confetiesParent;
+    public List<GameObject> leaderBoardAI;
+    public List<string> leaderBoardAIName;
+    
     void Start()
     {
+        int _boardCount = leaderBoardAI.Count;
+        for (int i = 0; i < _boardCount; i++)
+        {
+            leaderBoardAI[i].transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "#" + (i + 2).ToString();
+            leaderBoardAI[i].transform.GetChild(0).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "#" + (i + 2).ToString();
+            leaderBoardAI[i].transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = leaderBoardAIName[i];
+            leaderBoardAI[i].transform.GetChild(1).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = leaderBoardAIName[i];
+        }
         targetScreen = GameScreenCanvas.transform.GetChild(0).GetChild(0);
         settingUIElement.SetActive(false);
     }
