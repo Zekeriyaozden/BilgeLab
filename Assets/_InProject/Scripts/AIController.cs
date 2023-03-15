@@ -33,8 +33,11 @@ public class AIController : MonoBehaviour
     private bool isSpline;
     private GameObject currentPlatform;
     public GameObject parachute;
+    private bool zeroPlat;
     void Start()
     {
+        currentLevel = -1;
+        zeroPlat = false;
         startRot = transform.eulerAngles;
         isSpline = false;
         destTrue = new List<GameObject>();
@@ -46,16 +49,18 @@ public class AIController : MonoBehaviour
         startPos = transform.position;
         isNav = true;
         aiManager = GameObject.Find("AIManager").GetComponent<AIManager>();
-        dest = aiManager.destList;
+
         navMesh = gameObject.GetComponent<NavMeshAgent>();
 
         if (!gm.isLobby)
         {
             Debug.Log("isnav");
             isNav = false;
+            dest = new List<GameObject>();
         }
         else
         {
+            dest = aiManager.destList;
             FinalDest = dest[Random.Range(0, dest.Count)];
         }
         gameObject.SetActive(false);
@@ -130,7 +135,6 @@ public class AIController : MonoBehaviour
     
     private IEnumerator endSplineMotion(Vector3 targetPos,Vector3 targetRot)
     {
-        Debug.Log("inThere");
         //onParachute(true);
         float k = 0;
         Vector3 startRot = gameObject.transform.eulerAngles;
@@ -247,6 +251,9 @@ public class AIController : MonoBehaviour
                else if (aiManager.levelOfMainChar > currentLevel)
                {
                    select = Random.Range(2, 10);
+               }else if (aiManager.levelOfMainChar > currentLevel + 1)
+               {
+                   select = 0;
                }
                if (select < 2)
                {
@@ -301,8 +308,14 @@ public class AIController : MonoBehaviour
     }
     private void waitForPlatform(GameObject other)
     {
+        Debug.Log("WaitForPlatform");
         dest.Clear();
-        dest = other.gameObject.GetComponent<PlatformController>().dests;
+        Debug.Log("clear");
+        int _count = other.gameObject.GetComponent<PlatformController>().dests.Count;
+        for (int i = 0; i < _count; i++)
+        {
+            dest.Add(other.gameObject.GetComponent<PlatformController>().dests[i]);
+        }
         destFalse.Clear();
         destTrue.Clear();
         StartCoroutine(destsForTrue(other.gameObject.GetComponent<PlatformController>()));
@@ -313,9 +326,15 @@ public class AIController : MonoBehaviour
         if (other.tag == "Platform")
         {
             currentPlatform = other.gameObject;
-            if (other.gameObject.GetComponent<PlatformController>().level == currentLevel && currentLevel != 0)
+            dest.Clear();
+            if (other.gameObject.GetComponent<PlatformController>().level == currentLevel)
             {
-                
+                int _count = other.gameObject.GetComponent<PlatformController>().dests.Count;
+                for (int i = 0; i < _count; i++)
+                {
+                    dest.Add(other.gameObject.GetComponent<PlatformController>().dests[i]);
+                }
+                FinalDest = dest[Random.Range(0, dest.Count)];
             }
             else
             {
