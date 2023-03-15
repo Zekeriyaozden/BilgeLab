@@ -25,9 +25,11 @@ public class ElevatorController : MonoBehaviour
     public int countOfPlayer;
     public GameObject canvasNew;
     public GameObject Unlockparticle;
+    public bool openForce;
     
     private void Awake()
     {
+        openForce = false;
         Unlockparticle.SetActive(false);
         countOfPlayer = 0;
         aiList = new List<GameObject>();
@@ -59,14 +61,23 @@ public class ElevatorController : MonoBehaviour
         yield return new WaitForSeconds(.2f);
         if (isComplated || unlockForce)
         {
-            Debug.Log(unlockForce);
             lockObject.gameObject.GetComponent<Animator>().SetBool("Unlock",true);
             Unlockparticle.SetActive(true);
             gameObject.GetComponent<Collider>().isTrigger = true;
         }
         else
         {
-            gameObject.GetComponent<Collider>().isTrigger = false;
+            if (openForce)
+            {
+                Debug.Log(unlockForce);
+                lockObject.gameObject.GetComponent<Animator>().SetBool("Unlock",true);
+                Unlockparticle.SetActive(true);
+                gameObject.GetComponent<Collider>().isTrigger = true;
+            }
+            else
+            {
+                gameObject.GetComponent<Collider>().isTrigger = false;   
+            }
         }
     }
 

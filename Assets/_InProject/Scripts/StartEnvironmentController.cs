@@ -17,33 +17,51 @@ public class StartEnvironmentController : MonoBehaviour
         distance = startPlatforms[1].transform.position.z - startPlatforms[0].transform.position.z;
         sizeOfQuestion = GameObject.Find("GameManager").GetComponent<GameManager>().dataReader.sizeOfQuestion();
         int countOfPlatform = sizeOfQuestion / 20;
-        Debug.Log(countOfPlatform);
         levelIndex();
         if (countOfPlatform >= 2)
         {
             for (int i = 0; i < countOfPlatform-2; i++)
             {
+                bool isLastPlt = false;
                 GameObject _pltfrm;
                 if (countOfPlatform - 3 == i)
                 {
+                    isLastPlt = true;
                     _pltfrm = Instantiate(lastPlatformPrefab); 
                 }
                 else
                 {
                     _pltfrm = Instantiate(platform1Prefabs);   
                 }
-                _pltfrm.transform.position = new Vector3(startPlatforms[1].transform.position.x,
-                    startPlatforms[1].transform.position.y, startPlatforms[startPlatforms.Count - 1].transform.position.z + 28);
-                startPlatforms.Add(_pltfrm);
-                Debug.Log(_pltfrm);
-                _pltfrm.GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>()
-                    .levelIndex = sumOfLevel;
-                _pltfrm.GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>().levelIndexer();
-                sumOfLevel++;
-                _pltfrm.GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>()
-                    .levelIndex = sumOfLevel;
-                _pltfrm.GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>().levelIndexer();
-                sumOfLevel++;
+
+                if (isLastPlt)
+                {
+                    _pltfrm.transform.position = new Vector3(startPlatforms[1].transform.position.x + 14.56f,
+                        startPlatforms[1].transform.position.y, startPlatforms[startPlatforms.Count - 1].transform.position.z + 32.21f - 8.42f);
+                    startPlatforms.Add(_pltfrm);
+                    _pltfrm.GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>()
+                        .levelIndex = sumOfLevel;
+                    _pltfrm.GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>().levelIndexer();
+                    sumOfLevel++;
+                    _pltfrm.GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>()
+                        .levelIndex = sumOfLevel;
+                    _pltfrm.GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>().levelIndexer();
+                    sumOfLevel++;
+                }
+                else
+                {
+                    _pltfrm.transform.position = new Vector3(startPlatforms[1].transform.position.x,
+                        startPlatforms[1].transform.position.y, startPlatforms[startPlatforms.Count - 1].transform.position.z + 28);
+                    startPlatforms.Add(_pltfrm);
+                    _pltfrm.GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>()
+                        .levelIndex = sumOfLevel;
+                    _pltfrm.GetComponent<StartPlatformController>().elevator1.GetComponent<ElevatorController>().levelIndexer();
+                    sumOfLevel++;
+                    _pltfrm.GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>()
+                        .levelIndex = sumOfLevel;
+                    _pltfrm.GetComponent<StartPlatformController>().elevator2.GetComponent<ElevatorController>().levelIndexer();
+                    sumOfLevel++;
+                }
             }
         }
         findFirstUncomplatedElev();
@@ -61,6 +79,8 @@ public class StartEnvironmentController : MonoBehaviour
             {
                 startPlatforms[i].gameObject.GetComponent<StartPlatformController>().elevator1
                     .GetComponent<ElevatorController>().lockObject.SetActive(false);
+                StartCoroutine(startPlatforms[i].gameObject.GetComponent<StartPlatformController>().elevator1
+                    .GetComponent<ElevatorController>().unLock(true));
             }
             else
             {
@@ -91,8 +111,10 @@ public class StartEnvironmentController : MonoBehaviour
             }
             else
             {
+                
                 targetPlatform = startPlatforms[i];
                 targetElev = startPlatforms[i].GetComponent<StartPlatformController>().elevator1;
+                Debug.Log(targetElev);
                 breakFlag = true;
                 break;
             }
@@ -104,7 +126,8 @@ public class StartEnvironmentController : MonoBehaviour
             }else
             {
                 targetPlatform = startPlatforms[i];
-                targetElev = startPlatforms[i].GetComponent<StartPlatformController>().elevator1;
+                targetElev = startPlatforms[i].GetComponent<StartPlatformController>().elevator2;
+                Debug.Log(targetElev);
                 breakFlag = true;
                 break;
             }
@@ -113,6 +136,10 @@ public class StartEnvironmentController : MonoBehaviour
         {
             targetPlatform = startPlatforms[_count - 1];
             targetElev = startPlatforms[_count - 1].GetComponent<StartPlatformController>().elevator2;
+        }
+        else
+        {
+            StartCoroutine(targetElev.GetComponent<ElevatorController>().unLock(true));
         }
     }
     

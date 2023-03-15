@@ -248,7 +248,7 @@ public class AIController : MonoBehaviour
                {
                    select = 10;
                }
-               else if (aiManager.levelOfMainChar > currentLevel)
+               else if (aiManager.levelOfMainChar == currentLevel+1)
                {
                    select = Random.Range(2, 10);
                }else if (aiManager.levelOfMainChar > currentLevel + 1)
@@ -326,7 +326,6 @@ public class AIController : MonoBehaviour
         if (other.tag == "Platform")
         {
             currentPlatform = other.gameObject;
-            dest.Clear();
             if (other.gameObject.GetComponent<PlatformController>().level == currentLevel)
             {
                 int _count = other.gameObject.GetComponent<PlatformController>().dests.Count;

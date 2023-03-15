@@ -40,7 +40,7 @@ public class StartPlatformController : MonoBehaviour
 
     private IEnumerator DoorBeh()
     {
-        //yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
         if (!isOpened)
         {
             isOpened = true;
@@ -50,6 +50,7 @@ public class StartPlatformController : MonoBehaviour
                 if (elevator1.GetComponent<ElevatorController>().isComplated &&
                     elevator2.GetComponent<ElevatorController>().isComplated)
                 {
+                    Debug.Log("OpenDoor");
                     door.GetComponent<Animator>().enabled = true;
                     Material[] mt =  door.transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().materials;
                     yield return new WaitForSeconds(1.2f);
