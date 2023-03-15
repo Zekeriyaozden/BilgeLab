@@ -70,7 +70,7 @@ public class UIManager : MonoBehaviour
         }
 
         Debug.Log("load");
-        loadingCanvas.SetActive(true);
+        //loadingCanvas.SetActive(true);
         StartCoroutine(load());
     }
 

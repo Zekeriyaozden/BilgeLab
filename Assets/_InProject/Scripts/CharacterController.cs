@@ -10,7 +10,8 @@ public class CharacterController : MonoBehaviour
     private bool letChangeTheMotion;
     private float speed;
     private DynamicJoystick dynamicJoystick;
-    [HideInInspector]public Vector3 direction;
+    //[HideInInspector]
+    public Vector3 direction;
     [HideInInspector]public float _magn;
     [HideInInspector]public Vector2 _magnVert;
     private Animator anim;
@@ -255,11 +256,12 @@ public class CharacterController : MonoBehaviour
         if (inMotion)
         {
             direction = Vector3.forward * dynamicJoystick.Vertical + Vector3.right * dynamicJoystick.Horizontal;
+            direction = Quaternion.Euler(0, -62.6f, 0) * direction;
             _magn = direction.magnitude;
             if (_magn > 0.1f)
             {
                 animatorController(_magn);
-                gameObject.transform.Translate(Vector3.forward*_magn * Time.deltaTime * speed,Space.Self);
+                gameObject.transform.Translate(direction * Time.deltaTime * speed,Space.World);
                 gameObject.transform.LookAt(gameObject.transform.position + direction);
             }
             else
