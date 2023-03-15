@@ -229,7 +229,11 @@ MonoBehaviour:
   wing: {fileID: 0}
   lockObject: {fileID: 0}
   destsElev: []
+  playerCountInElev: 0
   sphere: {fileID: 0}
+  countOfPlayer: 0
+  canvasNew: {fileID: 0}
+  Unlockparticle: {fileID: 0}
 --- !u!1 &2067782860114063668
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +432,11 @@ MonoBehaviour:
   wing: {fileID: 0}
   lockObject: {fileID: 0}
   destsElev: []
+  playerCountInElev: 0
   sphere: {fileID: 0}
+  countOfPlayer: 0
+  canvasNew: {fileID: 0}
+  Unlockparticle: {fileID: 0}
 --- !u!1 &2414203461991349448
 GameObject:
   m_ObjectHideFlags: 0
