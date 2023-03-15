@@ -121,16 +121,7 @@ public class CharacterSelectionController : MonoBehaviour
             firstSelect = false;   
         }
     }
-
-    private IEnumerator startGameCor(GameObject obj)
-    {
-        //obj.gameObject.GetComponent<Animator>().SetBool("Dance",true);
-        
-        obj.transform.SetParent(elevatorBone.transform);
-        yield return new WaitForSeconds(1.8f);
-
-        StartCoroutine(startGameAnim());
-    }
+    
 
     private IEnumerator startGameAnim()
     {
@@ -164,7 +155,9 @@ public class CharacterSelectionController : MonoBehaviour
             return;
         }
         started = true;
-        StartCoroutine(startGameCor(_obj));
+        _obj.transform.SetParent(elevatorBone.transform);
+
+        StartCoroutine(startGameAnim());
     }
     
     void Update()
@@ -176,8 +169,16 @@ public class CharacterSelectionController : MonoBehaviour
         }
         else
         {
-            startButton.GetComponent<Button>().interactable = true;
-            mtStart.SetFloat("_Trigger",1.7f);
+            if (objOnGoing)
+            {
+                startButton.GetComponent<Button>().interactable = false;
+                mtStart.SetFloat("_Trigger",0);
+            }
+            else
+            {
+                startButton.GetComponent<Button>().interactable = true;
+                mtStart.SetFloat("_Trigger",1.7f);
+            }
         }
     }
 }
