@@ -16,6 +16,7 @@ public class DataReader : MonoBehaviour
         selectableIndex = new List<int>();
         dataSet = new List<QuestionData>();
         Read();
+        Debug.Log( "----><----"+PlayerPrefs.GetInt("Level", 1) + "----><----");
         indexer(PlayerPrefs.GetInt("Level", 1));
     }
 

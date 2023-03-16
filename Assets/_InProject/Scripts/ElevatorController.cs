@@ -82,6 +82,27 @@ public class ElevatorController : MonoBehaviour
     }
 
 
+    public bool target = false;
+    private bool _flag = false;
+    private bool afterAIs()
+    {
+        bool _fr = false;
+        if (!_flag) {_fr = true;}
+        if (target && !_flag)
+        {
+            aiManager.destList.RemoveAt(aiManager.destList.Count - 1);
+            _flag = true;
+        }
+
+        if (_fr)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     
     public void levelIndexer()
     {
@@ -127,11 +148,23 @@ public class ElevatorController : MonoBehaviour
         canvasNew.transform.LookAt(Camera.main.gameObject.transform);
         canvasNew.transform.eulerAngles += new Vector3(0, 180, 0);
         countOfPlayer = playerCountInElev;
+        if (mainCharInElev && playerCountInElev < 8)
+        {
+            sphere.SetActive(false);
+        }
         if ((playerCountInElev > 8 && mainCharInElev) || (playerCountInElev > 7 && !mainCharInElev))
         {
             
             countOfPlayer = playerCountInElev;
-            aiManager.randomMove();
+            bool _control = afterAIs();
+            if (_control)
+            {
+                aiManager.randomMove();   
+            }
+            else
+            {
+                
+            }
             sphere.SetActive(true);
             if (!isElevMotion && mainCharInElev)
             {

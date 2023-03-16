@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.2
     agentHeight: 2
     agentSlope: 22.7
     agentClimb: 0.31
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.06666667
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: destsElev.Array.data[7]
       value: 
       objectReference: {fileID: 898012442}
+    - target: {fileID: 1972897506289409425, guid: 7670870249ca3ee45ad69438732326f3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6502553920520601558, guid: 7670870249ca3ee45ad69438732326f3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -262,6 +266,10 @@ PrefabInstance:
       propertyPath: destsElev.Array.data[7]
       value: 
       objectReference: {fileID: 1365034283}
+    - target: {fileID: 8421487500782789653, guid: 7670870249ca3ee45ad69438732326f3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7670870249ca3ee45ad69438732326f3, type: 3}
 --- !u!1001 &44901583
@@ -273,7 +281,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3481654853889543459, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458570083447072811, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_Name
@@ -595,6 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questdata: {fileID: 4900000, guid: e0a2b65e6a5536e459103ac4aa7d66c2, type: 3}
+  selectableIndex: 
 --- !u!1001 &131952785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -604,7 +613,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3481654853889543459, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458570083447072811, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_Name
@@ -793,7 +802,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3481654853889543459, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458570083447072811, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_Name
@@ -879,7 +888,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3481654853889543459, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458570083447072811, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_Name
@@ -1260,6 +1269,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6510094751574301779, guid: 223ff2f64a8c5c248b1ab229b32d7890, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 223ff2f64a8c5c248b1ab229b32d7890, type: 3}
 --- !u!4 &331978553 stripped
@@ -1476,6 +1489,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3057323368141749561, guid: 223ff2f64a8c5c248b1ab229b32d7890, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6510094751574301779, guid: 223ff2f64a8c5c248b1ab229b32d7890, type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1923,6 +1940,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3057323368141749561, guid: 223ff2f64a8c5c248b1ab229b32d7890, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6510094751574301779, guid: 223ff2f64a8c5c248b1ab229b32d7890, type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2423,7 +2444,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823678349}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3045,6 +3066,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6510094751574301779, guid: 223ff2f64a8c5c248b1ab229b32d7890, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 223ff2f64a8c5c248b1ab229b32d7890, type: 3}
 --- !u!4 &1206917321 stripped
@@ -3347,7 +3372,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3481654853889543459, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458570083447072811, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_Name
@@ -3443,7 +3468,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3481654853889543459, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458570083447072811, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_Name
@@ -3889,6 +3914,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6510094751574301779, guid: 223ff2f64a8c5c248b1ab229b32d7890, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 223ff2f64a8c5c248b1ab229b32d7890, type: 3}
 --- !u!4 &1556990847 stripped
@@ -3994,7 +4023,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3481654853889543459, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458570083447072811, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_Name
@@ -4075,7 +4104,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3481654853889543459, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458570083447072811, guid: 1b4869a169e6bea4280b632fb6e1e491, type: 3}
       propertyPath: m_Name
@@ -4519,6 +4548,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3057323368141749561, guid: 223ff2f64a8c5c248b1ab229b32d7890, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6510094751574301779, guid: 223ff2f64a8c5c248b1ab229b32d7890, type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

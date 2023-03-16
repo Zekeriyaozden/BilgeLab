@@ -67,6 +67,7 @@ public class StartEnvironmentController : MonoBehaviour
         findFirstUncomplatedElev();
         targetPlatform.GetComponent<StartPlatformController>().setPlatformDests(targetElev);
         startElev();
+        targetElev.gameObject.GetComponent<ElevatorController>().target = true;
     }
 
     public void startElev()
