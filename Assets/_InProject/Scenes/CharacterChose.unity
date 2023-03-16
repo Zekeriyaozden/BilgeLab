@@ -26921,12 +26921,12 @@ MonoBehaviour:
   _spline:
     points:
     - _type: 0
-      position: {x: 4.7977886, y: -0.92234373, z: -8.200745}
+      position: {x: 4.8154163, y: -0.9225602, z: -8.209991}
       color: {r: 1, g: 1, b: 1, a: 1}
       normal: {x: 0, y: 1, z: 0}
       size: 1
-      tangent: {x: 5.415846, y: -0.48156738, z: -9.998077}
-      tangent2: {x: 4.1797314, y: -1.3631201, z: -6.403412}
+      tangent: {x: 5.435404, y: -0.92353415, z: -10.288452}
+      tangent2: {x: 4.195429, y: -0.9215863, z: -6.131531}
     - _type: 0
       position: {x: -8.041353, y: -0.86194754, z: -6.9361877}
       color: {r: 1, g: 1, b: 1, a: 1}
@@ -26959,57 +26959,57 @@ MonoBehaviour:
   _sampleMode: 0
   _subscribers: []
   _rawSamples:
-  - position: {x: 4.7977886, y: -0.92234373, z: -8.200745}
+  - position: {x: 4.8154163, y: -0.9225602, z: -8.209991}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.31677824, y: -0.22591491, z: 0.9212025}
+    forward: {x: -0.2858456, y: 0.00044903558, z: 0.95827556}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0
-  - position: {x: 4.3405576, y: -1.0370245, z: -7.688674}
+  - position: {x: 4.357072, y: -0.9208878, z: -7.623562}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.84580255, y: -0.10278045, z: 0.523502}
+    forward: {x: -0.8198875, y: 0.0034663328, z: 0.57251424}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0.1111111111111111
-  - position: {x: 3.4386992, y: -1.0948031, z: -7.3326416}
+  - position: {x: 3.4533238, y: -0.9168379, z: -7.2273445}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.96692014, y: -0.029239545, z: 0.25339788}
+    forward: {x: -0.96178424, y: 0.0044519217, z: 0.27377218}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0.2222222222222222
-  - position: {x: 2.17891, y: -1.1070598, z: -7.105582}
+  - position: {x: 2.19111, y: -0.9108867, z: -6.987486}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.99266374, y: 0.0047249147, z: 0.12081559}
+    forward: {x: -0.99257475, y: 0.0047382996, z: 0.12154406}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0.3333333333333333
-  - position: {x: 0.64788866, y: -1.0851753, z: -6.9804373}
+  - position: {x: 0.65737104, y: -0.9035113, z: -6.870138}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.9984823, y: 0.021437136, z: 0.050731074}
+    forward: {x: -0.999146, y: 0.0048290393, z: 0.04103671}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0.4444444444444444
-  - position: {x: -1.0676718, y: -1.0405297, z: -6.930141}
+  - position: {x: -1.0609564, y: -0.89518785, z: -6.841445}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.9994936, y: 0.029346894, z: 0.0123006515}
+    forward: {x: -0.9999853, y: 0.004848543, z: -0.0024419653}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0.5555555555555556
-  - position: {x: -2.881072, y: -0.9845037, z: -6.9276304}
+  - position: {x: -2.8769307, y: -0.88639313, z: -6.8675547}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.99947864, y: 0.031576212, z: -0.006738983}
+    forward: {x: -0.99972385, y: 0.0048310785, z: -0.022996122}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0.6666666666666666
-  - position: {x: -4.705617, y: -0.92847776, z: -6.9458437}
+  - position: {x: -4.7036147, y: -0.87760377, z: -6.914617}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.999521, y: 0.028984541, z: -0.010850687}
+    forward: {x: -0.9996597, y: 0.004783455, z: -0.025644317}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0.7777777777777778
-  - position: {x: -6.454609, y: -0.88383216, z: -6.957717}
+  - position: {x: -6.454068, y: -0.8692964, z: -6.948778}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.9997816, y: 0.020896267, z: 0.0001885413}
+    forward: {x: -0.99994135, y: 0.0046971906, z: -0.009758104}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0.8888888888888888
@@ -42919,6 +42919,10 @@ PrefabInstance:
     - target: {fileID: 3190313087588341061, guid: 5e3c4ff2e5f2f1049aef1cb7ac2121bc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3190313088048964350, guid: 5e3c4ff2e5f2f1049aef1cb7ac2121bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3190313088435608664, guid: 5e3c4ff2e5f2f1049aef1cb7ac2121bc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

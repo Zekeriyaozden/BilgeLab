@@ -42,9 +42,10 @@ public class CharacterSelectionController : MonoBehaviour
     {
         sp.followMode = SplineFollower.FollowMode.Time;
         sp.followDuration = 1f;
+        sp.motion.applyRotationX = false;
         objOnGoing = true;
         obj.GetComponent<Animator>().SetBool("Walking",true);
-        obj.GetComponent<Animator>().SetBool("Idle",false);
+        obj.GetComponent<Animator>().SetBool("Dance",false);
         bool _control = true;
         while (_control)
         {
@@ -57,7 +58,7 @@ public class CharacterSelectionController : MonoBehaviour
         obj.GetComponent<SplineFollower>().enabled = false;
         objOnGoing = false;
         obj.GetComponent<Animator>().SetBool("Walking",false);
-        obj.GetComponent<Animator>().SetBool("Idle",true);
+        obj.GetComponent<Animator>().SetBool("Dance",true);
     }
 
     public void boySelected()
