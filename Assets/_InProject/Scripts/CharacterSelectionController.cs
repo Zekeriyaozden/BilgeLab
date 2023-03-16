@@ -55,7 +55,8 @@ public class CharacterSelectionController : MonoBehaviour
                 _control = false;
             }
         }
-        obj.GetComponent<SplineFollower>().enabled = false;
+        Destroy(sp);
+        //obj.GetComponent<SplineFollower>().enabled = false;
         objOnGoing = false;
         obj.GetComponent<Animator>().SetBool("Walking",false);
         obj.GetComponent<Animator>().SetBool("Dance",true);

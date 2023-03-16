@@ -26,6 +26,7 @@ public class ElevatorController : MonoBehaviour
     public GameObject canvasNew;
     public GameObject Unlockparticle;
     public bool openForce;
+    public GameObject peopleTick;
     
     private void Awake()
     {
@@ -41,6 +42,8 @@ public class ElevatorController : MonoBehaviour
 
     void Start()
     {
+        peopleTick.gameObject.transform.position -= new Vector3(0, 1, 0);
+        peopleTick.SetActive(false);
         mainCharInElev = false;
         aiManager = GameObject.Find("AIManager").GetComponent<AIManager>();
         //destsElev.Add(transform.GetChild(transform.childCount - 1).GetChild(0).transform.position);
@@ -58,7 +61,12 @@ public class ElevatorController : MonoBehaviour
     
     public IEnumerator unLock(bool unlockForce = false)
     {
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(5f);
+        if (isComplated)
+        {
+            peopleTick.SetActive(true);
+            canvasNew.SetActive(false);
+        }
         if (isComplated || unlockForce)
         {
             lockObject.gameObject.GetComponent<Animator>().SetBool("Unlock",true);
@@ -144,9 +152,16 @@ public class ElevatorController : MonoBehaviour
     private string numberOfPerson;
     void Update()
     {
-
-        canvasNew.transform.LookAt(Camera.main.gameObject.transform);
-        canvasNew.transform.eulerAngles += new Vector3(0, 180, 0);
+        if (canvasNew)
+        {
+            canvasNew.transform.LookAt(Camera.main.gameObject.transform);
+            canvasNew.transform.localEulerAngles += new Vector3(0, 180, 0);
+        }
+        if (peopleTick)
+        {
+            peopleTick.transform.LookAt(Camera.main.gameObject.transform);
+            //peopleTick.transform.localEulerAngles += new Vector3(0, 180, 0);
+        }
         countOfPlayer = playerCountInElev;
         if (mainCharInElev && playerCountInElev < 8)
         {
@@ -244,8 +259,12 @@ public class ElevatorController : MonoBehaviour
             aiManager.AIList[i].GetComponent<AIController>().Call(elevat.gameObject);
         }
     }
-    
-    
+
+    private void tickOffCounterOn()
+    {
+        peopleTick.SetActive(false);
+        canvasNew.SetActive(true);
+    }
     
     
 
@@ -270,6 +289,7 @@ public class ElevatorController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            tickOffCounterOn();
             playerCountInElev++;
             mainCharInElev = true;
             other.gameObject.transform.parent = elevat.transform;
@@ -283,6 +303,7 @@ public class ElevatorController : MonoBehaviour
         }
         else if (other.tag == "AI")
         {
+            tickOffCounterOn();
             AIControlForElev(other.gameObject);
         }
     }
