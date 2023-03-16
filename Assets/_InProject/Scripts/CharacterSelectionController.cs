@@ -143,14 +143,11 @@ public class CharacterSelectionController : MonoBehaviour
         {
             return;
         }
-        GameObject _obj = new GameObject();
         if (boy)
         {
-            _obj = boyObj; 
             PlayerPrefs.SetInt("Character",0);
         }else if (girl)
         {
-            _obj = girlObj;
             PlayerPrefs.SetInt("Character",1);
         }
         else
@@ -159,7 +156,8 @@ public class CharacterSelectionController : MonoBehaviour
             return;
         }
         started = true;
-        _obj.transform.SetParent(elevatorBone.transform);
+        girlObj.transform.SetParent(elevatorBone.transform);
+        boyObj.transform.SetParent(elevatorBone.transform);
 
         StartCoroutine(startGameAnim());
     }

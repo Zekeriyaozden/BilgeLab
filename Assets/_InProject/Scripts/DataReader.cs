@@ -9,11 +9,14 @@ public class DataReader : MonoBehaviour
 {
     public TextAsset questdata;
     public List<QuestionData> dataSet;
+    public List<int> selectableIndex;
 
     private void Awake()
     {
+        selectableIndex = new List<int>();
         dataSet = new List<QuestionData>();
         Read();
+        indexer(PlayerPrefs.GetInt("Level", 1));
     }
 
     public int sizeOfQuestion()
@@ -22,51 +25,104 @@ public class DataReader : MonoBehaviour
         return dataSet.Count;
     }
     
-    public QuestionData selectRandomQuestion(int Level)
+    public QuestionData selectRandomQuestion(int _level)
     {
-        List<int> selectebleIndexes = new List<int>();
-        
-        
-        for (int i = 0; i < dataSet.Count; i++)
+        if (selectableIndex.Count == 10)
         {
-            if ((PlayerPrefs.GetInt(i.ToString(), -1) == Level))
-            {
-                selectebleIndexes.Add(i);   
-            }
-        }
-        
-        if (selectebleIndexes.Count < 10)
-        {
-            int _counter = selectebleIndexes.Count;
-            for (int i = 0; i < dataSet.Count; i++)
-            {
-                if ((PlayerPrefs.GetInt(i.ToString(), -1) == -1))
-                {
-                    selectebleIndexes.Add(i);
-                    PlayerPrefs.SetInt(i.ToString(),Level);
-                    _counter++;
-                    if (_counter >= 10)
-                    {
-                        break;
-                    }
-                }
-            }
-        }
-
-        if (selectebleIndexes.Count < 1)
-        {
-            return null;
+            Debug.Log("->Level-> " + _level + "Qid-->>" + dataSet[selectableIndex[_level]].id.ToString());
+            return dataSet[selectableIndex[_level]];
+            
         }
         else
         {
-            int randIndex = Random.Range(0, selectebleIndexes.Count-1);
-            int randId = selectebleIndexes[randIndex];
-            QuestionData dt = dataSet.Find(x => x.id == randId);
-            return dt;
+            Debug.Log("NotTrueData");
+            return dataSet[Random.Range(0, dataSet.Count)];
+        }
+        /* for (int i = 0; i < dataSet.Count; i++)
+         {
+             if ((PlayerPrefs.GetInt(i.ToString(), -1) == 20))
+             {
+                 selectebleIndexes.Add(i);   
+             }
+         }
+         
+         if (selectebleIndexes.Count < 10)
+         {
+             int _counter = selectebleIndexes.Count;
+             for (int i = 0; i < dataSet.Count; i++)
+             {
+                 if ((PlayerPrefs.GetInt(i.ToString(), -1) == -1))
+                 {
+                     selectebleIndexes.Add(i);
+                     PlayerPrefs.SetInt(i.ToString(),Level);
+                     _counter++;
+                     if (_counter >= 10)
+                     {
+                         break;
+                     }
+                 }
+             }
+         }
+ 
+         if (selectebleIndexes.Count < 1)
+         {
+             return null;
+         }
+         else
+         {
+             int randIndex = Random.Range(0, selectebleIndexes.Count-1);
+             int randId = selectebleIndexes[randIndex];
+             QuestionData dt = dataSet.Find(x => x.id == randId);
+             return dt;
+         }*/
+    }
+
+    private void indexer(int _level)
+    {
+        List<int> emptyQuestion = new List<int>();
+        int _count = dataSet.Count;
+        for (int i = 0; i < _count; i++)
+        {
+            if ((PlayerPrefs.GetInt(i.ToString(), -1) == _level))
+            {
+                selectableIndex.Add(i);
+            }else if ((PlayerPrefs.GetInt(i.ToString(), -1) == -1))
+            {
+                emptyQuestion.Add(i);
+            }
+        }
+        if (selectableIndex.Count == 0)
+        {
+            if (emptyQuestion.Count > 10)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    int _temp = Random.Range(0, emptyQuestion.Count - 1);
+                    selectableIndex.Add(emptyQuestion[_temp]);
+                    PlayerPrefs.SetInt(i.ToString(), _level);
+                    emptyQuestion.Remove(emptyQuestion[_temp]);
+                }
+            }
+            else
+            {
+                
+            }
+        }
+        else
+        {
+            int _tempF = selectableIndex.Count;
+            if (_tempF < 10)
+            {
+                for (int i = _tempF; i < 10; i++)
+                {
+                    int _temp = Random.Range(0, emptyQuestion.Count - 1);
+                    selectableIndex.Add(emptyQuestion[_temp]);
+                    PlayerPrefs.SetInt(i.ToString(), _level);
+                    emptyQuestion.Remove(emptyQuestion[_temp]);
+                }
+            }
         }
     }
-    
-    
 
     void Read()
     {

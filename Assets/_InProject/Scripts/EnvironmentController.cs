@@ -57,8 +57,7 @@ public class EnvironmentController : MonoBehaviour
     {
         for (int i = 0; i < platforms.Count; i++)
         {
-            QuestionData qd = dataReader.selectRandomQuestion(level);
-            Debug.Log("-->>" + qd.id);
+            QuestionData qd = dataReader.selectRandomQuestion(platforms[i].GetComponent<PlatformController>().level);
             platforms[i].GetComponent<PlatformController>().questionData = qd;
         }
         List<GameObject> newList = new List<GameObject>();
@@ -151,8 +150,9 @@ public class EnvironmentController : MonoBehaviour
         if (addedPlatformSize < 10)
         {
             addedPlatformSize++;
+            
             int _platformIndex = 0;
-            QuestionData questionData = dataReader.selectRandomQuestion(level);
+            QuestionData questionData = dataReader.selectRandomQuestion(addedPlatformSize - 1);
             if (questionData.sizeOfAnswer == 3)
             {
                 _platformIndex = 0;
