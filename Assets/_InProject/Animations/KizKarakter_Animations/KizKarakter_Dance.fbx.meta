@@ -1,8 +1,23 @@
 fileFormatVersion: 2
-guid: e944d83cdde62894ab6d5b5738b59d38
+guid: c583594c0b495da4b809978b1a221750
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
+  - first:
+      74: 3787175245205227387
+    second: Armature.003|Armature.001|mixamo.com|Layer0
+  - first:
+      74: 5669840359611111574
+    second: Armature.003|Armature.002|mixamo.com|Layer0
+  - first:
+      74: 2413935595439080513
+    second: Armature.003|Armature.003|mixamo.com|Layer0
+  - first:
+      74: -8500319796296858554
+    second: Armature.003|Armature|mixamo.com|Layer0
+  - first:
+      74: -7794612100412726128
+    second: Armature.003|Armature|mixamo.com|Layer0.001
   - first:
       74: -203655887218126122
     second: mixamo.com
@@ -34,36 +49,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: mixamo.com
-      takeName: mixamo.com
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 143
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
