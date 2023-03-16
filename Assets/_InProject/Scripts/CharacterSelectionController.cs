@@ -14,7 +14,7 @@ public class CharacterSelectionController : MonoBehaviour
     public GameObject boyObj, girlObj;
     private bool objOnGoing , firstSelect , started;
     //---------------------------------------------
-    public GameObject elevator, wing , elevatorBone;
+    public GameObject elevator, wing , elevatorBone , curtain;
     void Start()
     {
         started = false;
@@ -130,6 +130,9 @@ public class CharacterSelectionController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         wing.gameObject.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(2f);
+        curtain.gameObject.SetActive(true);
+        curtain.gameObject.GetComponent<Animator>().enabled = true;
+        yield return new WaitForSeconds(2f);        
         SceneManager.LoadScene(1);
     }
     
