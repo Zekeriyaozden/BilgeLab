@@ -24,9 +24,11 @@ public class UIManager : MonoBehaviour
     public GameObject loadingCanvas;
     public GameObject soundOn, soundOff, musicOn, musicOff;
     public bool music, sound;
+    private SoundManager sm;
     
     void Start()
     {
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         int _sound = PlayerPrefs.GetInt("Sound", 1);
         int _music = PlayerPrefs.GetInt("Music", 1);
         if (_sound == 1)
@@ -70,12 +72,17 @@ public class UIManager : MonoBehaviour
         }
 
         Debug.Log("load");
-        //loadingCanvas.SetActive(true);
-        StartCoroutine(load());
+        if (isLobby)
+        {
+            sm.playSound(5);
+            loadingCanvas.SetActive(true);
+            StartCoroutine(load());   
+        }
     }
 
     public void setSound(bool _sound)
     {
+        sm.playSound(2);
         if (_sound)
         {
             PlayerPrefs.SetInt("Sound", 1);
@@ -94,6 +101,7 @@ public class UIManager : MonoBehaviour
     
     public void setMusic(bool _music)
     {
+        sm.playSound(2);
         if (_music)
         {
             PlayerPrefs.SetInt("Music", 1);
@@ -114,6 +122,8 @@ public class UIManager : MonoBehaviour
     private IEnumerator load()
     {
         yield return new WaitForSeconds(5f);
+        sm.stopSound(5);
+        sm.playSound(4);
         loadingCanvas.SetActive(false);
         GameObject.Find("AIManager").GetComponent<AIManager>().aiSetActive();
     }
@@ -122,6 +132,7 @@ public class UIManager : MonoBehaviour
     private bool isSetingOpen = false;
     public void settingUI(bool set)
     {
+        sm.playSound(2);
         if (set)
         {
             isSetingOpen = true;
@@ -174,8 +185,14 @@ public class UIManager : MonoBehaviour
        // star.SetActive(false);
     }
 
+    private IEnumerator winClick()
+    {
+        yield return new WaitForSeconds(.4f);
+        sm.playSound(2);
+    }
     public void winButtonClick()
     {
+        StartCoroutine(winClick());
         SceneManager.LoadScene(1);
     }
 
@@ -209,6 +226,7 @@ public class UIManager : MonoBehaviour
     
     void Update()
     {
-        
+        sm.soundOn = sound;
+        sm.musicOn = music;
     }
 }

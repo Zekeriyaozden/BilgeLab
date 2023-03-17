@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public EnvironmentController envController;
     public float splineSpeed;
     public UIManager UIManager;
+    
 
     private void Awake()
     {
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        
         levelsOfCharacter = 0;
         if (!isLobby)
         {

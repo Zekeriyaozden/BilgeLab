@@ -10,7 +10,7 @@ public class CharacterController : MonoBehaviour
     private bool letChangeTheMotion;
     private float speed;
     private DynamicJoystick dynamicJoystick;
-    //[HideInInspector]
+    [HideInInspector]
     public Vector3 direction;
     [HideInInspector]public float _magn;
     [HideInInspector]public Vector2 _magnVert;
@@ -26,9 +26,10 @@ public class CharacterController : MonoBehaviour
     private bool parachuteOn;
     private bool skingOn;
     public bool gameEnd;
-
+    private SoundManager sm;
     void Start()
     {
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         gameEnd = false;
         skingOn = parachuteOn = false;
         startRotation = gameObject.transform.rotation.eulerAngles;
@@ -84,10 +85,14 @@ public class CharacterController : MonoBehaviour
     {
         if (activate)
         {
+            sm.playSound(6);
+            sm.stopSound(9);
             parachuteOn = true;
         }
         else
         {
+            sm.stopSound(6);
+            sm.playSound(9);
             parachuteOn = false;
         }
         parachute.gameObject.SetActive(activate);
@@ -117,12 +122,14 @@ public class CharacterController : MonoBehaviour
         gameObject.transform.eulerAngles = startRotation;
         if (sf.spline.gameObject.transform.parent.gameObject.GetComponent<PipeController>().isTrue)
         {
+            sm.playSound(3);
             gameObject.transform.eulerAngles = startRotation;
             gameObject.transform.position = new Vector3(transform.position.x,startPosition.y,transform.position.z);
             changeMotion(true);
         }
         else
         {
+            sm.playSound(8);
             gameObject.transform.eulerAngles = startRotation;
             gameObject.transform.position = new Vector3(gm.envController.currentPlatform.transform.position.x,transform.position.y,gm.envController.currentPlatform.transform.position.z);
             StartCoroutine(endSplineMotion(
@@ -135,6 +142,8 @@ public class CharacterController : MonoBehaviour
 
     private IEnumerator splineFollow(SplineFollower sf)
     {
+        sm.playSound(1);
+        sm.stopSound(9);
         skingOn = true;
         sf.followSpeed = gm.splineSpeed;
         while (true)
@@ -146,6 +155,8 @@ public class CharacterController : MonoBehaviour
             }
         }
         skingOn = false;
+        sm.playSound(9);
+        sm.stopSound(1);
         endOfSpline(sf);
     }
 
@@ -167,6 +178,7 @@ public class CharacterController : MonoBehaviour
     {
         if (gameEnd)
         {
+            sm.stopSound(9);
             anim.SetBool("Dance",true);
             changeMotion(false);
             return;
@@ -190,6 +202,7 @@ public class CharacterController : MonoBehaviour
         }
         if (idle)
         {
+            sm.stopSound(9);
             {
                 anim.speed = 1f;
                 anim.SetBool("Idle",true);
@@ -199,6 +212,7 @@ public class CharacterController : MonoBehaviour
         }
         else
         {
+            sm.playSound(9);
             if (s > .3f)
             {
                 anim.SetBool("Idle",false);

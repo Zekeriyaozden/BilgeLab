@@ -60,12 +60,18 @@ public class AIController : MonoBehaviour
         }
         else
         {
+            gameObject.SetActive(false);
             dest = aiManager.destList;
             FinalDest = dest[Random.Range(0, dest.Count)];
         }
-        gameObject.SetActive(false);
+        
     }
 
+    private IEnumerator waitSecond()
+    {
+        yield return new WaitForEndOfFrame();
+    }
+    
     public void setActive()
     {
         gameObject.SetActive(true);
@@ -234,7 +240,11 @@ public class AIController : MonoBehaviour
         animControl();
         if (isNav)
         {
-
+            if (FinalDest == null)
+            {
+                randomDest();
+                return;
+            }
             navMesh.destination = FinalDest.transform.position;   
             
             if (isLobby && Vector3.Distance(gameObject.transform.position, FinalDest.transform.position) < .8f)

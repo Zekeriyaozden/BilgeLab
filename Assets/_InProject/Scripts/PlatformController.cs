@@ -23,8 +23,10 @@ public class PlatformController : MonoBehaviour
     public int level;
     public List<GameObject> arrows;
     private List<GameObject> trueArrows;
+    private SoundManager sm;
     void Start()
     {
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         trueArrows = new List<GameObject>();
         isHoled = false;
         isAdded = false;
@@ -95,7 +97,6 @@ public class PlatformController : MonoBehaviour
         env.gm.mainCharacterController.gameEnd = true;
         env.gm.UIManager.winConfety();
         yield return new WaitForSeconds(1f);
-        yield return new WaitForSeconds(1f);
         env.gm.UIManager.WinCanvas.SetActive(true);
         env.gm.UIManager.starsStart();
     }
@@ -104,7 +105,8 @@ public class PlatformController : MonoBehaviour
     
     private IEnumerator LeaderBoard(GameObject mainChar)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.5f);
+        sm.playSound(7);
         mainChar.gameObject.GetComponent<CharacterController>().changeMotion(false);
         Camera.main.gameObject.GetComponent<CameraController>().endGame();
         PlayerPrefs.SetInt(env.level.ToString() + "isComplated" , 1);

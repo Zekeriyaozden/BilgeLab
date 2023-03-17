@@ -27,9 +27,10 @@ public class ElevatorController : MonoBehaviour
     public GameObject Unlockparticle;
     public bool openForce;
     public GameObject peopleTick;
-    
+    private SoundManager sm;
     private void Awake()
     {
+        
         openForce = false;
         Unlockparticle.SetActive(false);
         countOfPlayer = 0;
@@ -42,6 +43,7 @@ public class ElevatorController : MonoBehaviour
 
     void Start()
     {
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         peopleTick.gameObject.transform.position -= new Vector3(0, 1, 0);
         peopleTick.SetActive(false);
         mainCharInElev = false;
@@ -222,6 +224,7 @@ public class ElevatorController : MonoBehaviour
         sphere.SetActive(true);
         aiManager.randomMove();
         yield return new WaitForSeconds(1f);
+        sm.playSound(0);
         gameObject.GetComponent<Animator>().enabled = true;
         gameObject.GetComponent<Animator>().SetFloat("Direct",1f);
         if (isMainInElev)
@@ -232,6 +235,7 @@ public class ElevatorController : MonoBehaviour
             wing.gameObject.GetComponent<Animator>().SetFloat("Direct",1f);
             yield return new WaitForSeconds(3f);
             PlayerPrefs.SetInt("Level",levelIndex);
+            sm.stopSound(0);
             SceneManager.LoadScene(2);
         }
         else

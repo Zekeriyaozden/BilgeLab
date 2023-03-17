@@ -15,8 +15,10 @@ public class CharacterSelectionController : MonoBehaviour
     private bool objOnGoing , firstSelect , started;
     //---------------------------------------------
     public GameObject elevator, wing , elevatorBone , curtain;
+    private SoundManager sm;
     void Start()
     {
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         started = false;
         firstSelect = true;
         objOnGoing = false;
@@ -64,6 +66,7 @@ public class CharacterSelectionController : MonoBehaviour
 
     public void boySelected()
     {
+        sm.playSound(2);
         if (objOnGoing || started)
         {
             return;
@@ -95,6 +98,7 @@ public class CharacterSelectionController : MonoBehaviour
 
     public void girlSelected()
     {
+        sm.playSound(2);
         if (objOnGoing || started)
         {
             return;
@@ -128,6 +132,7 @@ public class CharacterSelectionController : MonoBehaviour
     private IEnumerator startGameAnim()
     {
         elevator.gameObject.GetComponent<Animator>().enabled = true;
+        sm.playSound(0);
         yield return new WaitForSeconds(2f);
         wing.gameObject.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(2f);
@@ -140,6 +145,7 @@ public class CharacterSelectionController : MonoBehaviour
     
     public void startGame()
     {
+        sm.playSound(2);
         if (started)
         {
             return;

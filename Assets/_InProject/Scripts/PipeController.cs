@@ -10,8 +10,10 @@ public class PipeController : MonoBehaviour
     private GameManager gm;
     public bool isTrue;
     public SplineComputer spline;
+    private SoundManager sm;
     void Start()
     {
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
