@@ -17,14 +17,59 @@ public class SoundManager : MonoBehaviour
     public bool musicOn;
     public bool soundOn;
     private bool onWalkPaused;
+    public int ind;
     void Start()
     {
+        walk.Play();
+        stopSound(9);
         onWalkPaused = false;
     }
 
+    public void unEnable(int _indexOfVoice)
+    {
+        if (_indexOfVoice == 0)
+        {
+            elevator.enabled = false;
+            pipe.enabled = false;
+            button.enabled = false;
+            truePipe.enabled = false;
+            parachute.enabled = false;
+            win.enabled = false;
+            fault.enabled = false;
+            walk.enabled = false;
+        }
+        else
+        {
+            gameMusic.enabled = false;
+            loadingScreenMusic.enabled = false;
+        }
+    }
+//0=sound
+//1 = music
+    public void _enable(int _indexOfVoice)
+    {
+        if (_indexOfVoice == 0)
+        {
+            elevator.enabled = true;
+            pipe.enabled = true;
+            button.enabled = true;
+            truePipe.enabled = true;
+            parachute.enabled = true;
+            win.enabled = true;
+            fault.enabled = true;
+            walk.enabled = true;
+        }
+        else
+        {
+            gameMusic.enabled = true;
+            loadingScreenMusic.enabled = true;
+        }
+    }
+    
+    
     public void playSound(int _index)
     {
-        
+        ind = _index;
         if (_index == 0)
         {
             if (soundOn)
@@ -93,6 +138,7 @@ public class SoundManager : MonoBehaviour
             {
                 if (onWalkPaused)
                 {
+                    Debug.Log("unpouse");
                     walk.UnPause();
                 }
                 else
@@ -172,7 +218,9 @@ public class SoundManager : MonoBehaviour
         {
             if (soundOn)
             {
-                walk.Pause();   
+                Debug.Log("pause");
+                walk.Pause();
+                onWalkPaused = true;
             }
         }
                 

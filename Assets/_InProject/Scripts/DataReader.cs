@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Object = System.Object;
 using Random = UnityEngine.Random;
@@ -82,6 +83,7 @@ public class DataReader : MonoBehaviour
     {
         List<int> emptyQuestion = new List<int>();
         int _count = dataSet.Count;
+        
         for (int i = 0; i < _count; i++)
         {
             if ((PlayerPrefs.GetInt(i.ToString(), -1) == _level))
@@ -123,6 +125,14 @@ public class DataReader : MonoBehaviour
                 }
             }
         }
+        emptyQuestion = shuffledList(emptyQuestion);
+        
+    }
+
+    List<int> shuffledList(List<int> main)
+    {
+        List<int> shuffledList = main.OrderBy( x => Random.value ).ToList( );
+        return shuffledList;
     }
 
     void Read()

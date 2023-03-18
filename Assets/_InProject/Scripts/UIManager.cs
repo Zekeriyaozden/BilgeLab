@@ -89,6 +89,7 @@ public class UIManager : MonoBehaviour
             sound = true;
             soundOff.SetActive(false);
             soundOn.SetActive(true);
+            sm._enable(0);
         }
         else
         {
@@ -96,6 +97,7 @@ public class UIManager : MonoBehaviour
             sound = false;
             soundOff.SetActive(true);
             soundOn.SetActive(false); 
+            sm.unEnable(0);
         }
     }
     
@@ -108,6 +110,7 @@ public class UIManager : MonoBehaviour
             music = true;
             musicOn.SetActive(true);
             musicOff.SetActive(false);
+            sm._enable(1);
         }
         else
         {
@@ -115,6 +118,7 @@ public class UIManager : MonoBehaviour
             music = false;
             musicOn.SetActive(false);
             musicOff.SetActive(true);
+            sm.unEnable(1);
         }
     }
     

@@ -31,9 +31,10 @@ public class AIController : MonoBehaviour
     private bool isLobby;
     private int select;
     private bool isSpline;
-    private GameObject currentPlatform;
+    public GameObject currentPlatform;
     public GameObject parachute;
     private bool zeroPlat;
+    private Vector3 v3Target;
     void Start()
     {
         currentLevel = -1;
@@ -54,9 +55,12 @@ public class AIController : MonoBehaviour
 
         if (!gm.isLobby)
         {
+            StartCoroutine(setV3());
+            v3Target = new Vector3(0, -.3f, 0);
             Debug.Log("isnav");
             isNav = false;
             dest = new List<GameObject>();
+            StartCoroutine(waitSecond());
         }
         else
         {
@@ -67,9 +71,16 @@ public class AIController : MonoBehaviour
         
     }
 
+    private IEnumerator setV3()
+    {
+        yield return new WaitForSeconds(2f);
+        gameObject.transform.position += v3Target;
+    }
+    
     private IEnumerator waitSecond()
     {
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(.2f);
+        currentPlatform = gm.envController.platforms[0];
     }
     
     public void setActive()
@@ -131,6 +142,7 @@ public class AIController : MonoBehaviour
             onParachute(true);
             Destroy(sf);
             gameObject.transform.eulerAngles = startRot;
+            
             gameObject.transform.position = new Vector3(currentPlatform.transform.position.x,transform.position.y,currentPlatform.transform.position.z);
             StartCoroutine(endSplineMotion(
                 new Vector3(currentPlatform.transform.position.x, startPos.y,
