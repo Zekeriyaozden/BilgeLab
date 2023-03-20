@@ -16,8 +16,12 @@ public class CharacterSelectionController : MonoBehaviour
     //---------------------------------------------
     public GameObject elevator, wing , elevatorBone , curtain;
     private SoundManager sm;
+    public GameObject selectCanvas, loadingCanvas;
     void Start()
     {
+        selectCanvas.SetActive(false);
+        loadingCanvas.SetActive(true);
+        StartCoroutine(setCanvas());
         sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         started = false;
         firstSelect = true;
@@ -33,6 +37,13 @@ public class CharacterSelectionController : MonoBehaviour
         mtStart.SetFloat("_Trigger",0);
     }
 
+    private IEnumerator setCanvas()
+    {
+        yield return new WaitForSeconds(5f);
+        selectCanvas.SetActive(true);
+        loadingCanvas.SetActive(false);
+    }
+    
     //0 -> boy
     //1 -> girl
     public void characterSelect(int index)

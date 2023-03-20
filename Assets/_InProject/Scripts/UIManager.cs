@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
         Debug.Log("load");
         if (isLobby)
         {
-            sm.playSound(5);
+            //sm.playSound(5);
             loadingCanvas.SetActive(true);
             StartCoroutine(load());   
         }
@@ -126,8 +126,8 @@ public class UIManager : MonoBehaviour
     private IEnumerator load()
     {
         yield return new WaitForSeconds(5f);
-        sm.stopSound(5);
-        sm.playSound(4);
+        //sm.stopSound(5);
+        //sm.playSound(4);
         loadingCanvas.SetActive(false);
         GameObject.Find("AIManager").GetComponent<AIManager>().aiSetActive();
     }
