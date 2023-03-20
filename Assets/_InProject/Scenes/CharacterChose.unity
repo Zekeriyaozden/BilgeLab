@@ -28212,21 +28212,65 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1428496911}
     m_Modifications:
+    - target: {fileID: 2694188392295053108, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694188392368475152, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694188392392953141, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2694188392392953141, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
       propertyPath: m_Volume
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 2694188392415767877, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694188392771135747, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2694188392771135747, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694188392911259754, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694188393110582183, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694188393110582183, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2694188393110582183, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2694188393157139544, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694188393157139544, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
       propertyPath: m_Volume
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694188393947066346, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694188393948368099, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
+      propertyPath: Mute
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2694188394090236088, guid: b27c1d0c014e3db46ac47a9118b4f6cb, type: 3}
       propertyPath: m_Name
