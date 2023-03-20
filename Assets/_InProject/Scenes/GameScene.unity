@@ -252,7 +252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.223108
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.y
@@ -430,6 +430,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
   m_PrefabInstance: {fileID: 181850439}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &224671390
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2DxFX/Standard/Lightning
+  m_Shader: {fileID: 4800000, guid: 2fe709954df631a4092385650f116e77, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 2800000, guid: 21297ee56dfcb3744aeca141dd1a29de, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 0
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _Value1: 10
+    - _Value2: 1.65
+    - _Value3: 1
+    - _Value4: 0
+    - _Value5: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &229981390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -990,7 +1035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.223108
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1142,7 +1187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.223108
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1279,7 +1324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.223108
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2618,7 +2663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.223108
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3583,7 +3628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.223108
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4165,51 +4210,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6259206801723940570, guid: 308b64618a28d4b4f83749cda4d5eda0, type: 3}
   m_PrefabInstance: {fileID: 326482805}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1398588129
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 2DxFX/Standard/Lightning
-  m_Shader: {fileID: 4800000, guid: 2fe709954df631a4092385650f116e77, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex2:
-        m_Texture: {fileID: 2800000, guid: 21297ee56dfcb3744aeca141dd1a29de, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Alpha: 0
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _Value1: 10
-    - _Value2: 1.65
-    - _Value3: 1
-    - _Value4: 0
-    - _Value5: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &1401388699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4296,7 +4296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.223108
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4554,7 +4554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.223108
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5435,7 +5435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.223108
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5890,7 +5890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.223108
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6618981264310433933, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.y
