@@ -63,7 +63,7 @@ Material:
     - _QueueOffset: 0
     - _SrcBlend: 5
     - _Surface: 1
-    - _Trigger: 1.7
+    - _Trigger: 0
     - _ZTest: 8
     - _ZWrite: 0
     - _ZWriteControl: 0
