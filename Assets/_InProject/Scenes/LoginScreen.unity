@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27059cda1c7a01f4da75ec67e60c9989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questdata: {fileID: 4900000, guid: 4eb3bca05a00c8d4fb3c1a0093fcba6d, type: 3}
+  questdata: {fileID: 4900000, guid: e0a2b65e6a5536e459103ac4aa7d66c2, type: 3}
   selectableIndex: 
 --- !u!1001 &131952785
 PrefabInstance:
