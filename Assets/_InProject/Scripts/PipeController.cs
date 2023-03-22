@@ -11,10 +11,12 @@ public class PipeController : MonoBehaviour
     public bool isTrue;
     public SplineComputer spline;
     private SoundManager sm;
+    public GameObject platform;
     void Start()
     {
         sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
     }
 
     // Update is called once per frame
@@ -38,12 +40,21 @@ public class PipeController : MonoBehaviour
             if (isTrue)
             {
                 Debug.Log("truePipe");
+                if (platform.GetComponent<PlatformController>().isFault)
+                {
+                    gm.UIManager.pointUpgrade(50);
+                }
+                else
+                {
+                    gm.UIManager.pointUpgrade(100);
+                }
                 gm.UIManager.pipeControl(true);
                 gm.envController.transition();
                 gameObject.transform.parent = null;
             }
             else
             {
+                platform.GetComponent<PlatformController>().isFault = true;
                 Debug.Log("falsePipe");
                 gm.UIManager.pipeControl(false);
             }

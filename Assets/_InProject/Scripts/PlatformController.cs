@@ -24,8 +24,10 @@ public class PlatformController : MonoBehaviour
     public List<GameObject> arrows;
     private List<GameObject> trueArrows;
     private SoundManager sm;
+    public bool isFault;
     void Start()
     {
+        isFault = false;
         sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         trueArrows = new List<GameObject>();
         isHoled = false;
@@ -75,12 +77,14 @@ public class PlatformController : MonoBehaviour
             if (answerHoles[i].GetComponent<HoleController>().isTrue)
             {
                 GameObject pipe = Instantiate(env.pipeTrue);
+                pipe.GetComponent<PipeController>().platform = gameObject;
                 pipe.transform.position = answerHoles[i].transform.position;
                 pipe.transform.parent = transform.GetChild(0);
             }
             else
             {
                 GameObject pipe = Instantiate(env.pipeFalse);
+                pipe.GetComponent<PipeController>().platform = gameObject;
                 pipe.transform.position = answerHoles[i].transform.position;
                 pipe.transform.parent = transform.GetChild(0);
             }

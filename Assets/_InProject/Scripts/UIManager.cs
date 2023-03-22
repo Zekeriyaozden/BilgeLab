@@ -25,6 +25,8 @@ public class UIManager : MonoBehaviour
     public GameObject soundOn, soundOff, musicOn, musicOff;
     public bool music, sound;
     private SoundManager sm;
+    public List<GameObject> pointTexts;
+    private int point;
     
     void Start()
     {
@@ -69,6 +71,8 @@ public class UIManager : MonoBehaviour
             }
             targetScreen = GameScreenCanvas.transform.GetChild(0).GetChild(0);
             settingUIElement.SetActive(false);
+            point = 0;
+            pointUpgrade(0);
         }
 
         Debug.Log("load");
@@ -80,6 +84,15 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void pointUpgrade(int _point)
+    {
+        point += _point;
+        for (int i = 0; i < 2; i++)
+        {
+            pointTexts[i].GetComponent<TextMeshProUGUI>().text = point.ToString();
+        }
+    }
+    
     public void setSound(bool _sound)
     {
         sm.playSound(2);

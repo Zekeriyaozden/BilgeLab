@@ -94,6 +94,7 @@ public class DataReader : MonoBehaviour
                 emptyQuestion.Add(i);
             }
         }
+        
         if (selectableIndex.Count == 0)
         {
             if (emptyQuestion.Count > 10)
