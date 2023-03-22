@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public EnvironmentController envController;
     public float splineSpeed;
     public UIManager UIManager;
+    public bool isArrowVisible;
     
 
     private void Awake()

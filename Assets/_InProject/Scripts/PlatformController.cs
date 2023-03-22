@@ -117,6 +117,10 @@ public class PlatformController : MonoBehaviour
 
     public void onArrows()
     {
+        if (!env.gm.isArrowVisible)
+        {
+            return;
+        }
         int _count = trueArrows.Count;
         for (int i = 0; i < _count; i++)
         {
