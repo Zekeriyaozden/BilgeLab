@@ -1505,6 +1505,7 @@ MonoBehaviour:
   inTunnel: 0
   tunnel: {fileID: 0}
   parachute: {fileID: 2578172677243309048}
+  gameEnd: 0
   distancedis: 0
 --- !u!1 &6442660392201098787
 GameObject:
