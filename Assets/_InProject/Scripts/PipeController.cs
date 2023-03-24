@@ -39,7 +39,7 @@ public class PipeController : MonoBehaviour
             _controller.inSpline();
             if (isTrue)
             {
-                Debug.Log("truePipe");
+                _controller.startConfety();
                 if (platform.GetComponent<PlatformController>().isFault)
                 {
                     gm.UIManager.pointUpgrade(50);

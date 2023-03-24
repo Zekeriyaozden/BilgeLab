@@ -74,8 +74,7 @@ public class UIManager : MonoBehaviour
             point = 0;
             pointUpgrade(0);
         }
-
-        Debug.Log("load");
+        
         if (isLobby)
         {
             //sm.playSound(5);
@@ -178,6 +177,7 @@ public class UIManager : MonoBehaviour
     }
     public void starsStart()
     {
+        return;
         for (int i = 0; i < stars.Count; i++)
         {
             StartCoroutine(starCor(stars[i]));

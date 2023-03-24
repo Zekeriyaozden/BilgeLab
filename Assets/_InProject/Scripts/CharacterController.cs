@@ -27,8 +27,14 @@ public class CharacterController : MonoBehaviour
     private bool skingOn;
     public bool gameEnd;
     private SoundManager sm;
+    public GameObject confety;
     void Start()
     {
+        if (confety)
+        {
+            confety.gameObject.transform.localScale = Vector3.one * 8f;
+            confety.SetActive(false);
+        }
         sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         gameEnd = false;
         skingOn = parachuteOn = false;
@@ -60,8 +66,22 @@ public class CharacterController : MonoBehaviour
         transform.SetParent(parent.transform);
         changeMotion(true);
     }
-    
-    
+
+    public void startConfety()
+    {
+        Vector3 confetyPosOffset = confety.transform.position - transform.position;
+        confety.transform.SetParent(null);
+        confety.SetActive(true);
+        StartCoroutine(confetyClose(confetyPosOffset));
+    }
+
+    private IEnumerator confetyClose(Vector3 startLocalPos)
+    {
+        yield return new WaitForSeconds(3f);
+        confety.transform.SetParent(gameObject.transform);
+        confety.transform.position = startLocalPos + transform.position;
+        confety.SetActive(false);
+    }
     
     public bool changeSpeed(float _speed)
     {

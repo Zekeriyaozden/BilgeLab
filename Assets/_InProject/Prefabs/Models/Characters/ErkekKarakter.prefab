@@ -1484,6 +1484,7 @@ Transform:
   - {fileID: 3504602038581552976}
   - {fileID: 1201657046396195610}
   - {fileID: 2921801309382562114}
+  - {fileID: 8008018121583616324}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1506,6 +1507,7 @@ MonoBehaviour:
   tunnel: {fileID: 0}
   parachute: {fileID: 2578172677243309048}
   gameEnd: 0
+  confety: {fileID: 8008018121583915822}
   distancedis: 0
 --- !u!1 &6442660392201098787
 GameObject:
@@ -2522,4 +2524,75 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c825ca9c5748ddc4bbef7013f7591769, type: 3}
   m_PrefabInstance: {fileID: 6590964204780402107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8008018121583986756
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6700642091980305294}
+    m_Modifications:
+    - target: {fileID: 129898, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_Name
+      value: ConfettiBlastRainbow
+      objectReference: {fileID: 0}
+    - target: {fileID: 129898, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+--- !u!4 &8008018121583616324 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 420096, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+  m_PrefabInstance: {fileID: 8008018121583986756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8008018121583915822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 129898, guid: b619f42a14627b949b57721e0aabaa09, type: 3}
+  m_PrefabInstance: {fileID: 8008018121583986756}
   m_PrefabAsset: {fileID: 0}

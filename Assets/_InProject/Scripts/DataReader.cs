@@ -18,6 +18,7 @@ public class DataReader : MonoBehaviour
         dataSet = new List<QuestionData>();
         Read();
         Debug.Log( "----><----"+PlayerPrefs.GetInt("Level", 1) + "----><----");
+        Debug.Log(PlayerPrefs.GetInt("Level", 1) + " = Level");
         indexer(PlayerPrefs.GetInt("Level", 1));
     }
 
@@ -86,6 +87,7 @@ public class DataReader : MonoBehaviour
         
         for (int i = 0; i < _count; i++)
         {
+            Debug.Log("prefsI - " + PlayerPrefs.GetInt(i.ToString(), -1));
             if ((PlayerPrefs.GetInt(i.ToString(), -1) == _level))
             {
                 selectableIndex.Add(i);
@@ -94,16 +96,20 @@ public class DataReader : MonoBehaviour
                 emptyQuestion.Add(i);
             }
         }
-        
+
+        Debug.Log(emptyQuestion.Count + " -->> emptyQuest");
+        Debug.Log(selectableIndex.Count + " -->> selectableIndex");
         if (selectableIndex.Count == 0)
         {
+            Debug.Log("select=0");
             if (emptyQuestion.Count > 10)
             {
                 for (int i = 0; i < 10; i++)
                 {
                     int _temp = Random.Range(0, emptyQuestion.Count - 1);
+                    Debug.Log(emptyQuestion[_temp] + "--<><Empty><>--" + _level);
                     selectableIndex.Add(emptyQuestion[_temp]);
-                    PlayerPrefs.SetInt(i.ToString(), _level);
+                    PlayerPrefs.SetInt(emptyQuestion[_temp].ToString(), _level);
                     emptyQuestion.Remove(emptyQuestion[_temp]);
                 }
             }
@@ -114,9 +120,11 @@ public class DataReader : MonoBehaviour
         }
         else
         {
+            Debug.Log(selectableIndex[0]);
             int _tempF = selectableIndex.Count;
             if (_tempF < 10)
             {
+                Debug.Log("select<10");
                 for (int i = _tempF; i < 10; i++)
                 {
                     int _temp = Random.Range(0, emptyQuestion.Count - 1);

@@ -272,12 +272,12 @@ public class AIController : MonoBehaviour
                }
                else if (aiManager.levelOfMainChar == currentLevel+1)
                {
-                   select = Random.Range(2, 10);
+                   select = Random.Range(0, 10);
                }else if (aiManager.levelOfMainChar > currentLevel + 1)
                {
                    select = 0;
                }
-               if (select < 2)
+               if (select < 3)
                {
                    FinalDest = destTrue[Random.Range(0, destTrue.Count)];
                }else if (select < 5 && select > 1)
@@ -330,9 +330,7 @@ public class AIController : MonoBehaviour
     }
     private void waitForPlatform(GameObject other)
     {
-        Debug.Log("WaitForPlatform");
         dest.Clear();
-        Debug.Log("clear");
         int _count = other.gameObject.GetComponent<PlatformController>().dests.Count;
         for (int i = 0; i < _count; i++)
         {

@@ -218,7 +218,6 @@ public class SoundManager : MonoBehaviour
         {
             if (soundOn)
             {
-                Debug.Log("pause");
                 walk.Pause();
                 onWalkPaused = true;
             }
