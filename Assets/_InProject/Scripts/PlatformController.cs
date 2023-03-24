@@ -110,13 +110,21 @@ public class PlatformController : MonoBehaviour
     private IEnumerator LeaderBoard(GameObject mainChar)
     {
         yield return new WaitForSeconds(.5f);
-        sm.playSound(7);
-        mainChar.gameObject.GetComponent<CharacterController>().changeMotion(false);
-        Camera.main.gameObject.GetComponent<CameraController>().endGame();
-        PlayerPrefs.SetInt(env.level.ToString() + "isComplated" , 1);
-        env.gm.UIManager.LeaderBoardCanvas.SetActive(true);
-        //env.gm.UIManager.LeaderBoardCanvas.GetComponent<Animator>().speed = .2f;
-        StartCoroutine(winUI());
+        Debug.Log(gameObject);
+        if (GameObject.Find("AIManager").GetComponent<AIManager>().levelOfMainChar < 8)
+        {
+            
+        }
+        else
+        {
+            sm.playSound(7);
+            mainChar.gameObject.GetComponent<CharacterController>().changeMotion(false);
+            Camera.main.gameObject.GetComponent<CameraController>().endGame();
+            PlayerPrefs.SetInt(env.level.ToString() + "isComplated" , 1);
+            env.gm.UIManager.LeaderBoardCanvas.SetActive(true);
+            //env.gm.UIManager.LeaderBoardCanvas.GetComponent<Animator>().speed = .2f;
+            StartCoroutine(winUI());   
+        }
     }
 
     public void onArrows()
