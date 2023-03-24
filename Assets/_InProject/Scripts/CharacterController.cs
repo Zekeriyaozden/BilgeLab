@@ -29,6 +29,7 @@ public class CharacterController : MonoBehaviour
     private SoundManager sm;
     public GameObject confety;
     private Vector3 confetyEuler;
+    public GameObject currentPlatforms;
     void Start()
     {
         if (confety)
@@ -370,10 +371,28 @@ public class CharacterController : MonoBehaviour
         {
             GameObject.Find("AIManager").GetComponent<AIManager>().levelOfMainChar =
                 other.gameObject.GetComponent<PlatformController>().level;
+            currentPlatforms = other.gameObject;
         }
     }
 
-    
+    private IEnumerator TranslateCol()
+    {
+        Vector3 startPos = transform.position;
+        float k = 0;
+        while (k < 1)
+        {
+            k += Time.deltaTime*3f;
+            yield return new WaitForEndOfFrame();
+            transform.Translate(Vector3.back * .1f, Space.Self);
+            transform.position = new Vector3(transform.position.x, startPos.y, transform.position.z);
+        }
+    }
 
-    
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Collide")
+        {
+            StartCoroutine(TranslateCol());
+        }
+    }
 }
