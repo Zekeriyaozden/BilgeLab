@@ -358,6 +358,10 @@ public class AIController : MonoBehaviour
             else
             {
                 currentLevel = other.gameObject.GetComponent<PlatformController>().level;
+                if (currentLevel > 8)
+                {
+                    gm.finishedAI++;
+                }
                 waitForPlatform(other.gameObject);
             }
         }

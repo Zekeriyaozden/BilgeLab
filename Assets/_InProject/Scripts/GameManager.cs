@@ -20,10 +20,12 @@ public class GameManager : MonoBehaviour
     public float splineSpeed;
     public UIManager UIManager;
     public bool isArrowVisible;
+    public int finishedAI;
     
 
     private void Awake()
     {
+        finishedAI = 0;
         Debug.Log("playerPrefs" + PlayerPrefs.GetInt("Character",-1));
         if (PlayerPrefs.GetInt("Character", -1) == 0)
         {

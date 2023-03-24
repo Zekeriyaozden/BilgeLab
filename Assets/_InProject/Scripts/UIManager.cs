@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
     private SoundManager sm;
     public List<GameObject> pointTexts;
     private int point;
+    public GameObject leaderBoardPlayer;
+    public List<GameObject> flamas;
     
     void Start()
     {
@@ -182,6 +184,36 @@ public class UIManager : MonoBehaviour
         {
             StartCoroutine(starCor(stars[i]));
         }
+    }
+
+    public void setLeaderBoard()
+    {
+        int _finishedAI = GameObject.Find("GameManager").GetComponent<GameManager>().finishedAI;
+        int _count = leaderBoardAI.Count;
+        if (_finishedAI == 0)
+        {
+            flamas[0].gameObject.SetActive(true);
+            flamas[1].gameObject.SetActive(false);
+            flamas[2].gameObject.SetActive(false);
+        }else if (_finishedAI == 1)
+        {
+            flamas[0].gameObject.SetActive(false);
+            flamas[1].gameObject.SetActive(true);
+            flamas[2].gameObject.SetActive(false);
+        }
+        else
+        {
+            flamas[0].gameObject.SetActive(false);
+            flamas[1].gameObject.SetActive(false);
+            flamas[2].gameObject.SetActive(true);
+        }
+        for (int i = 0; i < _count; i++)
+        {
+            leaderBoardAI[i].transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "#" + _finishedAI + 2 + i;
+            leaderBoardAI[i].transform.GetChild(0).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "#" + _finishedAI + 2 + i;
+        }
+        leaderBoardPlayer.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "#" + _finishedAI + 1;
+        leaderBoardPlayer.transform.GetChild(0).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "#" + _finishedAI + 1;
     }
 
     private IEnumerator starCor(GameObject star)

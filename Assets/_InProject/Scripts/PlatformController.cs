@@ -101,6 +101,7 @@ public class PlatformController : MonoBehaviour
         env.gm.mainCharacterController.gameEnd = true;
         env.gm.UIManager.winConfety();
         yield return new WaitForSeconds(1f);
+        
         env.gm.UIManager.WinCanvas.SetActive(true);
         env.gm.UIManager.starsStart();
     }
@@ -121,6 +122,7 @@ public class PlatformController : MonoBehaviour
             mainChar.gameObject.GetComponent<CharacterController>().changeMotion(false);
             Camera.main.gameObject.GetComponent<CameraController>().endGame();
             PlayerPrefs.SetInt(env.level.ToString() + "isComplated" , 1);
+            env.gm.UIManager.setLeaderBoard();
             env.gm.UIManager.LeaderBoardCanvas.SetActive(true);
             //env.gm.UIManager.LeaderBoardCanvas.GetComponent<Animator>().speed = .2f;
             StartCoroutine(winUI());   
