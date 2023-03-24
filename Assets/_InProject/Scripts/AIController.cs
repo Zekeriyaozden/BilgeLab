@@ -35,8 +35,10 @@ public class AIController : MonoBehaviour
     public GameObject parachute;
     private bool zeroPlat;
     private Vector3 v3Target;
+    private bool startFlag;
     void Start()
     {
+        startFlag = false;
         currentLevel = -1;
         zeroPlat = false;
         startRot = transform.eulerAngles;
@@ -57,7 +59,6 @@ public class AIController : MonoBehaviour
         {
             StartCoroutine(setV3());
             v3Target = new Vector3(0, -.3f, 0);
-            Debug.Log("isnav");
             isNav = false;
             dest = new List<GameObject>();
             StartCoroutine(waitSecond());
@@ -299,8 +300,13 @@ public class AIController : MonoBehaviour
         }
     }
 
-    private IEnumerator destsForTrue(PlatformController pc)
+    private IEnumerator destsForTrue(PlatformController pc , bool st=false)
     {
+        yield return new WaitForSeconds(.2f);
+        if (st)
+        {
+            pc = gm.envController.platforms[0].GetComponent<PlatformController>();
+        }
         bool _flag = true;
         while (_flag)
         {
@@ -328,7 +334,7 @@ public class AIController : MonoBehaviour
             isNav = true;
         }
     }
-    private void waitForPlatform(GameObject other)
+    private void waitForPlatform(GameObject other,bool st=false)
     {
         dest.Clear();
         int _count = other.gameObject.GetComponent<PlatformController>().dests.Count;
@@ -338,7 +344,14 @@ public class AIController : MonoBehaviour
         }
         destFalse.Clear();
         destTrue.Clear();
-        StartCoroutine(destsForTrue(other.gameObject.GetComponent<PlatformController>()));
+        if (st)
+        {
+            StartCoroutine(destsForTrue(other.gameObject.GetComponent<PlatformController>(),st));
+        }
+        else
+        {
+            StartCoroutine(destsForTrue(other.gameObject.GetComponent<PlatformController>()));   
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -362,7 +375,17 @@ public class AIController : MonoBehaviour
                 {
                     gm.finishedAI++;
                 }
-                waitForPlatform(other.gameObject);
+
+                if (!startFlag)
+                {
+                    waitForPlatform(other.gameObject,true);
+                    startFlag = true;
+                }
+                else
+                {
+                    waitForPlatform(other.gameObject);
+                }
+                
             }
         }
     }

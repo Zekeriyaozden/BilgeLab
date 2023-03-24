@@ -2857,6 +2857,8 @@ MonoBehaviour:
   music: 0
   sound: 0
   pointTexts: []
+  leaderBoardPlayer: {fileID: 0}
+  flamas: []
 --- !u!1 &1046752770
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,6 +3099,7 @@ MonoBehaviour:
   splineSpeed: 0
   UIManager: {fileID: 0}
   isArrowVisible: 0
+  finishedAI: 0
 --- !u!1001 &1206917320
 PrefabInstance:
   m_ObjectHideFlags: 0

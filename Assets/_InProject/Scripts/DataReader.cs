@@ -17,8 +17,6 @@ public class DataReader : MonoBehaviour
         selectableIndex = new List<int>();
         dataSet = new List<QuestionData>();
         Read();
-        Debug.Log( "----><----"+PlayerPrefs.GetInt("Level", 1) + "----><----");
-        Debug.Log(PlayerPrefs.GetInt("Level", 1) + " = Level");
         indexer(PlayerPrefs.GetInt("Level", 1));
     }
 
@@ -87,7 +85,6 @@ public class DataReader : MonoBehaviour
         
         for (int i = 0; i < _count; i++)
         {
-            Debug.Log("prefsI - " + PlayerPrefs.GetInt(i.ToString(), -1));
             if ((PlayerPrefs.GetInt(i.ToString(), -1) == _level))
             {
                 selectableIndex.Add(i);
@@ -101,13 +98,11 @@ public class DataReader : MonoBehaviour
         Debug.Log(selectableIndex.Count + " -->> selectableIndex");
         if (selectableIndex.Count == 0)
         {
-            Debug.Log("select=0");
             if (emptyQuestion.Count > 10)
             {
                 for (int i = 0; i < 10; i++)
                 {
                     int _temp = Random.Range(0, emptyQuestion.Count - 1);
-                    Debug.Log(emptyQuestion[_temp] + "--<><Empty><>--" + _level);
                     selectableIndex.Add(emptyQuestion[_temp]);
                     PlayerPrefs.SetInt(emptyQuestion[_temp].ToString(), _level);
                     emptyQuestion.Remove(emptyQuestion[_temp]);
@@ -206,9 +201,10 @@ public class DataReader : MonoBehaviour
                         Console.WriteLine(e);
                         throw;
                     }
-
+                    
                     if (trueAns0 != "")
                     {
+                        Debug.Log("trueAnsCome" + trueAns0);
                         if (trueAns0 == "a" || trueAns0 == "A")
                         {
                             indexesOfTrueAns.Add(0);
@@ -224,6 +220,10 @@ public class DataReader : MonoBehaviour
                         }else if (trueAns0 == "e" || trueAns0 == "E")
                         {
                             indexesOfTrueAns.Add(4);
+                        }
+                        else
+                        {
+                            Debug.Log("thereIsAProblem");
                         }
                     }
                     if (trueAns1 != "")
@@ -265,6 +265,7 @@ public class DataReader : MonoBehaviour
                         }
                     }
 
+                    Debug.Log(indexesOfTrueAns.Count + "cnt");
                     QuestionData dt = new QuestionData(answerSize,question,answer,id,subject,indexesOfTrueAns);
                     dataSet.Add(dt);
                 }

@@ -11,7 +11,7 @@ public class PlatformController : MonoBehaviour
     public List<TextMeshProUGUI> texts;
     public bool isStart;
     public int answerCount;
-    public List<GameObject> answerObjects;
+    //public List<GameObject> answerObjects;
     public List<GameObject> answerHoles;
     public QuestionData questionData;
     private EnvironmentController env;
@@ -46,9 +46,13 @@ public class PlatformController : MonoBehaviour
     //TO DO
     private void _holeAns()
     {
+        Debug.Log("_HoleAns");
         if (questionData != null)
         {
+            Debug.Log(questionData.indexesOfTrueAnswer.Count);
+            Debug.Log("questData");
             texts[0].text = questionData.question;
+            Debug.Log("indexOfTrueAnswer" + questionData.question);
             for (int i = 0; i < answerHoles.Count; i++)
             {
                 texts[i+1].text = questionData.answers[i];
