@@ -28,11 +28,13 @@ public class CharacterController : MonoBehaviour
     public bool gameEnd;
     private SoundManager sm;
     public GameObject confety;
+    private Vector3 confetyEuler;
     void Start()
     {
         if (confety)
         {
             confety.gameObject.transform.localScale = Vector3.one * 8f;
+            confetyEuler = confety.transform.eulerAngles;
             confety.SetActive(false);
         }
         sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
@@ -69,17 +71,19 @@ public class CharacterController : MonoBehaviour
 
     public void startConfety()
     {
-        Vector3 confetyPosOffset = confety.transform.position - transform.position;
-        confety.transform.SetParent(null);
         confety.SetActive(true);
-        StartCoroutine(confetyClose(confetyPosOffset));
+        StartCoroutine(confetyClose());
     }
 
-    private IEnumerator confetyClose(Vector3 startLocalPos)
+    private IEnumerator confetyClose()
     {
-        yield return new WaitForSeconds(3f);
-        confety.transform.SetParent(gameObject.transform);
-        confety.transform.position = startLocalPos + transform.position;
+        float k = 0;
+        while (k < 1)
+        {
+            yield return new WaitForEndOfFrame();
+            k += Time.deltaTime / 3f;
+            confety.transform.eulerAngles = confetyEuler;
+        }
         confety.SetActive(false);
     }
     
