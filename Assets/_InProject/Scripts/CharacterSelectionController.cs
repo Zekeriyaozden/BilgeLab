@@ -32,6 +32,9 @@ public class CharacterSelectionController : MonoBehaviour
             SceneManager.LoadScene(1);
         }
         boy = girl = false;
+        boyButton.GetComponent<Image>().color = Color.white;
+        girlButton.GetComponent<Image>().color = Color.white;
+        startButton.GetComponent<Image>().color = Color.white;
         mtGirl.SetFloat("_Trigger",0);
         mtBoy.SetFloat("_Trigger",0);
         mtStart.SetFloat("_Trigger",0);
@@ -87,6 +90,8 @@ public class CharacterSelectionController : MonoBehaviour
         {
             mtGirl.SetFloat("_Trigger",0);
             mtBoy.SetFloat("_Trigger",1.7f);
+            girlButton.GetComponent<Image>().color = Color.white;
+            boyButton.GetComponent<Image>().color = Color.green;
             boy = true;
             girl = false;
             firstSelect = false;
@@ -95,6 +100,8 @@ public class CharacterSelectionController : MonoBehaviour
         {
             mtGirl.SetFloat("_Trigger",0);
             mtBoy.SetFloat("_Trigger",1.7f);
+            girlButton.GetComponent<Image>().color = Color.white;
+            boyButton.GetComponent<Image>().color = Color.green;
             boy = true;
             girl = false;
             SplineFollower splineComing = boyObj.gameObject.AddComponent<SplineFollower>();
@@ -119,6 +126,8 @@ public class CharacterSelectionController : MonoBehaviour
         {
             mtBoy.SetFloat("_Trigger",0);
             mtGirl.SetFloat("_Trigger",1.7f);
+            girlButton.GetComponent<Image>().color = Color.green;
+            boyButton.GetComponent<Image>().color = Color.white;
             girl = true;
             boy = false;
             firstSelect = false;
@@ -127,6 +136,8 @@ public class CharacterSelectionController : MonoBehaviour
         {
             mtBoy.SetFloat("_Trigger",0);
             mtGirl.SetFloat("_Trigger",1.7f);
+            girlButton.GetComponent<Image>().color = Color.green;
+            boyButton.GetComponent<Image>().color = Color.white;
             girl = true;
             boy = false;
             SplineFollower splineComing = girlObj.gameObject.AddComponent<SplineFollower>();
@@ -186,6 +197,7 @@ public class CharacterSelectionController : MonoBehaviour
         {
             startButton.GetComponent<Button>().interactable = false;
             mtStart.SetFloat("_Trigger",0);
+            startButton.GetComponent<Image>().color = Color.white;
         }
         else
         {
@@ -193,11 +205,13 @@ public class CharacterSelectionController : MonoBehaviour
             {
                 startButton.GetComponent<Button>().interactable = false;
                 mtStart.SetFloat("_Trigger",0);
+                startButton.GetComponent<Image>().color = Color.white;
             }
             else
             {
                 startButton.GetComponent<Button>().interactable = true;
                 mtStart.SetFloat("_Trigger",1.7f);
+                startButton.GetComponent<Image>().color = Color.green;
             }
         }
     }

@@ -10266,6 +10266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadingScreenCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1702257786263210298, guid: 86d55106f1f67454a8c05158aa5090dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1702257786263210299, guid: 86d55106f1f67454a8c05158aa5090dc, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -10350,9 +10354,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1702257787876332461, guid: 86d55106f1f67454a8c05158aa5090dc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1702257787887051458, guid: 86d55106f1f67454a8c05158aa5090dc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86d55106f1f67454a8c05158aa5090dc, type: 3}
