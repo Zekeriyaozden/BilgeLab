@@ -125,7 +125,6 @@ public class CharacterController : MonoBehaviour
 
     private IEnumerator endSplineMotion(Vector3 targetPos,Vector3 targetRot)
     {
-        Debug.Log("inThere");
         onParachute(true);
         float k = 0;
         Vector3 startRot = gameObject.transform.eulerAngles;
@@ -360,6 +359,7 @@ public class CharacterController : MonoBehaviour
     [HideInInspector]public float distancedis;
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name + " -->> collision");
         if (other.gameObject.tag == "Tunnel")
         {
             tunnel = other.gameObject;
@@ -387,9 +387,10 @@ public class CharacterController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, startPos.y, transform.position.z);
         }
     }
-
+    
     private void OnCollisionEnter(Collision other)
     {
+        Debug.Log(other.gameObject.name + " -->> collision");
         if (other.gameObject.tag == "Collide")
         {
             StartCoroutine(TranslateCol());

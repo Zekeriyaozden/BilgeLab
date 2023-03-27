@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         finishedAI = 0;
-        Debug.Log("playerPrefs" + PlayerPrefs.GetInt("Character",-1));
         if (PlayerPrefs.GetInt("Character", -1) == 0)
         {
             mainCharacter = mainChars[0];

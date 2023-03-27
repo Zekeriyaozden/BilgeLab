@@ -256,7 +256,6 @@ public class ElevatorController : MonoBehaviour
 
     public void Call()
     {
-        Debug.Log("Call");
         int count = aiManager.AIList.Count;
         for (int i = 0; i < count; i++)
         {

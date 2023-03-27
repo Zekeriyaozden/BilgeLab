@@ -46,13 +46,9 @@ public class PlatformController : MonoBehaviour
     //TO DO
     private void _holeAns()
     {
-        Debug.Log("_HoleAns");
         if (questionData != null)
         {
-            Debug.Log(questionData.indexesOfTrueAnswer.Count);
-            Debug.Log("questData");
             texts[0].text = questionData.question;
-            Debug.Log("indexOfTrueAnswer" + questionData.question);
             for (int i = 0; i < answerHoles.Count; i++)
             {
                 texts[i+1].text = questionData.answers[i];
@@ -115,7 +111,6 @@ public class PlatformController : MonoBehaviour
     private IEnumerator LeaderBoard(GameObject mainChar)
     {
         yield return new WaitForSeconds(.5f);
-        Debug.Log(gameObject);
         if (GameObject.Find("AIManager").GetComponent<AIManager>().levelOfMainChar < 8)
         {
             
@@ -167,7 +162,6 @@ public class PlatformController : MonoBehaviour
 
         if (isLast)
         {
-            Debug.Log(gameObject);
             StartCoroutine(LeaderBoard(other.gameObject));
         }
     }

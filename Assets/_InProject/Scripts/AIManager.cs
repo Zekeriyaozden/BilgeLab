@@ -57,7 +57,6 @@ public class AIManager : MonoBehaviour
     
     public void setDest(List<GameObject> dests)
     {
-        Debug.Log("destListss");
         destList = dests;
         int _count = AIList.Count;
         for (int i = 0; i < _count; i++)

@@ -178,7 +178,6 @@ public class AIController : MonoBehaviour
     }
     public void Call(GameObject tempDest)
     {
-        Debug.Log(tempDest);
         FinalDest = tempDest;
     }
 

@@ -22,7 +22,6 @@ public class DataReader : MonoBehaviour
 
     public int sizeOfQuestion()
     {
-        //Debug.Log(dataSet.Count);
         return dataSet.Count;
     }
     
@@ -30,13 +29,11 @@ public class DataReader : MonoBehaviour
     {
         if (selectableIndex.Count == 10)
         {
-            Debug.Log("->Level-> " + _level + "Qid-->>" + dataSet[selectableIndex[_level]].id.ToString());
             return dataSet[selectableIndex[_level]];
             
         }
         else
         {
-            Debug.Log("NotTrueData");
             return dataSet[Random.Range(0, dataSet.Count)];
         }
         /* for (int i = 0; i < dataSet.Count; i++)
@@ -93,9 +90,6 @@ public class DataReader : MonoBehaviour
                 emptyQuestion.Add(i);
             }
         }
-
-        Debug.Log(emptyQuestion.Count + " -->> emptyQuest");
-        Debug.Log(selectableIndex.Count + " -->> selectableIndex");
         if (selectableIndex.Count == 0)
         {
             if (emptyQuestion.Count > 10)
@@ -115,11 +109,9 @@ public class DataReader : MonoBehaviour
         }
         else
         {
-            Debug.Log(selectableIndex[0]);
             int _tempF = selectableIndex.Count;
             if (_tempF < 10)
             {
-                Debug.Log("select<10");
                 for (int i = _tempF; i < 10; i++)
                 {
                     int _temp = Random.Range(0, emptyQuestion.Count - 1);
@@ -204,7 +196,6 @@ public class DataReader : MonoBehaviour
                     
                     if (trueAns0 != "")
                     {
-                        Debug.Log("trueAnsCome" + trueAns0);
                         if (trueAns0 == "a" || trueAns0 == "A")
                         {
                             indexesOfTrueAns.Add(0);
@@ -223,7 +214,6 @@ public class DataReader : MonoBehaviour
                         }
                         else
                         {
-                            Debug.Log("thereIsAProblem");
                         }
                     }
                     if (trueAns1 != "")
@@ -264,8 +254,6 @@ public class DataReader : MonoBehaviour
                             indexesOfTrueAns.Add(4);
                         }
                     }
-
-                    Debug.Log(indexesOfTrueAns.Count + "cnt");
                     QuestionData dt = new QuestionData(answerSize,question,answer,id,subject,indexesOfTrueAns);
                     dataSet.Add(dt);
                 }

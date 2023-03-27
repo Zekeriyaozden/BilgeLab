@@ -115,7 +115,6 @@ public class StartEnvironmentController : MonoBehaviour
                 
                 targetPlatform = startPlatforms[i];
                 targetElev = startPlatforms[i].GetComponent<StartPlatformController>().elevator1;
-                Debug.Log(targetElev);
                 breakFlag = true;
                 break;
             }
@@ -128,7 +127,6 @@ public class StartEnvironmentController : MonoBehaviour
             {
                 targetPlatform = startPlatforms[i];
                 targetElev = startPlatforms[i].GetComponent<StartPlatformController>().elevator2;
-                Debug.Log(targetElev);
                 breakFlag = true;
                 break;
             }

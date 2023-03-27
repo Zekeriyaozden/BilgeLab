@@ -138,12 +138,11 @@ public class SoundManager : MonoBehaviour
             {
                 if (onWalkPaused)
                 {
-                    Debug.Log("unpouse");
                     walk.UnPause();
                 }
                 else
                 {
-                       walk.Play();
+                    walk.Play();
                 }
             }
         }
