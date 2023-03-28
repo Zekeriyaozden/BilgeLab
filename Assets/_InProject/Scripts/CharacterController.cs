@@ -125,6 +125,7 @@ public class CharacterController : MonoBehaviour
 
     private IEnumerator endSplineMotion(Vector3 targetPos,Vector3 targetRot)
     {
+        Debug.Log("endSplineMotion");
         onParachute(true);
         float k = 0;
         Vector3 startRot = gameObject.transform.eulerAngles;
@@ -146,6 +147,7 @@ public class CharacterController : MonoBehaviour
         gameObject.transform.eulerAngles = startRotation;
         if (sf.spline.gameObject.transform.parent.gameObject.GetComponent<PipeController>().isTrue)
         {
+            Debug.Log("endSplineTrue");
             sm.playSound(3);
             gameObject.transform.eulerAngles = startRotation;
             gameObject.transform.position = new Vector3(transform.position.x,startPosition.y,transform.position.z);
@@ -153,6 +155,7 @@ public class CharacterController : MonoBehaviour
         }
         else
         {
+            Debug.Log("endSplineFalse");
             sm.playSound(8);
             gameObject.transform.eulerAngles = startRotation;
             gameObject.transform.position = new Vector3(gm.envController.currentPlatform.transform.position.x,transform.position.y,gm.envController.currentPlatform.transform.position.z);
@@ -178,6 +181,7 @@ public class CharacterController : MonoBehaviour
                 break;
             }
         }
+        Debug.Log("EndSpline");
         skingOn = false;
         sm.playSound(9);
         sm.stopSound(1);
@@ -187,6 +191,7 @@ public class CharacterController : MonoBehaviour
     public void inSpline()
     {
         SplineFollower sf = gameObject.GetComponent<SplineFollower>();
+        Debug.Log("StartSpline");
         StartCoroutine(splineFollow(sf));
     }
     
