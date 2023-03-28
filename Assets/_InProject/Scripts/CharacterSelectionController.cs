@@ -155,7 +155,9 @@ public class CharacterSelectionController : MonoBehaviour
     {
         elevator.gameObject.GetComponent<Animator>().enabled = true;
         sm.playSound(0);
+        Debug.Log("StartedElevator");
         yield return new WaitForSeconds(2f);
+        Debug.Log("StartedWings");
         wing.gameObject.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(2f);
         curtain.gameObject.SetActive(true);
