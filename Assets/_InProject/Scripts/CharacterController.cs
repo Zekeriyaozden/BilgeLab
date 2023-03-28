@@ -43,6 +43,7 @@ public class CharacterController : MonoBehaviour
         skingOn = parachuteOn = false;
         startRotation = gameObject.transform.rotation.eulerAngles;
         startPosition = transform.position;
+        startPosition = new Vector3(startPosition.x, 3.877013f, startPosition.z);
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         inTunnel = false;
         anim = gameObject.GetComponent<Animator>();
