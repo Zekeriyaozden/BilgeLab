@@ -8,6 +8,8 @@ TagManager:
   - AI
   - Platform
   - Collide
+  - Sphare
+  - Plane
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - Water
   - UI
   - Platform
-  - 
-  - 
+  - Plane
+  - Player
   - 
   - 
   - 

@@ -1813,6 +1813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere
       objectReference: {fileID: 0}
+    - target: {fileID: 8598566382646769603, guid: 492201487a95cce4491960bf52f9eb80, type: 3}
+      propertyPath: m_TagString
+      value: Sphare
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 492201487a95cce4491960bf52f9eb80, type: 3}
 --- !u!1 &3988441329860255412 stripped
@@ -2784,6 +2788,10 @@ PrefabInstance:
     - target: {fileID: 8598566382646769603, guid: 492201487a95cce4491960bf52f9eb80, type: 3}
       propertyPath: m_Name
       value: Sphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 8598566382646769603, guid: 492201487a95cce4491960bf52f9eb80, type: 3}
+      propertyPath: m_TagString
+      value: Sphare
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 492201487a95cce4491960bf52f9eb80, type: 3}

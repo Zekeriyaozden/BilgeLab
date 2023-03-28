@@ -1461,7 +1461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6700642091980305294}
   - component: {fileID: 4825944215015582848}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: ErkekKarakter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1508,6 +1508,7 @@ MonoBehaviour:
   parachute: {fileID: 2578172677243309048}
   gameEnd: 0
   confety: {fileID: 8008018121583915822}
+  currentPlatforms: {fileID: 0}
   distancedis: 0
 --- !u!1 &6442660392201098787
 GameObject:

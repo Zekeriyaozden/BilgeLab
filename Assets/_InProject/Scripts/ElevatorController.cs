@@ -198,26 +198,7 @@ public class ElevatorController : MonoBehaviour
         canvasNew.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = numberOfPerson;
 
     }
-
-    private IEnumerator setElevMot()
-    {
-        yield return new WaitForSeconds(2f);
-        gameObject.GetComponent<Animator>().enabled = false;
-        wing.gameObject.GetComponent<Animator>().enabled = false;
-        for (int i = 0; i < aiList.Count; i++)
-        {
-            aiList[i].GetComponent<AIController>().reset();
-        }
-        aiList.Clear();
-        wing.gameObject.GetComponent<Animator>().SetFloat("Direct",-1);
-        wing.gameObject.GetComponent<Animator>().enabled = true;
-        yield return new WaitForSeconds(1f);
-        Animator anim = gameObject.GetComponent<Animator>();
-        anim.SetFloat("Direct",-1);
-        anim.enabled = true;
-        sphere.SetActive(false);
-    }
-
+    
     private IEnumerator ElevMotion()
     {
         
@@ -254,6 +235,25 @@ public class ElevatorController : MonoBehaviour
         isElevMotion = false;
     }
 
+    private IEnumerator setElevMot()
+    {
+        yield return new WaitForSeconds(2f);
+        gameObject.GetComponent<Animator>().enabled = false;
+        wing.gameObject.GetComponent<Animator>().enabled = false;
+        for (int i = 0; i < aiList.Count; i++)
+        {
+            aiList[i].GetComponent<AIController>().reset();
+        }
+        aiList.Clear();
+        wing.gameObject.GetComponent<Animator>().SetFloat("Direct",-1);
+        wing.gameObject.GetComponent<Animator>().enabled = true;
+        yield return new WaitForSeconds(1f);
+        Animator anim = gameObject.GetComponent<Animator>();
+        anim.SetFloat("Direct",-1);
+        anim.enabled = true;
+        sphere.SetActive(false);
+    }
+    
     public void Call()
     {
         int count = aiManager.AIList.Count;
@@ -262,15 +262,7 @@ public class ElevatorController : MonoBehaviour
             aiManager.AIList[i].GetComponent<AIController>().Call(elevat.gameObject);
         }
     }
-
-    private void tickOffCounterOn()
-    {
-        peopleTick.SetActive(false);
-        canvasNew.SetActive(true);
-    }
     
-    
-
     private IEnumerator elevCenter(GameObject main)
     {
         main.GetComponent<CharacterController>().changeMotion(false);
@@ -287,6 +279,13 @@ public class ElevatorController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Camera.main.gameObject.GetComponent<CameraController>().enabled = false;
     }
+
+    private void tickOffCounterOn()
+    {
+        peopleTick.SetActive(false);
+        canvasNew.SetActive(true);
+    }
+    
 
     private void OnTriggerEnter(Collider other)
     {

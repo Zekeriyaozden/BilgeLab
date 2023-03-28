@@ -2635,9 +2635,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!1 &823678349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,7 +2650,7 @@ GameObject:
   - component: {fileID: 823678353}
   - component: {fileID: 823678352}
   - component: {fileID: 823678351}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4374,9 +4374,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!136 &1504509239
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4875,6 +4875,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 896040313}
     m_Modifications:
+    - target: {fileID: 6618981264010503112, guid: c548073c0f7ab3148b2410396892f623, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6618981264010503117, guid: c548073c0f7ab3148b2410396892f623, type: 3}
       propertyPath: m_LocalPosition.x
       value: -370
