@@ -891,6 +891,10 @@ PrefabInstance:
       propertyPath: Unlockparticle
       value: 
       objectReference: {fileID: 8365074127305072493}
+    - target: {fileID: 3756738459798487297, guid: e1ae64def49466a429762aaaabf440f8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4178601567611390667, guid: e1ae64def49466a429762aaaabf440f8, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -1873,7 +1877,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6268130553857262536}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 3.1450226
   m_Height: 12.368451

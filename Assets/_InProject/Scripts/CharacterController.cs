@@ -359,7 +359,6 @@ public class CharacterController : MonoBehaviour
     [HideInInspector]public float distancedis;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name + " -->> Trigger");
         if (other.gameObject.tag == "Tunnel")
         {
             tunnel = other.gameObject;
@@ -390,11 +389,6 @@ public class CharacterController : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.gameObject.name + " -->> collision");
-        if (other.gameObject.tag == "Sphare")
-        {
-            Debug.Log("--->>>>sphare<<<<---");
-        }
         if (other.gameObject.tag == "Collide")
         {
             StartCoroutine(TranslateCol());

@@ -53,17 +53,18 @@ public class ElevatorController : MonoBehaviour
         GetComponent<Animator>().enabled = false;
         wing.gameObject.GetComponent<Animator>().enabled = false;
         elevat = transform.GetChild(0).GetChild(0).gameObject;
-        StartCoroutine(unLock());
+        //StartCoroutine(unLock());
     }
 
     /*private IEnumerator lockAnimStart()
     {
         
     }*/
-    
+    //BurayaBak
     public IEnumerator unLock(bool unlockForce = false)
     {
-        yield return new WaitForSeconds(5f);
+        Debug.Log(unlockForce+ "<<--UnlockForce" + " ||| isComplated -->>"+ isComplated + "||| Name -->>" + gameObject.name);
+        yield return new WaitForSeconds(2f);
         if (isComplated)
         {
             peopleTick.SetActive(true);
@@ -86,7 +87,7 @@ public class ElevatorController : MonoBehaviour
             }
             else
             {
-                gameObject.GetComponent<Collider>().isTrigger = false;   
+                gameObject.GetComponent<Collider>().isTrigger = false;
             }
         }
     }
@@ -221,6 +222,7 @@ public class ElevatorController : MonoBehaviour
         }
         else
         {
+            //Bura2
             GetComponent<Collider>().isTrigger = false;
             GetComponent<Animator>().enabled = true;
             gameObject.GetComponent<Animator>().enabled = true;
